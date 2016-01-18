@@ -4,11 +4,6 @@ node_modules
 dist
 
 
-# Ignore docs files
-_gh_pages
-_site
-.ruby-version
-
 
 # Numerous always-ignore extensions
 *.diff
@@ -22,12 +17,14 @@ _site
 *~
 
 
-
-
 # Ignore docs files
 _gh_pages
-_site
 .ruby-version
+
+_site
+.sass-cache
+.jekyll-metadata
+
 
 # Numerous always-ignore extensions
 *.diff
@@ -58,10 +55,3 @@ Thumbs.db
 # .komodotools
 # *.komodoproject
 
-# grunt-html-validation
-validation-report.json
-validation-status.json
-
-
-# blog folder
-blog/html
