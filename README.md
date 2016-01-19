@@ -1,4 +1,4 @@
-# LiXizhi's Personal Website
+# 대문블로그(demun)
 
-Runing on Github + Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
+[http://demun.github.io/](http://demun.github.io/)
 
