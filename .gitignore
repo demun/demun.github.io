@@ -1,27 +1,2 @@
-# Folders to ignore
-bower_components
-node_modules
-dist
-
-
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
-
-
-# Ignore docs files
-_gh_pages
-.ruby-version
-
 _site
 .sass-cache
-.jekyll-metadata
-

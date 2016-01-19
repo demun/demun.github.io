@@ -1,26 +1,32 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: 대문블로그
+title: demun
 email: hjm01@naver.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://demun.github.io" # the base hostname & protocol for your site
-twitter_username: demunblog
-github_username:  demun
+description: 대문블로그
+# > # this means to ignore newlines until "baseurl:"
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
+
+# baseurl: "" # the subpath of your site, e.g. /blog/
+# url: "http://yourdomain.com" # the base hostname & protocol for your site
+# twitter_username: jekyllrb
+github_username: demun
+permalink: /:year/:month/:day/:title/
+
+#########################################
+# for duoshuo.com commenting system, uncomment following line if you do not want to include duoshuo.com. 
+#duoshuo_shortname: lixizhi
+#duoshuo_url: "http://lixizhi.github.io"
+# disqus.com commenting system. please note that it is exclusive with duoshuo.com
+# disqus_shortname: disqus_vc2s2oD2Un
+disqus_shortname: jongmun
+disqus_url: "http://demun.github.io"
+#########################################
 
 # Build settings
 markdown: kramdown
 
-# Permalinks
-permalink: /:categories/:title/
-
-keywords: Jekyll, 지킬, 마크다운, markdown, Github, Github pages, 깃허브, 깃허브 저장소
+# highlight
+# highlighter: pygments
+# highlighter: rouge
+# highlighter: false
