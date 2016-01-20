@@ -1,9 +1,9 @@
 ---
 layout: post
 comments: true
-categories: paracraft
+categories: Jekyll
 ---
 
-## 빈 템플릿
+## Jekyll
 
 이곳은 빈 템플릿 페이지 입니다.
