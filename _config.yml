@@ -2,6 +2,44 @@
 title: demun
 email: hjm01@naver.com
 description: 대문블로그
+
+
+# # 파일 종류별 위치
+# source:       .
+# destination:  ./_site
+# plugins_dir:  ./_plugins
+# layouts_dir:  ./_layouts
+# data_dir:     ./_data
+# includes_dir: ./_includes
+# collections:  null
+
+
+# # 읽기 처리방법
+# safe:         false
+# include:      [".htaccess"]
+# exclude:      []
+# keep_files:   [".git", ".svn"]
+# encoding:     "utf-8"
+# markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# # 컨텐츠 필터링
+# show_drafts: null
+# limit_posts: 0
+# future:      false
+# unpublished: false
+
+# # 플러그인
+# whitelist: []
+# gems:      []
+
+# # 출력 방식
+# permalink:     date
+# paginate_path: /page:num
+# timezone:      null
+
+# quiet:    false
+# defaults: []
+
 # > # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
 #   line in _config.yml. It will appear in your document head meta (for
@@ -23,8 +61,20 @@ disqus_shortname: jongmun
 disqus_url: "http://demun.github.io"
 #########################################
 
-# Build settings
-markdown: kramdown
+
+
+# 변환
+markdown:    kramdown
+highlighter: rouge
+#lsi:         false
+#excerpt_separator: "\n\n"
+#incremental: false
+
+# Github Flavored Markdown
+kramdown:
+  input: GFM
+
+
 
 # highlight
 # highlighter: pygments
