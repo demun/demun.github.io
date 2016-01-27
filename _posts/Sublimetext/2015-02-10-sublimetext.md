@@ -41,7 +41,7 @@ function fixFooterInit() {
 ```
 
 
-- css
+* CSS code
 
 ```css
 table thead{
@@ -60,11 +60,26 @@ table td{
 }
 ```
 
+* CSS code
+{% highlight css %}
+table{
+	border-top:2px solid #777;
+	border-bottom: 2px solid #777;
+	margin: 8px 0;
+}
+table thead{
+	border-bottom: 1px dashed #777;
+	background-color: #aaa;
+	color:#fff;
+}
+{% endhighlight %}
+
+
 
 
 아래는 링크의 예제
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+지킬을 최대한 활용하는 방법에 대한 자세한 정보를 원하시면 [Jekyll docs][jekyll] 를 참조하십시오. 버그 / 기능 요청은 [Jekyll’s GitHub repo][jekyll-gh].  질문이있는 경우 [지킬의 전용 도움말 저장소][jekyll-help]를 참고하세요.
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll

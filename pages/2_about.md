@@ -9,9 +9,15 @@ icon: glyphicon-heart
 * content
 {:toc}
 
-## About the site
-This is a personal website of LiXizhi, created with github and jekyll. 
-Create your own website is as easy as clone or fork a [template](https://github.com/LiXizhi/lixizhi.github.io) on github, and [commit](http://jekyllrb.com/docs/posts/) to `_posts` folder. 
+
+### demun
+
+Repository: [github.com/demun](https://github.com/demun)
+Blog: [demun.github.io](http://demun.github.io/)
+Blog: [demun.tistory.com](http://demun.tistory.com)
+Email: [hjm01@naver.com](mailto:hjm01@naver.com)
+
+
 
 ### Admin tools
 * [사이트 구성파일](https://github.com/LiXizhi/lixizhi.github.io/blob/master/_config.yml)
@@ -23,8 +29,11 @@ Create your own website is as easy as clone or fork a [template](https://github.
 * YAML for human readable markdown: [yaml.org](http://www.yaml.org/)
 * markdown reference: [kramdown](http://kramdown.gettalong.org/quickref.html)
 
+
+
 ### About comments
-Add a variable called `comments` to the [YAML front matter](http://jekyllrb.com/docs/frontmatter/) and set its value to true. A sample might look like:
+[YAML front matter](http://jekyllrb.com/docs/frontmatter/)네 `comments`라는 변수를 추가하고 해당 값을 `true`로 설정합니다. 샘플은 다음과 같을 수 있습니다 :
+
 
     ---
     layout: post
@@ -33,7 +42,6 @@ Add a variable called `comments` to the [YAML front matter](http://jekyllrb.com/
     ---
 
 ### Sample markdowns
-페이지 하단의 소스보기를 클릭합니다
 
 * Embedding code
 {% highlight lua %}
@@ -43,13 +51,4 @@ end
 {% endhighlight %}
 
 
-## About me
-
-My primary research interest is in artificial intelligence, programming and education. See my project page for details.
-
-
-### 2005 Old Website 
-Here is my old personal website when I was in University. It was mostly on my projects and thoughts before 2005.
-
-* [Xizhi's old website before 2005](/oldsite2005/index.htm). 
 

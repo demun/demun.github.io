@@ -4,6 +4,29 @@ email: hjm01@naver.com
 description: 대문블로그
 
 
+# Permalinks
+permalink: pretty
+# permalink: /:year/:month/:day/:title/
+
+
+github_username: demun
+
+disqus_shortname: jongmun
+disqus_url: "http://demun.github.io"
+
+
+markdown:    kramdown
+highlighter: rouge
+
+# Github Flavored Markdown
+kramdown:
+  input: GFM
+
+
+
+
+
+
 # # 파일 종류별 위치
 # source:       .
 # destination:  ./_site
@@ -40,39 +63,25 @@ description: 대문블로그
 # quiet:    false
 # defaults: []
 
-# > # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
+
 
 # baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
-github_username: demun
-permalink: /:year/:month/:day/:title/
 
 #########################################
-# for duoshuo.com commenting system, uncomment following line if you do not want to include duoshuo.com. 
 #duoshuo_shortname: lixizhi
 #duoshuo_url: "http://lixizhi.github.io"
 # disqus.com commenting system. please note that it is exclusive with duoshuo.com
 # disqus_shortname: disqus_vc2s2oD2Un
-disqus_shortname: jongmun
-disqus_url: "http://demun.github.io"
 #########################################
 
 
 
 # 변환
-markdown:    kramdown
-highlighter: rouge
 #lsi:         false
 #excerpt_separator: "\n\n"
 #incremental: false
-
-# Github Flavored Markdown
-kramdown:
-  input: GFM
 
 
 
