@@ -5,9 +5,9 @@ description: 대문블로그
 
 
 # Permalinks
-permalink: pretty
+permalink: /:categories/:title/
+# permalink: pretty
 # permalink: /:year/:month/:day/:title/
-
 
 github_username: demun
 
