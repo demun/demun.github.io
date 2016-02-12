@@ -1,91 +1,21 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-title: demun
-email: hjm01@naver.com
-description: 대문블로그
+title: Your awesome title
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
 
-
-# Permalinks
-permalink: /:categories/:title/
-# permalink: pretty
-# permalink: /:year/:month/:day/:title/
-
-github_username: demun
-
-disqus_shortname: jongmun
-disqus_url: "http://demun.github.io"
-
-
-markdown:    kramdown
-highlighter: rouge
-
-# Github Flavored Markdown
-kramdown:
-  input: GFM
-
-
-
-
-
-
-# # 파일 종류별 위치
-# source:       .
-# destination:  ./_site
-# plugins_dir:  ./_plugins
-# layouts_dir:  ./_layouts
-# data_dir:     ./_data
-# includes_dir: ./_includes
-# collections:  null
-
-
-# # 읽기 처리방법
-# safe:         false
-# include:      [".htaccess"]
-# exclude:      []
-# keep_files:   [".git", ".svn"]
-# encoding:     "utf-8"
-# markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# # 컨텐츠 필터링
-# show_drafts: null
-# limit_posts: 0
-# future:      false
-# unpublished: false
-
-# # 플러그인
-# whitelist: []
-# gems:      []
-
-# # 출력 방식
-# permalink:     date
-# paginate_path: /page:num
-# timezone:      null
-
-# quiet:    false
-# defaults: []
-
-
-
-# baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-
-#########################################
-#duoshuo_shortname: lixizhi
-#duoshuo_url: "http://lixizhi.github.io"
-# disqus.com commenting system. please note that it is exclusive with duoshuo.com
-# disqus_shortname: disqus_vc2s2oD2Un
-#########################################
-
-
-
-# 변환
-#lsi:         false
-#excerpt_separator: "\n\n"
-#incremental: false
-
-
-
-# highlight
-# highlighter: pygments
-# highlighter: rouge
-# highlighter: false
+# Build settings
+markdown: kramdown
