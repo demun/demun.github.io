@@ -1,21 +1,26 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: demun(대문블로그)
+email: hjm01@naver.com
+description: Front End Developer,demun,대문,html,css,javascript,jQuery,demunblog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://demun.github.io/" # the base hostname & protocol for your site
+twitter_username: demunblog
+github_username: demun
 
 # Build settings
 markdown: kramdown
+
+
+# 특정 디렉토리나 파일을 변환되지 않도록 제외시킨다. 
+# exclude: [DIR, FILE, ...]
+
+
+keep_files: [".git", ".svn"]
+encoding: "utf-8"
+
+
+
+
+
+
+
