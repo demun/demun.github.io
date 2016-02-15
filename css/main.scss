@@ -1,31 +1,10 @@
 ---
-# sass 파일은 --- 세개가 있어야 함
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
 
-
-// variables 로 옮김
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "variables",
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "variables";
+@import "mixin";
+@import "base";
+@import "layout";
+@import "syntax-highlighting";
