@@ -14,7 +14,6 @@ markdown: kramdown
 # 특정 디렉토리나 파일을 변환되지 않도록 제외시킨다. 
 # exclude: [DIR, FILE, ...]
 
-
 keep_files: [".git", ".svn"]
 encoding: "utf-8"
 
