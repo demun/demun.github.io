@@ -39,7 +39,7 @@ category_dir: /category
 # vimeo: "#"
 twitter_username: demunblog
 github_username: demun
-
+facebook_username: demunblog
 
 
 # 인코딩 설정
@@ -49,10 +49,23 @@ encoding: utf-8
 # sass는 자동으로 지킬에서 변환한다.
 # css  폴더에 main.scss 하고 sass  폴더의 파일을 임포트한다.
 # 만약 css 폴더없이 sass 를 변환하고 싶다면 grunt 를 이용해야 한다.
-# 
-# 
+ 
 
 # 레이아웃
 # 현재의 레이아웃은 공통으로 사용되는 header, footer 로 나눈다
 # 또다른 방법은 고정폭, 유동폭 레이아웃 파일을 만들고 {{ content }} 만 작성한다.
+
+permalink: /:categories/:title
+
+
+links:
+  - title: about
+  - url: /about
+  - title: work
+  - url: /work
+  - title: articles
+  - url: /articles
+  - title: hire me
+  - url: /hire-me
+
 

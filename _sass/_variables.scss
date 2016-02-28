@@ -1,6 +1,6 @@
 @charset "utf-8";
 // Our variables
-$base-font-family: "Noto Sans KR",Helvetica, Arial, sans-serif;
+$base-font-family: "Noto Sans KR","Nanum Gothic","나눔고딕","Malgun Gothic", "맑은고딕",Helvetica, Arial, sans-serif;
 // $base-font-family: "Noto Sans KR","Nanum Gothic","나눔고딕","Malgun Gothic", "맑은고딕", Helvetica, Arial, sans-serif;
 // $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
@@ -8,14 +8,35 @@ $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
+
+// add
+$mega-font-size: 100px;
+$h1-font-size: 70px;
+$h2-font-size: 40px;
+$h3-font-size: 30px;
+$h4-font-size: 24;
+// end
+
+
+
+
 $spacing-unit:     30px;
 
 
 
 // color
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color:       #333;
+$background-color: #fefef3;
+$brand-color:      #fe5f55;
+
+// add color
+$blue-color: #92b5bd;
+$yellow-color: #ede24e;
+$red-color: #df6d59;
+$purple-color: #6b2339;
+
+
+
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -24,7 +45,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // layout
 // Width of the content area
-$content-width:    960px;
+$content-width:    1200px;
 // $content-width:    800px;
 
 $on-palm:          600px;

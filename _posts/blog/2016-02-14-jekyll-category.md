@@ -1,16 +1,15 @@
 ---
 layout: post
-title:  "Jekyll 카테고리"
+title:  "Jekyll"
 date:   2016-02-14 19:05:13 +0900
-categories: jekyll
+categories: blog
+tags: jekyll
 ---
 
 
 # 카테고리
 
-카테고리는 폴더를 미리 만드는것이 아닐다.
-
-포스트 작성시 머릿말에 카테고리를 지정해준다.
+카테고리는 폴더를 미리 만들지 않아도 포스트 작성시 머릿말에 카테고리를 지정해주면 생성된다.
 
 {% highlight yml %}
 ---
