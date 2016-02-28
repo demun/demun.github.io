@@ -14,6 +14,7 @@ kramdown:
 
 
 
+=======
 # 특정 디렉토리나 파일을 변환되지 않도록 제외시킨다. 
 # 지킬에서 빌드되지 않도록하는 폴더를 지정한다
 exclude: [.git, .gitignore, .sass-cache, node_modules]
