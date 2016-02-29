@@ -41,6 +41,7 @@ $abilities: (
 	'jekyll': 100,
 	'git': 80
 );
+
 @each $ability, $score in $abilities {
 	@keyframes show-ability-#{$ability} {
 		from { width: 0; }
