@@ -1,0 +1,50 @@
+@charset "utf-8";
+/**
+ * Reset some basic elements
+ */
+/* commom */
+body {
+	background-image: url(../images/bg/bg1.png);
+	// background-image: url(http://7q5cdt.com1.z0.glb.clouddn.com/bg-canvas_bg.jpg);
+    font-family: "Noto Sans KR","Nanum Gothic","나눔고딕","Malgun Gothic", "맑은고딕",Helvetica, Arial, sans-serif;
+    // font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+}
+article p{
+	/*text-indent: 2em;*/
+}
+pre{
+	// padding: 0;
+	// background: none;
+	background: url(../images/bg/bg58.png) repeat;
+}
+
+pre code{
+	font-size: 14px;
+}
+
+table{
+	border-top:2px solid #777;
+	border-bottom: 2px solid #777;
+	margin: 8px 0;
+}
+table thead{
+	border-bottom: 1px dashed #777;
+	background-color: #aaa;
+	color:#fff;
+}
+table th{
+	padding: 2px 10px;
+}
+table tr:nth-child(2n){
+	background-color: #E5EAED;
+}
+table td{
+	padding: 2px 10px;
+	vertical-align: top;
+}
+
+
+#index a:link {color: #005}		
+#index a:visited {color: #669}	
+#index a:hover {color: #336;text-decoration: none;}
+#index a:active {color: #99b}

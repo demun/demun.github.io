@@ -1,0 +1,19 @@
+@charset "utf-8";
+/**
+ * page-content
+ */
+.page-content table{
+	border-top: 1px dashed #ddd;
+	border-bottom: 1px dashed #ddd;
+	margin: 20px 0;
+}
+.page-content table tr td{
+	padding: 6px 10px;
+	vertical-align: top;
+
+}
+.page-content table tr td:first-of-type{
+	padding: 6px 10px 6px 10px;
+	border-right: 1px dashed #ddd; 
+	text-align: right;
+}

@@ -9,8 +9,8 @@ $(document).ready(function() {
 });
 
 /**
- * load方法，页面的加载完成后触发
- * {fixFooterInit();} 固定Footer栏
+ * load로딩 완료 트리거 페이지 이후에있어서,
+ * {fixFooterInit();} 고정 바닥 글 바
  */
 /*$(window).load(function() {
     fixFooterInit();
@@ -18,14 +18,14 @@ $(document).ready(function() {
 
 
 /**
- * 固定底栏的初始化方法
- * 在一开始载入页面时，使用fixFooter()方法固定底栏。
- * 在浏览器窗口改变大小是，依然固定底栏
+ * 초기화 방법은 고정 하단 바
+ * 처음에는 페이지가로드, 사용할 때 fixFooter () 메소드는 아래 줄을 고정.
+ * 브라우저 창의 크기를 변경 여전히 고정되어 하단 바
  * @return {[type]} [description]
  */
 function fixFooterInit() {
     var footerHeight = $('footer').outerHeight();
-    var footerMarginTop = getFooterMarginTop() - 0; //类型转换
+    var footerMarginTop = getFooterMarginTop() - 0; //형식 변환
     // var footerMarginTop = 80;
 
     fixFooter(footerHeight, footerMarginTop); //fix footer at the beginning
@@ -42,9 +42,9 @@ function fixFooterInit() {
 }
 
 /**
- * 固定底栏
- * @param  {number} footerHeight    底栏高度
- * @param  {number} footerMarginTop 底栏MarginTop
+ * 고정 하단 바
+ * @param  {number} footerHeight    하단 바의 높이
+ * @param  {number} footerMarginTop 하단 바 MarginTop
  * @return {[type]}                 [description]
  */
 function fixFooter(footerHeight, footerMarginTop) {
@@ -70,8 +70,8 @@ function fixFooter(footerHeight, footerMarginTop) {
 }
 
 /**
- * 使用正则表达式得到底栏的MarginTop
- * @return {string} 底栏的MarginTop
+ * 마지막 줄에서 얻은 정규 표현식을 사용하여 MarginTop
+ * @return {string} 하단 바 MarginTop
  */
 function getFooterMarginTop() {
     var margintop = $('footer').css('marginTop');
@@ -82,9 +82,9 @@ function getFooterMarginTop() {
 }
 
 /**
- * 分类展示
- * 点击右侧的分类展示时
- * 左侧的相关裂变展开或者收起
+ * 분류 된 전시
+ * 분류 화면의 오른쪽을 클릭
+ * 확장 또는 관련 분열 축소의 왼쪽
  * @return {[type]} [description]
  */
 function categoryDisplay() {
@@ -100,10 +100,10 @@ function categoryDisplay() {
 }
 
 /**
- * 回到顶部
+ * 위로 가기
  */
 function backToTop() {
-    //滚页面才显示返回顶部
+    //톱 페이지 만 표시로 롤백
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
             $("#top").fadeIn(500);
@@ -111,14 +111,14 @@ function backToTop() {
             $("#top").fadeOut(500);
         }
     });
-    //点击回到顶部
+    //위로 가기 클릭
     $("#top").click(function() {
         $("body").animate({
             scrollTop: "0"
         }, 500);
     });
 
-    //初始化tip
+    //초기화 팁
     $(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -126,18 +126,18 @@ function backToTop() {
 
 
 /**
- * 侧边目录
+ * 사이드 디렉토리
  */
 function generateContent() {
 
     // console.log($('#markdown-toc').html());
     if (typeof $('#markdown-toc').html() === 'undefined') {
-        // $('#content .content-text').html('<ul><li>文本较短，暂无目录</li></ul>');
+        // $('#content .content-text').html('<ul><li>텍스트 짧은, 어떤 디렉토리 없다</li></ul>');
         $('#content').hide();
         $('#myArticle').removeClass('col-sm-9').addClass('col-sm-12');
     } else {
         $('#content .content-text').html('<ul>' + $('#markdown-toc').html() + '</ul>');
-        /*   //数据加载完成后，加固定边栏
+        /*   //데이터로드 플러스 사이드 고정되면
         $('#myAffix').attr({
             'data-spy': 'affix',
             'data-offset': '50'

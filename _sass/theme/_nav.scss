@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* navbar */
+nav{
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	-o-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+	border-radius: 0;
+}
+.navbar-nav li{
+	min-width: 95px;
+	text-align: center;
+}
+
+.navbar-inverse {
+	background: url(../images/bg/bg41.png) repeat;
+	border: 0 none;
+	border-radius: 0;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+	color: #ddd;
+}

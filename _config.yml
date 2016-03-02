@@ -1,24 +1,18 @@
 title: demun(대문블로그)
 email: hjm01@naver.com
 description: Front End Developer, demun, 대문, demunblog, html, css, javascript, jQuery
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://demun.github.io/" # the base hostname & protocol for your site
+baseurl: ""
+url: "http://demun.github.io/"
 
 permalink: /:categories/:title
 
 
 # sns 설정
-# tumblr: "#"
-# pinterest: "#"
-# instagram: "#"
-# twitter: "#"
-# facebook: "#"
-# youtube: "#"
-# vimeo: "#"
 twitter_username: demunblog
 github_username: demun
 facebook_username: demunblog
 
+# disqus 댓글 플러그인
 disqus_shortname: demun
 disqus_url: "http://demun.github.io/"
 
