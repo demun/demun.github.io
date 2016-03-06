@@ -18,7 +18,7 @@
 	-o-transition:0.4s ease;
 }
 .categories-list-item:last-of-type{
-	border-bottom:none; 
+	// border-bottom:none; 
 }
 .categories-list-item:hover{
 	background-color: rgba(0,0,10,0.075);
@@ -44,3 +44,17 @@
 	-ms-transform:rotate(360deg) scale(1.2);
 	transform:rotate(360deg) scale(1.2);
 }
+
+
+
+// sidebar add
+.category-list {
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+
+
+

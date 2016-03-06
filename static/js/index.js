@@ -1,5 +1,5 @@
 /**
- * 页面ready方法
+ * 페이지 준비 방법
  */
 $(document).ready(function() {
 
