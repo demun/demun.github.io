@@ -22,11 +22,11 @@ Sync View Scroll 은 동시에 두개의 탭을 보며 동기화할수 있는 �
 
 `Ctrl+Shift+p` 를 눌러 `Package Control: Install Package` 를 선택합니다.
 
-![package control](/images/sublime/demun-003.jpg)
+![package control](/images/sublimetext/demun-003.jpg)
 
 그후 나오는 명령창에서 `Sync View Scroll` 입력하여 선택합니다.
 
-![Sync View Scroll](/images/sublime/demun-004.jpg)
+![Sync View Scroll](/images/sublimetext/demun-004.jpg)
 
 
 <br>
@@ -39,13 +39,13 @@ Sync View Scroll 은 동시에 두개의 탭을 보며 동기화할수 있는 �
 
 `Ctrl+Shift+p` 를 눌러 `SyncScroll: Toggle Current View Scroll Sync` 를 선택합니다.
 
-![Toggle Current View Scroll Sync](/images/sublime/demun-005.jpg)
+![Toggle Current View Scroll Sync](/images/sublimetext/demun-005.jpg)
 
 간편하게 단축키 `Ctrl+Shift+,` 를 눌러서 사용하는것을 추천합니다.
 
 여기서 단축키를 누를때 자세히 보면 첫번째줄에 커서가 가있습니다. 
 
-![Toggle Current View Scroll Sync](/images/sublime/demun-006.jpg)
+![Toggle Current View Scroll Sync](/images/sublimetext/demun-006.jpg)
 
 1번파일, 2번파일 모두 동일한 곳에 커서가 위치시킨후 단축키 `Ctrl+Shift+,`를 눌러서 시작하기 바랍니다.
 

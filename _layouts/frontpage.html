@@ -12,12 +12,12 @@ layout: default
 <div id="index" class="row">
   <div class="col-sm-9">
     <div class="panel panel-default">
-  	  <div class="panel-heading">Posts</div>
+  	  <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Posts</div>
       <div class="panel-body">
         <div class="all-posts" post-cate="All">
           {% for post in site.posts %}
             <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
-              <h2>
+              <h2><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 
               {{ post.title }}
               </h2>
               <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -47,7 +47,7 @@ layout: default
   </div>
   <div class="col-sm-3">
     <div class="panel panel-default hidden-xs">
-      <div class="panel-heading">Categories</div>
+      <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Categories</div>
       <div class="list-group">
         <a href="javascript:;" class="list-group-item categories-list-item2" cate="All">All<span class="badge">{{site.categories | size}}</span></a>
         {% for category in site.categories %}
