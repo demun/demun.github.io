@@ -24,6 +24,9 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# {% highlight ruby %}
+# {% endhighlight %}
+
 
 
 # 특정 디렉토리나 파일을 변환되지 않도록 제외시킨다. 

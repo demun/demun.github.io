@@ -37,7 +37,7 @@
 	-moz-transition:0.4s ease;
 	-o-transition:0.4s ease;
 }
-.categories-list-item:hover .my-badge{
+.categories-list-item:hover .my-badge {
 	-webkit-transform:rotate(360deg) scale(1.2);
 	-moz-transform:rotate(360deg) scale(1.2);
 	-o-transform:rotate(360deg) scale(1.2);
@@ -48,13 +48,13 @@
 
 
 // sidebar add
-.category-list {
-	margin-left: 0;
-	padding: 0;
-	list-style: none;
+.categories-list-item2 .badge {
+	transition:0.4s ease;
 }
 
-
+.categories-list-item2:hover .badge {
+	transform:rotate(360deg) scale(1.2);
+}
 
 
 
