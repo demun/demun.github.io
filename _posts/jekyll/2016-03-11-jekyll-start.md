@@ -3,8 +3,6 @@ layout: post
 title:  "지킬(jekyll)을 접하며"
 date:   2016-03-08
 categories: jekyll
-comments: true
-tags: [jekyll, 지킬]
 ---
 
 
