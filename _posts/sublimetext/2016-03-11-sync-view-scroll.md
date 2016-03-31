@@ -1,8 +1,11 @@
 ---
-layout: post
+layout: no_sidebar
 title:  "Sync View Scroll-두탭을 동기화하며 스크롤해서 볼수 있는 플로그인"
-date:   2016-03-10
+date:   2016-03-11
+featured: true
 categories: sublimetext
+comments: true
+tags: [sublimetext plugins, Sync Veiw Scroll]
 ---
 
 Sync View Scroll 은 동시에 두개의 탭을 보며 동기화할수 있는 플러그인입니다.

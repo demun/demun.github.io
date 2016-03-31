@@ -1,0 +1,23 @@
+<section>
+    <header>
+        <h3>Archive</h3>
+    </header>
+    <ul class="archive-list">
+        {% for post in site.posts %}
+        {% unless post.next %}
+            <header>
+                <h5>{{ post.date | date: '%B' }}</h5>
+            </header>
+        {% else %}
+            {% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
+            {% capture nmonth %}{{ post.next.date | date: '%B' }}{% endcapture %}
+            {% if month != nmonth %}
+            <header>
+                <h5>{{ post.date | date: '%B' }}</h5>
+            </header>
+            {% endif %}
+        {% endunless %}
+        <li><span class="date">{{ post.date | date:"%d." }}</span> <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</section>

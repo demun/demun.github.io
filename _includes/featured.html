@@ -1,0 +1,42 @@
+<div class="wrapper style1">
+	<section class="container special">
+		<header>
+			<h2 class="title-list">최신글 목록</h2>
+		</header>
+		<div class="row">
+			{% assign count = 0 %}
+				{% for post in site.posts reversed | limit:3 %}
+					{% if post.featured == true %}
+						<article class="4u 12u(mobile) special">
+
+							<!-- 본문에서 이미지를 불러올경우 -->
+							{% assign foundImage = 0 %}
+							{% assign images = post.content | split:"<img " %}
+							{% for image in images %}
+								{% if image contains 'src' %}
+
+									{% if foundImage == 0 %}
+										{% assign html = image | split:"/>" | first %}
+											<img class="image featured featured-img" {{ html }} />
+										{% assign foundImage = 1 %}
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+
+							<!-- <a href="{{ post.url }}"><img class="image featured featured-img" src="/images/post.jpg" alt="" /></a> -->
+							<header class="featured-header">
+								<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+							</header>
+							<div class="featured-post">
+								{{ post.content | strip_html | strip_newlines | truncate: 200 }}
+							</div>
+							<footer>
+								<a href="{{ post.url }}" class="button">Read more...</a>
+							</footer>
+						</article>
+					{% assign count = count | plus: 1 %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+</div>

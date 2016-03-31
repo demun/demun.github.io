@@ -1,26 +1,15 @@
 ---
 layout: default
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<article id="main">
-  <header class="special container">
-    <h2 class="post-title">{{ page.title }}</h2>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
   </header>
 
-  <section class="style4 wrapper container">
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
-  </section>
+  </div>
 
-  <section class="comments">
-    {% include comments.html %}
-  </section>
-    
-    <footer>
-        {% if page.previous %}
-        <a href="{{ page.previous.url }}" class="post-prev">&larr; Previous post</a> {% endif %}
-        {% if page.next %}
-        <a href="{{ page.next.url }}" class="post-next">Next post &rarr;</a> {% endif %}
-    </footer>
 </article>
-

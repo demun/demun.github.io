@@ -1,0 +1,125 @@
+<div id="footer">
+	<div class="container">
+		<div class="row">
+
+			<!-- Archive -->
+			<section class="4u 12u(mobile) archive">
+				<header>
+					<h2 class="icon fa-calendar circled"><span class="label">Archive</span></h2>
+				</header>
+				<ul class="divided">
+				    {% for post in site.posts | limit:5 %}
+				    {% unless post.next %}
+			            <h5>{{ post.date | date: '%B' }}</h5>
+				    {% else %}
+				        {% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
+				        {% capture nmonth %}{{ post.next.date | date: '%B' }}{% endcapture %}
+				        {% if month != nmonth %}
+				            <h5>{{ post.date | date: '%B' }}</h5>
+				        {% endif %}
+				    {% endunless %}
+				    <li>
+				    	<article class="tweet">
+				    		<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">{{ post.title }}</a>
+				    		<span class="timestamp">{{ post.date | date:"%d." }}</span>
+				    	</article>
+				    </li>
+				    {% endfor %}
+				</ul>
+
+			</section>
+
+			<!-- Posts -->
+			<section class="4u 12u(mobile)">
+				<header>
+					<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+				</header>
+				<ul class="divided">
+				    {% for post in site.posts reversed | limit: 6 %}
+				        {% if post.url == post.url %}
+				        	<li>
+				        		<article class="post stub">
+			        				<a href="{{ post.url }}">{{ post.title }}</a>
+				        			<!-- <span class="timestamp">{{ page.date | date: "%b %-d, %Y" }}</span> -->
+				        		</article>
+				        	</li>
+				        {% endif %}
+				    {% endfor %}
+				</ul>
+			</section>
+
+			<!-- Photos -->
+			<section class="4u 12u(mobile)">
+				<header>
+					<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+				</header>
+				<div class="row 25%">
+					{% assign count = 0 %}
+						{% for post in site.posts reversed | limit:3 %}
+							{% if post.featured == true %}
+								<div class="6u">
+
+									<!-- 본문에서 이미지를 불러올경우 -->
+									{% assign foundImage = 0 %}
+									{% assign images = post.content | split:"<img " %}
+									{% for image in images %}
+										{% if image contains 'src' %}
+
+											{% if foundImage == 0 %}
+												{% assign html = image | split:"/>" | first %}
+													<a href="{{ post.url }}" class="image fit"><img alt="" {{ html }}/></a>
+												{% assign foundImage = 1 %}
+											{% endif %}
+										{% endif %}
+									{% endfor %}
+									
+								</div>
+							{% assign count = count | plus: 1 %}
+						{% endif %}
+					{% endfor %}
+
+				</div>
+			</section>
+
+		</div>
+		<hr />
+		<div class="row">
+			<div class="12u">
+
+				<!-- Contact -->
+				<section class="contact">
+					<header>
+						<h3>대문블로그 </h3>
+					</header>
+					<p>일상적인 이야기화 함께. 프론트엔드 기술에 대한 이야기를 다룹니다. 서로 소통하는 공간이 되길 원합니다.</p>
+					<ul class="icons">
+						{% if site.author.twitter %}
+							<li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						{% endif %}
+						{% if site.author.facebook %}
+							<li><a href="https://facebook.com/{{ site.author.facebook }}" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						{% endif %}
+						{% if site.author.github %}
+							<li><a href="https://github.com/{{ site.author.github }}" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+						{% endif %}
+						{% if site.author.google_plus %}
+							<li><a href="https://plus.google.com/u/0/{{ site.author.google_plus }}" target="_blank" class="icon fa-google-plus"><span class="label">Google plus</span></a></li>
+						{% endif %}
+						{% if site.author.linkedin %}
+							<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+						{% endif %}
+					</ul>
+				</section>
+
+				<!-- Copyright -->
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; demun</li><li>All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>

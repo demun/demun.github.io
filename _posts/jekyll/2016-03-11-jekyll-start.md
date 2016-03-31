@@ -1,8 +1,11 @@
 ---
-layout: post
+layout: no_sidebar
 title:  "지킬(jekyll)을 접하며"
-date:   2016-03-08
+date:   2016-03-11
+featured: true
 categories: jekyll
+comments: true
+tags: [jekyll, 지킬]
 ---
 
 
