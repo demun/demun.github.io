@@ -35,6 +35,9 @@
 		margin: 2.5em 0 0 0;
 	}
 
+	
+	
+
 /* Image */
 
 	.image {
@@ -1341,3 +1344,22 @@
 			}
 
 	}
+
+
+
+.comment-wrap {
+	padding: 6em 0;
+}
+#footer {
+	.email,
+	.install,
+	.privacy {
+		a {
+			color: rgba(0,0,0,.5);
+		}
+	}
+}
+
+
+
+

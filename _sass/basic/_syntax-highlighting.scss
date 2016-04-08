@@ -2,15 +2,17 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #f1f1f1;
+    background: #fff;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 15px;
     // @extend %vertical-rhythm;
     margin-bottom: (30px / 2);
     margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ddd;
 
     .highlighter-rouge & {
-      background: #eef;
+      // background: #eef;
     }
 
     .c     { color: #998; font-style: italic } // Comment

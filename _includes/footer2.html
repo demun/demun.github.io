@@ -54,12 +54,30 @@
 					<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
 				</header>
 				<div class="row 25%">
-					{% assign count = 0 %}
-						{% for post in site.posts reversed | limit:3 %}
-							{% if post.featured == true %}
-								<div class="6u">
+					{% for post in site.posts %}
+					    <div class="6u 12u(mobile) special">
 
-									<!-- 본문에서 이미지를 불러올경우 -->
+					      {% assign foundImage = 0 %}
+					      {% assign images = post.content | split:"<img " %}
+					      {% for image in images %}
+					        {% if image contains 'src' %}
+
+					            {% if foundImage == 0 %}
+					                {% assign html = image | split:"/>" | first %}
+					                <a href="{{ post.url }}"><img {{ html }} /></a>
+					                {% assign foundImage = 1 %}
+					            {% endif %}
+					        {% endif %}
+					      {% endfor %}
+
+					    </div>
+					{% endfor %}
+
+					<!-- {% assign count = 0 %}
+						{% for post in site.posts reversed | limit:9 %}
+							{% if post.featured == true %}
+								<div class="6u 12u(mobile) special">
+
 									{% assign foundImage = 0 %}
 									{% assign images = post.content | split:"<img " %}
 									{% for image in images %}
@@ -72,11 +90,12 @@
 											{% endif %}
 										{% endif %}
 									{% endfor %}
-									
+
+
 								</div>
 							{% assign count = count | plus: 1 %}
 						{% endif %}
-					{% endfor %}
+					{% endfor %} -->
 
 				</div>
 			</section>

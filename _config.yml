@@ -1,12 +1,7 @@
-# url: "demun.github.io" # the base hostname & protocol for your site
-# twitter_username: demunblog
-# github_username:  demun
-
-
 # Site settings
 title: demun(대문블로그)
 email: hjm01@naver.com
-description: Front End Developer, demun, 대문, demunblog, html, css, javascript, jQuery
+description: Front End Developer, html, css, javascript, jQuery
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://locahost:4000" # the base hostname & protocol for your site
