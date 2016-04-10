@@ -1,7 +1,6 @@
 ---
 layout: no_sidebar
 title:  "Sync View Scroll-두탭을 동기화하며 스크롤해서 볼수 있는 플로그인"
-date:   2016-03-11
 featured: true
 categories: sublimetext
 comments: true

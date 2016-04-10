@@ -7,8 +7,8 @@ layout: front
 			<h2 class="title-list">최신글 목록</h2>
 		</header>
 		<div class="row">
-			{% assign count = 0 %}
-				{% for post in site.posts reversed | limit:6 %}
+			<!-- {% assign count = 0 %} -->
+				{% for post in site.posts | limit:6 %}
 					{% if post.featured == true %}
 						<article class="4u 12u(mobile) special">
 
@@ -22,9 +22,9 @@ layout: front
 								<a href="{{ post.url }}" class="button">Read more...</a>
 							</footer>
 						</article>
-					{% assign count = count | plus: 1 %}
-				{% endif %}
-			{% endfor %}
+					{% endif %}
+				{% endfor %}
+			<!-- {% assign count = count | plus: 1 %} -->
 		</div>
 	</section>
 </div>

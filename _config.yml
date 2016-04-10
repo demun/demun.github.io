@@ -45,6 +45,11 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+
+# markdown: kramdown
+# highlighter: pygments
+
+
 # {% highlight ruby %}
 # {% endhighlight %}
 
