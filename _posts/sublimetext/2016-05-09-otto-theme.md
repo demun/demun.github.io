@@ -1,6 +1,6 @@
 ---
 layout: no_sidebar
-title:  "otto 테마"
+title:  "서브라임텍스트(sublimetext) otto 테마"
 featured: true
 categories: sublimetext
 comments: true
