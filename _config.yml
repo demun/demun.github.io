@@ -1,0 +1,62 @@
+# Site settings
+title: demun(대문블로그)
+email: hjm01@naver.com
+description: Front End Developer, html, css, javascript, jQuery
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://demun.github.io" # the base hostname & protocol for your site
+
+# sns id
+github:  demun
+twitter: demunblog
+facebook: demunblog  ## e.g. imjark for https://facebook.com/imjark
+google_plus: "118035701709445624959"
+
+# Build settings
+# markdown: kramdown
+
+paginate: 4
+
+author: demun
+
+gems: [jekyll-paginate]
+
+#######################
+# 카테고리 설정
+# 첫글자를 대문자로 해도 소문자로 빌드됨
+# 카테고리는 post 에 sublimetext 이라고 작성하면 빌드후 sublimetext 폴더에 포스트가 생성된다.
+# 머릿말에 카테고리를 지정해줘야 한다.
+# categories: /category
+permalink: /:categories/:title/
+
+# 인코딩 설정
+encoding: utf-8
+
+
+# sass는 자동으로 지킬에서 변환한다.
+# css  폴더에 main.scss 하고 sass  폴더의 파일을 임포트한다.
+# 만약 css 폴더없이 sass 를 변환하고 싶다면 grunt 를 이용해야 한다.
+# sass
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+
+# 코드 하이라이트 설정
+# 코드 하이라이트 기능중에 GFM를 사용해서 깃헙사이트와 동일하게 보여준다.
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+
+
+# 특정 디렉토리나 파일을 변환되지 않도록 제외시킨다.
+# 지킬에서 빌드되지 않도록하는 폴더를 지정한다
+# exclude: [.git, .gitignore, .sass-cache, node_modules]
+exclude:
+  - .sass-cache
+  - .git
+  - .gitignore
+  - node_modules
+  - READMD.md
+

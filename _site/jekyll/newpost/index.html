@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>demun(대문블로그)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/main.css">
+  <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+<header id="header">
+    <h1><a href="http://demun.github.io">demun(대문블로그)</a></h1>
+    <nav class="links">
+<!--
+    <ul>
+      <li><a href="#">Lorem</a></li>
+			<li><a href="#">Ipsum</a></li>
+			<li><a href="#">Feugiat</a></li>
+			<li><a href="#">Tempus</a></li>
+			<li><a href="#">Adipiscing</a></li>
+		</ul>
+  -->
+    </nav>
+    <nav class="main">
+        <ul>
+            <!--
+			<li class="search">
+				<a class="fa-search" href="#search">Search</a>
+				<form id="search" method="get" action="#">
+					<input type="text" name="query" placeholder="Search" />
+				</form>
+			</li>
+              -->
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- Menu -->
+<section id="menu">
+    <!-- Search -->
+    <!--
+  <section>
+	  <form class="search" method="get" action="#">
+	    <input type="text" name="query" placeholder="Search" />
+		</form>
+	</section>
+  -->
+    <!-- Links -->
+    <section>
+        <ul class="links">
+            
+            <li><a name="sublimetext">sublimetext</a>
+                <ul>
+                     
+                    <li><a href=""></a></li>
+                      
+                    <li><a href="/sublimetext/otto-theme/">서브라임텍스트(sublimetext) otto 테마</a></li>
+                    
+                    <li><a href="/sublimetext/seti-ux/">서브라임텍스트(sublimetext) Seti_UX</a></li>
+                    
+                    <li><a href="/sublimetext/seti-ui/">서브라임텍스트(sublimetext) Seti-UI 테마</a></li>
+                    
+                    <li><a href="/sublimetext/sync-view-scroll/">Sync View Scroll-두탭을 동기화하며 스크롤해서 볼수 있는 플로그인</a></li>
+                    
+                    <li><a href="/sublimetext/syncing/">서브라임텍스트(sublimetext) 동기화(syncing) 시키기</a></li>
+                     
+                </ul>
+            </li>
+            
+            <li><a name="jekyll">jekyll</a>
+                <ul>
+                     
+                    <li><a href=""></a></li>
+                      
+                    <li><a href="/jekyll/newpost/">최신글 출력하는 방법</a></li>
+                    
+                    <li><a href="/jekyll/jekyll-start/">지킬(jekyll)을 접하며</a></li>
+                     
+                </ul>
+            </li>
+            
+            <!-- <li>
+                <a href="/acknowledgement">
+                    <h3>Acknowledgement</h3>
+                    <p>Acknowledgement</p>
+                </a>
+            </li> -->
+        </ul>
+    </section>
+    <!-- Actions -->
+    <!--
+  <section>
+	  <ul class="actions vertical">
+	    <li><a href="#" class="button big fit">Log In</a></li>
+    </ul>
+  </section>
+  -->
+</section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="/jekyll/newpost/">최신글 출력하는 방법</a></h2>
+                        <!-- <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p> -->
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime=" 2016-04-06 ">April 06, 2016</time>
+                        
+                        <a href="#">jekyll</a> 
+                        <!--
+        <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+        -->
+                    </div>
+                </header>
+                
+                <a href="/jekyll/newpost/" class="image featured"><img src="/images/pic02.jpg" alt="" /></a>
+                 <p>지킬에서 최신글을 출력하는 방법을 알아봅니다.</p>
+
+<p>참고적으로 지킬에서 포스팅하면서 지킬의 구문을 그대로 보여지게 작성하려니 구문적으로 예외사항이 있습니다.
+지킬에서 사용하는 <code>{% .. %}</code> 같은경우 그대로 보여지게 할려니 약간의 제약사항이 있습니다.</p>
+
+<p>지킬의 구문에 대해서는 차후에 다시 다뤄보고 최신글을 표시하는 방법을 알아보겠습니다.</p>
+
+<p>최신글의 경우 인덱스 페이지나 사이드바에 내용이나 목록형태로 출력할 때가 있습니다.</p>
+
+<p>포스트 목록을 표시하려면 <code>{% for post in site.posts %}</code> 를 시작으로 <code>{% endfor %}</code> 를 끝으로 합니다.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+  {% for post in site.posts %}
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p><code>{% for post in site.posts %}</code> 를 시작으로 <code>{{ post.url }}</code> <code>{{ post.title }}</code> 등을 표시합니다.</p>
+
+<p>하지만 내용까지 출력하려면 좀더 많은 설정이 필요합니다.
+먼저 최신글 목록 내용까지 출력는 예제를 보시죠.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for post in site.posts %}
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"featured-list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"featured-header"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"featured-post"</span><span class="nt">&gt;</span>
+      {{ post.content | strip_html | strip_newlines | truncate: 200 }}
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;footer&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Read more...<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/footer&gt;</span>
+  <span class="nt">&lt;/article&gt;</span>
+{% endfor %}</code></pre></figure>
+
+<p>컨텐츠를 표시하는 부분에 <code>{{ post.content | strip_html | strip_newlines | truncate: 200 }}</code> 함으로써 내용을 가져옵니다.</p>
+
+<p>추가적으로 <code>{% for post in site.posts %}</code> 부분에 <code>{% for post in site.posts | limit:6 %}</code> 해서 최고 6개의 게시물을 가져오게도 할 수 있씁니다.</p>
+
+
+                <footer>
+                    <ul class="stats">
+                        
+                        <li><a href="#">newpost</a></li>
+                        
+                        <li><a href="#">최신글</a></li>
+                        
+                        <li><a href="#">jekyll theme</a></li>
+                        
+                        <!--
+        <li><a href="#">General</a></li>
+        <li><a href="#" class="icon fa-heart">28</a></li>
+        <li><a href="#" class="icon fa-comment">128</a></li>
+        -->
+                    </ul>
+                </footer>
+            </article>
+            <ul class="actions pagination">
+                
+                <li><a href="/sublimetext/sync-view-scroll/" class="button big previous">Previous Post</a></li>
+                 
+                <li><a href="/sublimetext/seti-ui/" class="button big next">Next Post</a></li>
+                
+            </ul>
+        </div>
+        <!-- Sidebar -->
+        <section id="sidebar">
+            <!-- Intro -->
+            <section id="intro">
+  <a href="http://demun.github.io" class="logo"><img src="/images/logo.jpg" alt="" /></a>
+	<header>
+    <h2>demun(대문블로그)</h2>
+		<!-- <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a> -->
+    </p>
+	</header>
+</section>
+
+            <!-- Mini Posts -->
+            <section>
+    <div class="mini-posts">
+        
+        <article class="mini-post">
+            <header>
+                <h3><a href="/sublimetext/otto-theme/">서브라임텍스트(sublimetext) otto 테마</a></h3>
+                <time class="published" datetime=" 2016-05-09 ">May 09, 2016</time>
+                <!--<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>-->
+            </header>
+            
+            <a href="/sublimetext/otto-theme/" class="image"><img src="/images/sublimetext/demun-223.jpg" alt="" /></a>
+            
+        </article>
+        <!-- Mini Post -->
+        <!--
+			<article class="mini-post">
+				<header>
+					<h3><a href="#">Vitae sed condimentum</a></h3>
+					<time class="published" datetime="2015-10-20">October 20, 2015</time>
+					<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
+				</header>
+				<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
+			</article>
+		-->
+        
+        <article class="mini-post">
+            <header>
+                <h3><a href="/sublimetext/seti-ux/">서브라임텍스트(sublimetext) Seti_UX</a></h3>
+                <time class="published" datetime=" 2016-04-10 ">April 10, 2016</time>
+                <!--<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>-->
+            </header>
+            
+            <a href="/sublimetext/seti-ux/" class="image"><img src="/images/sublimetext/demun-136.jpg" alt="" /></a>
+            
+        </article>
+        <!-- Mini Post -->
+        <!--
+			<article class="mini-post">
+				<header>
+					<h3><a href="#">Vitae sed condimentum</a></h3>
+					<time class="published" datetime="2015-10-20">October 20, 2015</time>
+					<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
+				</header>
+				<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
+			</article>
+		-->
+        
+        <article class="mini-post">
+            <header>
+                <h3><a href="/sublimetext/seti-ui/">서브라임텍스트(sublimetext) Seti-UI 테마</a></h3>
+                <time class="published" datetime=" 2016-04-08 ">April 08, 2016</time>
+                <!--<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>-->
+            </header>
+            
+            <a href="/sublimetext/seti-ui/" class="image"><img src="/images/sublimetext/demun-015.jpg" alt="" /></a>
+            
+        </article>
+        <!-- Mini Post -->
+        <!--
+			<article class="mini-post">
+				<header>
+					<h3><a href="#">Vitae sed condimentum</a></h3>
+					<time class="published" datetime="2015-10-20">October 20, 2015</time>
+					<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
+				</header>
+				<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
+			</article>
+		-->
+        
+        <article class="mini-post">
+            <header>
+                <h3><a href="/jekyll/newpost/">최신글 출력하는 방법</a></h3>
+                <time class="published" datetime=" 2016-04-06 ">April 06, 2016</time>
+                <!--<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>-->
+            </header>
+            
+            <a href="/jekyll/newpost/" class="image"><img src="/images/pic02.jpg" alt="" /></a>
+            
+        </article>
+        <!-- Mini Post -->
+        <!--
+			<article class="mini-post">
+				<header>
+					<h3><a href="#">Vitae sed condimentum</a></h3>
+					<time class="published" datetime="2015-10-20">October 20, 2015</time>
+					<a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
+				</header>
+				<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
+			</article>
+		-->
+        
+    </div>
+</section>
+
+            <!-- Posts List -->
+            <!-- About -->
+            <section class="blurb">
+  <h2>About</h2>
+	<p>Front End Developer, html, css, javascript, jQuery</p>
+	<ul class="actions">
+	  <li><a href="/about" class="button">Learn More</a></li>
+	</ul>
+</section>
+
+            <!-- Footer -->
+            <section id="footer">
+	<ul class="icons">
+		<li><a href="https://facebook.com/demunblog" class="fa-facebook-square"><span class="label">Facebook</span></a></li>
+	  	<li><a href="https://twitter.com/demunblog" class="fa-twitter-square"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/demun" class="fa-git-square"><span class="label">GitHub</span></a></li>
+		<li><a href="https://plus.google.com/118035701709445624959" class="fa-google-plus-square"><span class="label">Google+</span></a></li>
+		<li><a href="/feed.xml" class="fa-rss-square"><span class="label">RSS</span></a></li>
+		<li><a href="mailto:hjm01@naver.com" class="fa-envelope"><span class="label">Email</span></a></li>
+	</ul>
+	<p class="copyright">Copyright &copy; 2015 demun</p>
+</section>
+
+        </section>
+    </div>
+    <!-- Scripts -->
+    <script src="/js/jquery.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>
+
+    <!-- google analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74844096-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
