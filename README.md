@@ -1,2 +1,1 @@
-# siera
-jekyll theme
+# demun

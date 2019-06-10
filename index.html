@@ -1,42 +1,221 @@
----
-layout: main
----
+<!DOCTYPE html>
+<html lang="ko">
 
-{% for post in paginator.posts %}
-  <article class="post">
-    <header>
-      <div class="title">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <!-- <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p> -->
-      </div>
-      <div class="meta">
-        <time class="published" datetime="{{ post.date | date: "%F" }}">{{ post.date | date: "%B %d, %Y" }}</time>
-        {% for category in post.categories limit:1 %}
-          <a href="#">{{ category }}</a>
-        {% endfor %}
-        <!--
-        <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-        -->
-      </div>
-    </header>
-    {% if post.image %}
-      <a href="{{ post.url }}" class="image featured"><img src="{{post.image}}" alt="" /></a>
-    {% endif %}
-    {{ post.excerpt }}
-    <footer>
-      <ul class="actions">
-        <li><a href="{{ post.url }}" class="button big">Continue Reading</a></li>
-      </ul>
-      <ul class="stats">
-        {% for tag in post.tags limit:3 %}
-          <li><a href="#">{{ tag }}</a></li>
-        {% endfor %}
-        <!--
-        <li><a href="#">General</a></li>
-        <li><a href="#" class="icon fa-heart">28</a></li>
-        <li><a href="#" class="icon fa-comment">128</a></li>
-        -->
-      </ul>
-    </footer>
-  </article>
-{% endfor %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demun</title>
+  <style>
+    /* #424140 #CFC8C4 #E8DCD7 #FAE5E1 #FF746A */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 960px;
+      position: relative;
+    }
+
+    .page-intro {
+      background-color: #FF746A;
+      background-color: rgba(255, 116, 106, .9);
+      padding-top: 3vw;
+      padding-bottom: 4vw;
+    }
+
+    .page-intro .title {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      text-decoration: none;
+      color: #f8f8f8;
+    }
+
+    .page-intro .title:hover {
+      color: #000;
+    }
+
+    .page-intro .container {
+      text-align: center;
+    }
+
+    .page-intro h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      font-size: 9vw;
+      padding: 3vw;
+      padding-top: 10vw;
+    }
+
+    .component {
+      background-color: #FAE5E1;
+      background-color: rgba(255, 116, 106, .3);
+    }
+
+    .toc-section {
+      min-height: 120px;
+      position: relative;
+    }
+
+    .toc-heading {
+      background: #424140;
+      background: rgba(66, 65, 64, .8);
+      padding: 20px;
+    }
+
+    .toc-heading h3 {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .toc-content {
+      font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+      padding: 20px;
+      position: relative;
+      list-style-position: inside;
+      background-color: #fff;
+    }
+
+    .toc-content li {
+      padding: 7px;
+      border-radius: 3px;
+      transition: all .3s;
+      border: 1px solid transparent;
+    }
+
+    .toc-content li:hover {
+      background: linear-gradient(white, #f5f7f9);
+      border-color: #d3d6db;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    }
+
+    .toc-content a {
+      color: #333;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 960px) {
+      .component {
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+      }
+
+      .page-intro .title {
+        font-size: 1.5rem;
+      }
+
+      .toc-heading {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-bottom: 1px solid rgba(66, 65, 64, .5);
+        right: auto;
+        width: 270px;
+      }
+
+      .page-intro h3 {
+        font-size: 4rem;
+        padding: 3vw;
+      }
+
+      .toc-content {
+        border-bottom: 1px solid #ebeff5;
+        margin-left: 270px;
+        padding: 20px 25px;
+        min-height: 120px;
+      }
+
+    }
+
+    @media screen and (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="page-intro">
+    <div class="container">
+      <a href="http://demun.github.io/" class="title">demun</a>
+      <h3>Web Development</h3>
+    </div>
+  </section>
+
+  <section class="component">
+    <div class="container">
+      <article class="toc-section toc-section--html">
+        <div class="toc-heading">
+          <h3>퍼블리셔 가이드</h3>
+        </div>
+        <ol class="toc-content">
+          <li class="toc-month"><a href="./">리스트 1</a></li>
+          <li class="toc-month"><a href="./">리스트 2</a></li>
+          <li class="toc-month"><a href="./">리스트 3</a></li>
+          <li class="toc-month"><a href="./">리스트 4</a></li>
+          <li class="toc-month"><a href="./">리스트 5</a></li>
+        </ol>
+      </article>
+
+      <article class="toc-section toc-section--css">
+        <div class="toc-heading">
+          <h3>Webpack</h3>
+        </div>
+        <ol class="toc-content">
+          <li class="toc-month"><a href="./">리스트 1</a></li>
+          <li class="toc-month"><a href="./">리스트 2</a></li>
+          <li class="toc-month"><a href="./">리스트 3</a></li>
+          <li class="toc-month"><a href="./">리스트 4</a></li>
+          <li class="toc-month"><a href="./">리스트 5</a></li>
+        </ol>
+      </article>
+
+      <article class="toc-section toc-section--css">
+        <div class="toc-heading">
+          <h3>Visual Studio Code</h3>
+        </div>
+        <ol class="toc-content">
+          <li class="toc-month"><a href="./">리스트 1</a></li>
+          <li class="toc-month"><a href="./">리스트 2</a></li>
+          <li class="toc-month"><a href="./">리스트 3</a></li>
+          <li class="toc-month"><a href="./">리스트 4</a></li>
+          <li class="toc-month"><a href="./">리스트 5</a></li>
+        </ol>
+      </article>
+
+      <article class="toc-section toc-section--css">
+        <div class="toc-heading">
+          <h3>Mkdocs</h3>
+        </div>
+        <ol class="toc-content">
+          <li class="toc-month"><a href="./">리스트 1</a></li>
+          <li class="toc-month"><a href="./">리스트 2</a></li>
+          <li class="toc-month"><a href="./">리스트 3</a></li>
+          <li class="toc-month"><a href="./">리스트 4</a></li>
+          <li class="toc-month"><a href="./">리스트 5</a></li>
+        </ol>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+
+</html>
