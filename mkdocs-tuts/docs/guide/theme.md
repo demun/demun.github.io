@@ -10,3 +10,15 @@ MKDocs 의 테마는 `Bootstrap` 기반으로 스타일이 작성되어 있습�
 
 자세한 내용은 [사용자정의테마](http://www.mkdocs.org/user-guide/custom-themes/) 에서 볼 수 있으며, 템플릿변수, CSS 추가, Javascript 추가 등을 할 수 있습니다.
 
+예를들어 `material` 테마를 설치할경우 
+
+```
+pip install mkdocs-material
+```
+
+한후 `mkdocs.yml` 에 아래처럼 추가해주면 됩니다.
+
+```
+theme:
+  name: 'material'
+```
