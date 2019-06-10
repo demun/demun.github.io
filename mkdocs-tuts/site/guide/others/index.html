@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>기타 - MKDocs 튜토리얼</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\uae30\ud0c0";
+    var mkdocs_page_input_path = "guide\\others.md";
+    var mkdocs_page_url = "/guide/others/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> MKDocs 튜토리얼</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">홈</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../how/">사용법</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">세부사용법</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../theme/">테마</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tree/">구조</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">기타</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">확장기능 사용법</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">각주</a></li>
+        
+            <li><a class="toctree-l4" href="#metadata">Metadata</a></li>
+        
+            <li><a class="toctree-l4" href="#permalinks">Permalinks</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../admonition/">Admonition</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../publish/">배포</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">MKDocs 튜토리얼</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>세부사용법 &raquo;</li>
+        
+      
+    
+    <li>기타</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">확장기능 사용법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>기본적으로 지원하는 확장기능을 설정만하면 다양한 기능을 이용할 수 있습니다.</p>
+<h2 id="_2">각주<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>각주 기능은 확장기능에 아래처럼 지정해주면 됩니다.</p>
+<pre><code class="yml">markdown_extensions:
+  - footnotes
+</code></pre>
+
+<p>각주는 <code>[^숫자]</code> 를 이용해서 작성하며 문서 하단에 위치하게 됩니다.
+각주에 대한 참고 내용을 바로 아래 작성하여도 보이기는 문서 하단에 위치합니다.</p>
+<p>예:</p>
+<p>글 중간에 참고 하고 싶은 키워드가 있으면 첫번째<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>처럼 작성하면 됩니다. 여러개가 있을수 있고 두번째<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> 처럼 사용하면 됩니다.
+각주에 대한 내용은 바로 아래 넣어도 문서 하단에 위치하게 됩니다.</p>
+<p>결과</p>
+<pre><code class="md">글 중간에 참고 하고 싶은 키워드가 있으면 첫번째[^1]처럼 작성하면 됩니다. 여러개가 있을수 있고 두번째[^2] 처럼 사용하면 됩니다.
+각주에 대한 내용은 바로 아래 넣어도 문서 하단에 위치하게 됩니다.
+
+[^1]: 첫번째 각주에 대한 내용
+[^2]: 두번째 각주에 대한 내용
+</code></pre>
+
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<p>메타데이터는 문서 상단에 메타정보를 추가할 수 있습니다.</p>
+<pre><code class="yml">markdown_extensions:
+  - meta
+</code></pre>
+
+<p>타이틀, 설명, 경로, 파일링크 등을 문서에 추가할 수 있습니다.</p>
+<p>예:</p>
+<pre><code class="md">title: 타이틀을 지정할 수 있습니다.
+description: 문서의 설명글을 추가할 수 있습니다.
+path: path/to/file
+source: file.js
+
+# Headline
+....
+</code></pre>
+
+<h2 id="permalinks">Permalinks<a class="headerlink" href="#permalinks" title="Permanent link">&para;</a></h2>
+<p>파머링크를 사용하면 영구 링크가 자동으로 삽입됩니다. 제목에 링크를 달아서 이동하게 해줍니다.</p>
+<pre><code class="md">markdown_extensions : 
+  -  toc : 
+      permalink :  true
+</code></pre>
+
+<p>마우스를 올릴때 보여집니다. </p>
+<!-- 파머링크의 텍스트를 변경하고 싶으면 문자열을 전달하면 됩니다.
+
+wzxhzdk:5
+
+
+이렇게 하면 제목의 끝에 `¶` 이 추가되어 링크로 작동이 됩니다. -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>첫번째 각주에 대한 내용&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>두번째 각주에 대한 내용&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../admonition/" class="btn btn-neutral float-right" title="Admonition">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tree/" class="btn btn-neutral" title="구조"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tree/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../admonition/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
