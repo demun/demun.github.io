@@ -13,18 +13,19 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "\ud14c\ub9c8";
     var mkdocs_page_input_path = "guide\\theme.md";
-    var mkdocs_page_url = "/guide/theme/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href="../.." class="icon icon-home"> MKDocs 튜토리얼</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -132,6 +133,14 @@
 <p>서드파티 테마는 <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">커뮤니티 위키페이지</a> 에서 볼 수 있으며 제목을 클릭하고 들어가면 각각의 설치법과 사용법이 있습니다.</p>
 <p>또한 사용자정의테마를 만들어서 적용할 수도 있습니다.</p>
 <p>자세한 내용은 <a href="http://www.mkdocs.org/user-guide/custom-themes/">사용자정의테마</a> 에서 볼 수 있으며, 템플릿변수, CSS 추가, Javascript 추가 등을 할 수 있습니다.</p>
+<p>예를들어 <code>material</code> 테마를 설치할경우 </p>
+<pre><code>pip install mkdocs-material
+</code></pre>
+
+<p>한후 <code>mkdocs.yml</code> 에 아래처럼 추가해주면 됩니다.</p>
+<pre><code>theme:
+  name: 'material'
+</code></pre>
               
             </div>
           </div>
@@ -176,9 +185,8 @@
     </span>
 </div>
     <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

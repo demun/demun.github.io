@@ -1,164 +1,223 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="None">
-  <link rel="shortcut icon" href="./img/favicon.ico">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
   <title>홈 - MKDocs 튜토리얼</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
   <script>
     // Current page data
     var mkdocs_page_name = "\ud648";
     var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
+    var mkdocs_page_url = null;
   </script>
-  <script src="./js/jquery-2.1.1.min.js"></script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
+
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         <a href="." class="icon icon-home"> MKDocs 튜토리얼</a>
         <div role="search">
-          <form id="rtd-search-form" class="wy-form" action="./search.html" method="get">
-            <input type="text" name="q" placeholder="Search docs" />
-          </form>
-        </div>
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
+
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          <li class="toctree-l1 current">
-            <a class="current" href="./">홈</a>
-            <ul class="subnav">
-              <li class="toctree-l2"><a href="#mkdocs">MkDocs</a></li>
-              <ul>
-                <li><a class="toctree-l3" href="#_1">설치</a></li>
-              </ul>
-            </ul>
-          </li>
-          <li class="toctree-l1">
-            <a class="" href="how/">사용법</a>
-          </li>
-          <li class="toctree-l1">
-            <span class="caption-text">세부사용법</span>
-            <ul class="subnav">
-              <li class="">
-                <a class="" href="guide/theme/">테마</a>
-              </li>
-              <li class="">
-                <a class="" href="guide/tree/">구조</a>
-              </li>
-              <li class="">
-                <a class="" href="guide/others/">기타</a>
-              </li>
-              <li class="">
-                <a class="" href="guide/admonition/">Admonition</a>
-              </li>
-              <li class="">
-                <a class="" href="guide/publish/">배포</a>
-              </li>
-            </ul>
-          </li>
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">홈</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#mkdocs">MkDocs</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_1">설치</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="how/">사용법</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">세부사용법</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="guide/theme/">테마</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="guide/tree/">구조</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="guide/others/">기타</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="guide/admonition/">Admonition</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="guide/publish/">배포</a>
+                </li>
+    </ul>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
     </nav>
+
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="./">MKDocs 튜토리얼</a>
+        <a href=".">MKDocs 튜토리얼</a>
       </nav>
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
-            <ul class="wy-breadcrumbs">
-              <li><a href="./">Docs</a> &raquo;</li>
-              <li>홈</li>
-              <li class="wy-breadcrumbs-aside">
-              </li>
-            </ul>
-            <hr />
-          </div>
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>홈</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
           <div role="main">
             <div class="section">
-              <h1 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h1>
-              <p>MKDocs 는 글쓰기 도구입니다. 글쓰기 도구에는 <a href="http://www.sphinx-doc.org">sphinx</a>, <a href="https://readthedocs.org/">read docs</a> 등 다양한 도구들이 있습니다.
-                MKDocs 는 간편하고, 마크다운 방식으로 글쓰기를 하며, <code>serve</code> 라는 명령어를 통해서 실시간으로 글쓰는 모습을 확인할수 있어서 선택하였습니다.</p>
-              <p>자세한 내용은 <a href="http://mkdocs.org">mkdocs.org</a> 에서 확인할 수 있습니다.</p>
-              <h2 id="_1">설치<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-              <p>MKDocs 는 <a href="https://www.python.org/">Python</a>이 설치되어 있어야하며 Python 패키지 관리자인 <a href="http://pip.readthedocs.io/en/stable/installing/">pip</a>가 있어야합니다
-                설치가 안되어있다면 설치한 후 진행을 해야합니다.</p>
-              <h3 id="mkdocs_1">mkdocs 설치<a class="headerlink" href="#mkdocs_1" title="Permanent link">&para;</a></h3>
-              <p>명령창에 아래코드를 입력하여 mkdocs 를 설치합니다.</p>
-              <pre><code class="console">pip install mkdocs
+              
+                <h1 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h1>
+<p>MKDocs 는 글쓰기 도구입니다. 글쓰기 도구에는 <a href="http://www.sphinx-doc.org">sphinx</a>, <a href="https://readthedocs.org/">read docs</a> 등 다양한 도구들이 있습니다.
+MKDocs 는 간편하고, 마크다운 방식으로 글쓰기를 하며, <code>serve</code> 라는 명령어를 통해서 실시간으로 글쓰는 모습을 확인할수 있어서 선택하였습니다.</p>
+<p>자세한 내용은 <a href="http://mkdocs.org">mkdocs.org</a> 에서 확인할 수 있습니다.</p>
+<h2 id="_1">설치<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>MKDocs 는 <a href="https://www.python.org/">Python</a>이 설치되어 있어야하며 Python 패키지 관리자인 <a href="http://pip.readthedocs.io/en/stable/installing/">pip</a>가 있어야합니다
+설치가 안되어있다면 설치한 후 진행을 해야합니다.</p>
+<h3 id="mkdocs_1">mkdocs 설치<a class="headerlink" href="#mkdocs_1" title="Permanent link">&para;</a></h3>
+<p>명령창에 아래코드를 입력하여 mkdocs 를 설치합니다.</p>
+<pre><code class="console">pip install mkdocs
 </code></pre>
-              <blockquote>
-                <p>윈도우에서 설치가 안될경우 <code>python -m pip install mkdocs</code> 를 입력해서 설치합니다.</p>
-              </blockquote>
-              <h3 id="_2">작업폴더 생성<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-              <p><code>new</code> 키워드를 이용해서 작업할 디렉토리를 생성합니다.</p>
-              <pre><code class="console">mkdocs new mkdocs-tuts
+
+<blockquote>
+<p>윈도우에서 설치가 안될경우 <code>python -m pip install mkdocs</code> 를 입력해서 설치합니다.</p>
+</blockquote>
+<h3 id="_2">작업폴더 생성<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>new</code> 키워드를 이용해서 작업할 디렉토리를 생성합니다.</p>
+<pre><code class="console">mkdocs new mkdocs-tuts
 </code></pre>
-              <p>그럼 <code>mkdocs.yml</code> 과 <code>docs/index.md</code> 가 생성이 됩니다.</p>
-              <p><img alt="mkdocs new" src="./img/0002.jpg" /></p>
-              <h3 id="_3">실시간 확인하기<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-              <p>먼저 작업 디렉토리로 이동합니다.</p>
-              <pre><code class="sh">cd mkdocs-tuts
+
+<p>그럼 <code>mkdocs.yml</code> 과 <code>docs/index.md</code> 가 생성이 됩니다.</p>
+<p><img alt="mkdocs new" src="img/0002.jpg" /></p>
+<h3 id="_3">실시간 확인하기<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>먼저 작업 디렉토리로 이동합니다.</p>
+<pre><code class="sh">cd mkdocs-tuts
 </code></pre>
-              <p><code>serve</code> 키워드를 이용해서 실시간 작업을 확인합니다.</p>
-              <pre><code class="sh">mkdocs serve
+
+<p><code>serve</code> 키워드를 이용해서 실시간 작업을 확인합니다.</p>
+<pre><code class="sh">mkdocs serve
 </code></pre>
-              <p>그럼 <code>http://127.0.0.1:8000</code> 으로 확인할 수 있습니다.</p>
-              <p><img alt="serve" src="./img/0003.jpg" /></p>
-              <p>내용을 수정하거나 추가하면 바로 반영이 되어서 브라우져에서 확인할 수 있습니다.</p>
-              <p>정지할때는 <code>ctrl+c</code> 를 누르면 정지됩니다.</p>
-              <h3 id="_4">빌드하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-              <p>배포하기전에 빌드를 해서 종속된 파일들을 모두 생성합니다.</p>
-              <pre><code class="sh">mkdocs build
+
+<p>그럼 <code>http://127.0.0.1:8000</code> 으로 확인할 수 있습니다.</p>
+<p><img alt="serve" src="img/0003.jpg" /></p>
+<p>내용을 수정하거나 추가하면 바로 반영이 되어서 브라우져에서 확인할 수 있습니다.</p>
+<p>정지할때는 <code>ctrl+c</code> 를 누르면 정지됩니다.</p>
+<h3 id="_4">빌드하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>배포하기전에 빌드를 해서 종속된 파일들을 모두 생성합니다.</p>
+<pre><code class="sh">mkdocs build
 </code></pre>
-              <p>구조를 보면 <code>site</code> 라는 폴더가 생성이 되고 종속된 파일들이 설치가 된걸 볼 수 있습니다.
-                <img alt="build" src="./img/0004.jpg" /></p>
+
+<p>구조를 보면 <code>site</code> 라는 폴더가 생성이 되고 종속된 파일들이 설치가 된걸 볼 수 있습니다.
+<img alt="build" src="img/0004.jpg" /></p>
+              
             </div>
           </div>
           <footer>
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-              <a href="how/" class="btn btn-neutral float-right" title="사용법">Next <span class="icon icon-circle-arrow-right"></span></a>
-            </div>
-            <hr />
-            <div role="contentinfo">
-              <!-- Copyright etc -->
-            </div>
-            Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-          </footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how/" class="btn btn-neutral float-right" title="사용법">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
       </div>
+
     </section>
+
   </div>
+
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span style="margin-left: 15px"><a href="how/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="how/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
     </span>
-  </div>
-  <script>var base_url = '.';</script>
-  <script src="./js/theme.js"></script>
-  <script src="./search/require.js"></script>
-  <script src="./search/search.js"></script>
-</body>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
 
+</body>
 </html>
+
 <!--
-MkDocs version : 0.17.2
-Build Date UTC : 2018-03-09 04:19:50
+MkDocs version : 1.0.4
+Build Date UTC : 2019-06-11 01:03:01
 -->

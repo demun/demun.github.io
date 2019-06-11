@@ -1,5 +1,5 @@
 site_name: MKDocs 튜토리얼
-pages: 
+nav: 
   - 홈: index.md
   - 사용법: how.md
   - 세부사용법:
