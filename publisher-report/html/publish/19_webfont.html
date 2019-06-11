@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="demun,demunskin,demun.tistory.com,demunskin.com">
+    <meta name="author" content="Heo, Jong-Mun">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.min.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/cerulean/bootstrap.min.css" media="screen"> -->
+    <link rel="stylesheet" href="../css/monokai_sublime.css" media="screen">
+    <link rel="stylesheet" href="../css/template.css" media="screen">
+    <title>
+        웹퍼블리셔 가이드
+    </title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="nav-sidebar">
+            <h5><a href="../others/index.html">퍼블리셔가이드</a></h5>
+            <details>
+                <summary>HTML</summary>
+                <ol>
+                    <li><a href="../publish/00_default.html">기본</a></li>
+                    <li><a href="../publish/01_html.html">html 만들기</a></li>
+                    <li><a href="../publish/02_p.html">단락,블럭,주석</a></li>
+                    <li><a href="../publish/03_a.html">링크,이미지</a></li>
+                    <li><a href="../publish/04_list.html">리스트</a></li>
+                    <li><a href="../publish/05_table.html">표</a></li>
+                    <li><a href="../publish/06_html5.html">html5</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>CSS</summary>
+                <ol>
+                    <li><a href="../publish/07_css.html">CSS 소개</a></li>
+                    <li><a href="../publish/08_color.html">색상,배경,테두리</a></li>
+                    <li><a href="../publish/09_padding.html">여백,높이</a></li>
+                    <li><a href="../publish/10_box.html">박스모델</a></li>
+                    <li><a href="../publish/11_text.html">텍스트</a></li>
+                    <li><a href="../publish/12_list.html">목록,표</a></li>
+                    <li><a href="../publish/13_display.html">디스플레이</a></li>
+                    <li><a href="../publish/14_overflow.html">오버플로우</a></li>
+                    <li><a href="../publish/15_radius.html">둥근테두리</a></li>
+                    <li><a href="../publish/16_gradient.html">그라디언트</a></li>
+                    <li><a href="../publish/17_text.html">텍스트효과</a></li>
+                    <li><a href="../publish/18_shadow.html">그림자</a></li>
+                    <li><a href="../publish/19_webfont.html">웹글꼴</a></li>
+                    <li><a href="../publish/20_viewport.html">뷰포트</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>레이아웃</summary>
+                <ol>
+                    <li><a href="../publish/21_fixed.html">고정형</a></li>
+                    <li><a href="../publish/22_flow.html">유동형</a></li>
+                    <li><a href="../publish/23_response.html">반응형</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>웹페이지 검수</summary>
+                <ol>
+                    <li><a href="../publish/24_exam.html">호환성 보기 설정</a></li>
+                    <li><a href="../publish/25_exam.html">개발자 도구 실제 속성값 확인</a></li>
+                    <li><a href="../publish/26_exam.html">QR코드생성해서 보기</a></li>
+                    <li><a href="../publish/27_exam.html">모바일 웹페이지 검수</a></li>
+                </ol>
+            </details>
+        </div>
+        <div class="content-wrap">
+            <h1 id="webfont">webfont</h1>
+            <p>CSS3 표준으로 선택된 웹 폰트(web font)는 시스템에 글꼴이 없어도 다운로드시켜 화면에 보여주는 방식입니다.</p>
+            <p>웹폰트를 지정하는 방식은 두가지가 있습니다.</p>
+            <p>웹상에 폰트가 있는경우와 직접 업로드해서 사용하는 방식입니다.</p>
+            <ul>
+                <li>웹상에 폰트가 있는 경우</li>
+            </ul>
+            <p><code>&lt;link&gt;</code> 태그나 <code>@import</code> 구문을 써서 다운로드 주소를 링크시키고 글꼴을 지정하는 방법입니다.</p>
+            <pre><code class="lang-css">@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.sample {
+    font-family: &quot;Nanum Gothic&quot;, 돋움;
+}
+</code></pre>
+            <ul>
+                <li>직접 업로드해서 사용하는 경우</li>
+            </ul>
+            <p>웹 폰트를 지정해주면 사이트에 접속하는 순간 다운로드 해서 표시해줍니다.</p>
+            <pre><code class="lang-css">@font-face {
+    font-family: 글꼴이름;
+    src: url(글꼴파일경로) format(파일유형);
+}
+.sample {
+    font-family: 글꼴이름;
+}
+</code></pre>
+            <blockquote>
+                <p>웹에서 사용할 수 있는 폰트는 woff(
+                    <em>.woff), 트루타입(.ttf), 오픈타입(</em>.ttf,
+                    <em>.otf), 임베디드 오픈타입(</em>.eot), svg폰트(
+                    <em>.svg, </em>.svgz) 입니다.</p>
+            </blockquote>
+            <p>시스템에서 사용하는 글꼴은 트루타입(TrueType) 유형이고 확장자가 <code>*.ttf</code> 입니다. 하지만 파일용량이 커서 eot(Embedded Open Type)와 woff(Web Open Font Format) 파일을 많이 사용합니다.</p>
+            <p>사용할때도 가벼운 eot, woff 를 먼저 지정하고 뒤에 ttf 파일을 지정합니다.</p>
+            <pre><code class="lang-css">@font-face {
+    font-family: &#39;trana&#39;;
+    src: local(&#39;trana&#39;),
+        url(&#39;trana.eot&#39;),
+        url(&#39;trana.woff&#39;) format(&#39;woff&#39;),
+        url(&#39;trana.ttf&#39;) format(&#39;truetype&#39;);
+}
+.sample {
+    font-family: &#39;trana&#39;, sans-serif;
+}
+</code></pre>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://highlightjs.org/static/highlight.pack.js"></script> -->
+</body>
+</html>

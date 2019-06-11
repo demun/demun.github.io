@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="demun,demunskin,demun.tistory.com,demunskin.com">
+    <meta name="author" content="Heo, Jong-Mun">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.min.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/cerulean/bootstrap.min.css" media="screen"> -->
+    <link rel="stylesheet" href="../css/monokai_sublime.css" media="screen">
+    <link rel="stylesheet" href="../css/template.css" media="screen">
+    <title>
+        웹퍼블리셔 가이드
+    </title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="nav-sidebar">
+            <h5><a href="../others/index.html">퍼블리셔가이드</a></h5>
+            <details>
+                <summary>HTML</summary>
+                <ol>
+                    <li><a href="../publish/00_default.html">기본</a></li>
+                    <li><a href="../publish/01_html.html">html 만들기</a></li>
+                    <li><a href="../publish/02_p.html">단락,블럭,주석</a></li>
+                    <li><a href="../publish/03_a.html">링크,이미지</a></li>
+                    <li><a href="../publish/04_list.html">리스트</a></li>
+                    <li><a href="../publish/05_table.html">표</a></li>
+                    <li><a href="../publish/06_html5.html">html5</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>CSS</summary>
+                <ol>
+                    <li><a href="../publish/07_css.html">CSS 소개</a></li>
+                    <li><a href="../publish/08_color.html">색상,배경,테두리</a></li>
+                    <li><a href="../publish/09_padding.html">여백,높이</a></li>
+                    <li><a href="../publish/10_box.html">박스모델</a></li>
+                    <li><a href="../publish/11_text.html">텍스트</a></li>
+                    <li><a href="../publish/12_list.html">목록,표</a></li>
+                    <li><a href="../publish/13_display.html">디스플레이</a></li>
+                    <li><a href="../publish/14_overflow.html">오버플로우</a></li>
+                    <li><a href="../publish/15_radius.html">둥근테두리</a></li>
+                    <li><a href="../publish/16_gradient.html">그라디언트</a></li>
+                    <li><a href="../publish/17_text.html">텍스트효과</a></li>
+                    <li><a href="../publish/18_shadow.html">그림자</a></li>
+                    <li><a href="../publish/19_webfont.html">웹글꼴</a></li>
+                    <li><a href="../publish/20_viewport.html">뷰포트</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>레이아웃</summary>
+                <ol>
+                    <li><a href="../publish/21_fixed.html">고정형</a></li>
+                    <li><a href="../publish/22_flow.html">유동형</a></li>
+                    <li><a href="../publish/23_response.html">반응형</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>웹페이지 검수</summary>
+                <ol>
+                    <li><a href="../publish/24_exam.html">호환성 보기 설정</a></li>
+                    <li><a href="../publish/25_exam.html">개발자 도구 실제 속성값 확인</a></li>
+                    <li><a href="../publish/26_exam.html">QR코드생성해서 보기</a></li>
+                    <li><a href="../publish/27_exam.html">모바일 웹페이지 검수</a></li>
+                </ol>
+            </details>
+        </div>
+        <div class="content-wrap">
+            <h1 id="-">표</h1>
+            <p>웹문서에서 자료를 정리할때 자주 사용하는 요소가 &#39;표(talbe)&#39; 입니다.
+                <br>표는 행(row)과 열(column)로 이루어져 있고, 행과 열이 만나 이루는 영역을 셀(cell) 이라고 부릅니다.</p>
+            <p>기본적인 구조는 아래와 같습니다.</p>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;제목셀&lt;/th&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;제목셀&lt;/th&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+            <p>기본적으로 제목에 해당하는 부분에 <code>&lt;th&gt;</code>태그를 사용합니다.
+                <br><code>&lt;th&gt;</code> 는 굵게 표시되고 셀의 중앙에 위치하게 됩니다.</p>
+            <table>
+                <tr>
+                    <th>제목셀</th>
+                    <td>내용셀</td>
+                </tr>
+                <tr>
+                    <th>제목셀</th>
+                    <td>내용셀</td>
+                </tr>
+            </table>
+            <h6 id="-">행 또는 열 합치기</h6>
+            <p>행의 셀을 합칠때는 <code>colspan</code>속성을 사용합니다. 원하는 갯수만큼 지정하면 됩니다.</p>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+            <table>
+                <tr>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+                <tr>
+                    <td colspan="2">내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+                <tr>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+            </table>
+            <p>열을 합칠때는 <code>rowspan</code> 속성을 사용합니다. 마찬가지로 원하는 갯수만큼 숫자로 지정하면 됩니다.</p>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan=&quot;2&quot;&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+            <table>
+                <tr>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">내용셀</td>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+                <tr>
+                    <td>내용셀</td>
+                    <td>내용셀</td>
+                </tr>
+            </table>
+            <h6 id="-">표에 제목 붙이기</h6>
+            <p>표에 제목을 붙일때는 <code>&lt;caption&gt;</code> 태그를 사용합니다.
+                <br><code>&lt;caption&gt;</code> 태그를 사용한 표 제목은 표의 중앙에 표시되고, <code>&lt;caption&gt;</code> 안에 다른 태그를 사용하여 여러줄로도 표시할 수 있습니다.</p>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;caption&gt;표의 제목을 넣는 태그&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;제목셀&lt;/th&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;제목셀&lt;/th&gt;
+        &lt;td&gt;내용셀&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+            <h6 id="-">표 구조 정의하기</h6>
+            <p>일부 표에서는 표의 머리부분, 몸부분, 다리부분이 각각 나뉘어서 보여질때가 있습니다.
+                <br>이때 해당하는 태그가 머리부분 <code>&lt;thead&gt;</code>, 몸부분 <code>&lt;tbody&gt;</code>, 다리부분 <code>&lt;tfoot&gt;</code> 입니다. </p>
+            <blockquote>
+                <p>html4에서는 <code>&lt;tfoot&gt;</code> 이 <code>&lt;tbody&gt;</code> 다음에 쓰면 오류가 납니다. html5 에서는 <code>&lt;tbody&gt;</code> 전.후 아무곳에 써도 상관없습니다.</p>
+            </blockquote>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;제목1&lt;/th&gt;
+            &lt;th&gt;제목2&lt;/th&gt;
+            &lt;th&gt;제목3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;표하단1&lt;/td&gt;
+            &lt;td&gt;표하단2&lt;/td&gt;
+            &lt;td&gt;표하단3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+            &lt;td&gt;내용셀&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+            <table>
+                <thead>
+                    <tr>
+                        <th>제목1</th>
+                        <th>제목2</th>
+                        <th>제목3</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>표하단1</td>
+                        <td>표하단2</td>
+                        <td>표하단3</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>내용셀</td>
+                        <td>내용셀</td>
+                        <td>내용셀</td>
+                    </tr>
+                    <tr>
+                        <td>내용셀</td>
+                        <td>내용셀</td>
+                        <td>내용셀</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h6 id="-">여러 열 묶기</h6>
+            <p>하나의 열에 스타일을 지정하거나 열(column)을 몇 개씩 묶어 스타일을 지정할 수 있습니다.
+                <br><code>&lt;col&gt;</code> 태그는 한 열에 있는 모든 셀에 같은 스타일을 적용 할 때 사용하는 것으로 닫는 태그가 없습니다.</p>
+            <p><code>&lt;colgroup&gt;</code> 태그를 사용해서 여러 열을 묶어 스타일을 적용할 수 있는데 <code>&lt;colgroup&gt;</code>태그안에 묶는 열의 개수만큼 <code>col</code> 태그를 넣어야 합니다.</p>
+            <p>이때 주의점은 <code>&lt;col&gt;</code>태그와 <code>&lt;colgroup&gt;</code>태그는 <code>&lt;caption&gt;</code>태그뒤와 <code>&lt;tr&gt;</code>태그전에 사용되어야 합니다.</p>
+            <pre><code class="lang-html">&lt;table&gt;
+    &lt;caption&gt;표제목&lt;/caption&gt;
+    &lt;colgroup&gt;
+        &lt;col style=&quot;background:#ddd;&quot;&gt;
+        &lt;col&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;내용1&lt;/td&gt;
+            &lt;td&gt;내용2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;내용1&lt;/td&gt;
+            &lt;td&gt;내용2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+            <table>
+                <caption>표제목</caption>
+                <colgroup>
+                    <col style="background:#ddd;">
+                        <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>내용1</td>
+                        <td>내용2</td>
+                    </tr>
+                    <tr>
+                        <td>내용1</td>
+                        <td>내용2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <br>
+                <br>
+            </p>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://highlightjs.org/static/highlight.pack.js"></script> -->
+</body>
+</html>

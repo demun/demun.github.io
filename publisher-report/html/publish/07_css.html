@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="demun,demunskin,demun.tistory.com,demunskin.com">
+    <meta name="author" content="Heo, Jong-Mun">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.min.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/cerulean/bootstrap.min.css" media="screen"> -->
+    <link rel="stylesheet" href="../css/monokai_sublime.css" media="screen">
+    <link rel="stylesheet" href="../css/template.css" media="screen">
+    <title>
+        웹퍼블리셔 가이드
+    </title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="nav-sidebar">
+            <h5><a href="../others/index.html">퍼블리셔가이드</a></h5>
+            <details>
+                <summary>HTML</summary>
+                <ol>
+                    <li><a href="../publish/00_default.html">기본</a></li>
+                    <li><a href="../publish/01_html.html">html 만들기</a></li>
+                    <li><a href="../publish/02_p.html">단락,블럭,주석</a></li>
+                    <li><a href="../publish/03_a.html">링크,이미지</a></li>
+                    <li><a href="../publish/04_list.html">리스트</a></li>
+                    <li><a href="../publish/05_table.html">표</a></li>
+                    <li><a href="../publish/06_html5.html">html5</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>CSS</summary>
+                <ol>
+                    <li><a href="../publish/07_css.html">CSS 소개</a></li>
+                    <li><a href="../publish/08_color.html">색상,배경,테두리</a></li>
+                    <li><a href="../publish/09_padding.html">여백,높이</a></li>
+                    <li><a href="../publish/10_box.html">박스모델</a></li>
+                    <li><a href="../publish/11_text.html">텍스트</a></li>
+                    <li><a href="../publish/12_list.html">목록,표</a></li>
+                    <li><a href="../publish/13_display.html">디스플레이</a></li>
+                    <li><a href="../publish/14_overflow.html">오버플로우</a></li>
+                    <li><a href="../publish/15_radius.html">둥근테두리</a></li>
+                    <li><a href="../publish/16_gradient.html">그라디언트</a></li>
+                    <li><a href="../publish/17_text.html">텍스트효과</a></li>
+                    <li><a href="../publish/18_shadow.html">그림자</a></li>
+                    <li><a href="../publish/19_webfont.html">웹글꼴</a></li>
+                    <li><a href="../publish/20_viewport.html">뷰포트</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>레이아웃</summary>
+                <ol>
+                    <li><a href="../publish/21_fixed.html">고정형</a></li>
+                    <li><a href="../publish/22_flow.html">유동형</a></li>
+                    <li><a href="../publish/23_response.html">반응형</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>웹페이지 검수</summary>
+                <ol>
+                    <li><a href="../publish/24_exam.html">호환성 보기 설정</a></li>
+                    <li><a href="../publish/25_exam.html">개발자 도구 실제 속성값 확인</a></li>
+                    <li><a href="../publish/26_exam.html">QR코드생성해서 보기</a></li>
+                    <li><a href="../publish/27_exam.html">모바일 웹페이지 검수</a></li>
+                </ol>
+            </details>
+        </div>
+        <div class="content-wrap">
+            <h1 id="css">css</h1>
+            <p>CSS(Cascading Style Sheets)는 HTML과 함께 웹 표준의 기본 개념입니다.</p>
+            <p>HTML이 텍스트나 이미지, 표 같은 각 요소를 웹 문서에 넣어 뼈대를 만드는 것이라면 CSS는 텍스트 색상이나 크기, 이미지 크기나 위치 등 디자인 요소를 담당하는 역활을 합니다.</p>
+            <p>웹 문서에서 스타일이란 글꼴이나 색상, 정렬, 배치 등 문서의 겉모습을 결정짓는 말하며 이런 스타일을 모아놓은것을 &#39;스타일시트&#39; 라고 합니다.</p>
+            <p>스타일시트는 <code>.css</code> 확장자로 <code>css</code> 구문으로 작성된 파일입니다.</p>
+            <p>CSS는 다음 세 가지 방법으로 HTML 요소에 추가 할 수 있습니다.</p>
+            <ul>
+                <li>외부 스타일</li>
+                <li>내부 스타일</li>
+                <li>인라인 스타일</li>
+            </ul>
+            <h3 id="-">외부 스타일</h3>
+            <p><code>&lt;head&gt;</code> 태그안에 <code>&lt;link&gt;</code> 요소로 스타일을 참조하는 방식으로 가장 많이 사용하는 방법입니다.</p>
+            <pre><code class="lang-html">&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+            <h3 id="-">내부 스타일</h3>
+            <p><code>&lt;head&gt;</code> 태그안에 <code>&lt;style&gt;</code> 요소로 <code>css</code> 를 추가하는 방식입니다.</p>
+            <pre><code class="lang-html">&lt;head&gt;
+  &lt;style&gt;
+    body {
+      background-color: white;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+            <h3 id="-">인라인 스타일</h3>
+            <p>인라인 스타일은 <code>html</code> 태그에 <code>style</code> 속성을 사용하여 추가하는 방법으로 <code>style=&quot;속성:값; 속성:값;&quot;</code> 형태로 작성합니다.</p>
+            <pre><code class="lang-html">&lt;h1 style=&quot;background-color: white&quot;&gt;내용&lt;/h1&gt;
+</code></pre>
+            <h2 id="-">구문</h2>
+            <p>css 구문은 선택자(selector)와 속성(property):값(value) 으로 구성됩니다. </p>
+            <p>선택자는 <code>html</code> 요소를 말하며, 선언(declaration) 이후에는 세미콜론(;)으로 닫으며 반드시 중괄호{} 로 묶습니다.</p>
+            <p>속성과 값은 콜론(:)으로 구분하고 선언과 선언은 세미콜론(;)으로 구분합니다.</p>
+            <p>
+                <img src="../images/css-rule.jpg" alt="css rule">
+            </p>
+            <h2 id="-">선택자, 가상클래스, 가상요소</h2>
+            <p>선택자는 태그 하나를 지정할 수도 있지만 여러 개의 요소를 묶어 별도의 선택자로도 지정할 수 있습니다.</p>
+            <h5 id="-universal-selector-">전체 선택자(universal selector)</h5>
+            <p>전체 선택자는 <code>*(별표)</code> 입니다. 모든 요소에 스타일을 적용할 때 사용합니다. 또한 여백이나 글꼴 크기 등 기본스타일을 초기화 할때 사용합니다.</p>
+            <pre><code class="lang-css">* {
+  속성:값;
+  속성:값;
+}
+</code></pre>
+            <h5 id="-tag-selector-">태그 선택자(tag selector)</h5>
+            <p>전체 선택자 다음으로 많은 요소들에 스타일을 적용하는 태그 선택자는 특정 태그가 쓰인 모든 요소에 스타일을 적용합니다.</p>
+            <p>예를들어 <code>p</code> 선택자를 정의하면 문서내의 모든 <code>p</code> 요소들에 스타일이 적용됩니다.</p>
+            <pre><code class="lang-css">p {
+  color: red;
+}
+</code></pre>
+            <h5 id="-class-selector-">클래스 선택자(class selector)</h5>
+            <p>클래스 선택자는 html 요소에 class 속성을 부여해서 사용합니다.
+                <br>클래스는 다중으로 사용할수 있습니다.
+                <br>클래스는 마침표(.) 다음에 클래스를 씁니다.</p>
+            <pre><code class="lang-css">.header {
+  color: red;
+}
+/* 다중으로 사용할때 */
+.header,
+.footer {
+  color: red;
+}
+</code></pre>
+            <blockquote>
+                <p>class는 숫자로 시작할 수 없습니다.</p>
+            </blockquote>
+            <h5 id="id-id-selector-">id 선택자(id selector)</h5>
+            <p>id선택자는 html 요소에 id 속성을 부여해서 사용합니다.
+                <br>id는 해당페이지에서 고유한 요소에 사용합니다. 한번만 사용할 수 있습니다.
+                <br>id는 해시(#) 다음에 id 를 씁니다.</p>
+            <pre><code class="lang-css">#header {
+  color: red;
+}
+</code></pre>
+            <blockquote>
+                <p>id는 숫자로 시작할 수 없습니다.</p>
+            </blockquote>
+            <h3 id="-">가상클래스</h3>
+            <p>가상클래스는 요소의 특수 상태를 정의하는 데 사용됩니다.</p>
+            <p>예를 들어 다음과 같이 사용할 수 있습니다.</p>
+            <ul>
+                <li>사용자가 마우스를 올리면 요소의 스타일을 지정합니다.</li>
+                <li>방문한 스타일과 방문하지 않은 스타일이 다르게 적용됩니다.</li>
+                <li>포커스를 얻으면 요소의 스타일을 지정합니다.</li>
+            </ul>
+            <p>대표적으로 링크의 상태에 따라 적용하는 예제입니다.</p>
+            <pre><code class="lang-css">/* 기본 링크 색상 */
+a:link {
+    color: #FF0000;
+}
+/* 방문한 링크 색상 */
+a:visited {
+    color: #00FF00;
+}
+/* 마우스 오버한 링크 색상 */
+a:hover {
+    color: #FF00FF;
+}
+/* 선택한 링크 색상 */
+a:active {
+    color: #0000FF;
+}
+</code></pre>
+            <h3 id="-">가상요소</h3>
+            <p>CSS 가상요소는 요소의 지정된 부분을 스타일화하는 데 사용됩니다.</p>
+            <p>예를 들어 다음과 같이 사용할 수 있습니다.</p>
+            <ul>
+                <li>요소의 첫 번째 문자 또는 선 스타일 지정</li>
+                <li>요소의 내용 앞이나 뒤에 내용 삽입</li>
+            </ul>
+            <p><code>::first-line</code> 가상요소는 텍스트의 첫 번째 줄에 특별한 스타일을 추가하는 데 사용됩니다.</p>
+            <pre><code class="lang-css">p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+</code></pre>
+            <p><code>p</code>태그 앞부분에 특별한 스타일을 추가한 예입니다.</p>
+            <pre><code class="lang-css">p::before {
+    content:&quot;&quot;;
+    border: 1px solid red;
+}
+</code></pre>
+            <blockquote>
+                <p>가상클래스는 <code>:</code> 로 표시하고 가상요소는 <code>::</code> 를 표시합니다.</p>
+            </blockquote>
+            <h3 id="-">상속</h3>
+            <p>CSS 에서 어려움을 겪는 것이 바로 <code>상속</code> 와 <code>우선순위</code> 입니다.
+                <br>CSS 에서 상속이란 부모요소에 지정한 스타일이 자식요소에 적용되는 것을 말합니다. </p>
+            <p>예를들어 아래와같은 html 구조가 있다고 합니다.</p>
+            <pre><code class="lang-html">&lt;ul&gt;
+    &lt;li&gt;자식요소1&lt;/li&gt;
+    &lt;li&gt;자식요소2&lt;/li&gt;
+    &lt;li&gt;자식요소3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <p>여기서 <code>&lt;ul&gt;</code> 요소는 <code>&lt;li&gt;</code> 요소의 부모입니다. 즉 <code>&lt;li&gt;</code> 요소는 <code>&lt;ul&gt;</code> 요소의 자식입니다.
+                <br><code>&lt;ul&gt;:부모</code> <code>&lt;li&gt;:자식</code> 관계입니다.</p>
+            <p>부모인 ul 요소에 스타일을 주면 자식인 li 에 스타일이 상속이 됩니다.</p>
+            <p>일반적으로 body 에 글꼴 스타일을 적용하면 문서내의 모든 요소에 스타일이 적용이 됩니다.
+                <br>따로 하위요소에 스타일을 지정하지 않으면 body 요소에 적용된 스타일이 적용됩니다.</p>
+            <p>
+                <img src="../images/child.jpg" alt="css rule">
+            </p>
+            <h3 id="-">우선순위</h3>
+            <p>스타일시트는 다음과 같은 3개의 CSS원천 소스(original source)를 가질수 있습니다.</p>
+            <ul>
+                <li>제작자(author) 원천 소스: 웹사이트 제작자가 지정하는 자신의 페이지 스타일</li>
+                <li>사용자(user) 원천 소스: 사용자가 직접 정하는 자신의 사용할 스타일</li>
+                <li>사용자 도구(user agent) 원천 소스: 웹 브라우저 자체에 지정된 기본 스타일</li>
+            </ul>
+            <h5 id="-">원천 소스 우선 순위</h5>
+            <p>!important 선언을 한 사용자 스타일 &gt; !important 선언을 한 제작자 스타일 &gt; 제작자 스타일 &gt; 사용자 스타일 &gt; 사용자 도구 선언 (브라우저 자체의 선언)</p>
+            <h5 id="css-specificity-">CSS 명시도(Specificity) 계산법</h5>
+            <blockquote>
+                <p>!important &gt; id[100] &gt; class[10] &gt; tag[1] &gt; *[0]</p>
+            </blockquote>
+            <p>선택자에 따른 점수</p>
+            <table class="table">
+                <tr>
+                    <th>지정방법</th>
+                    <th>예제</th>
+                    <th>점수</th>
+                </tr>
+                <tr>
+                    <td>전체선택자</td>
+                    <td>*</td>
+                    <td>0점</td>
+                </tr>
+                <tr>
+                    <td>태그선택자</td>
+                    <td>ul</td>
+                    <td>1점</td>
+                </tr>
+                <tr>
+                    <td>가상클래스속성</td>
+                    <td>:first-child</td>
+                    <td>10점</td>
+                </tr>
+                <tr>
+                    <td>속성선택자</td>
+                    <td>a[href*=&quot;sample&quot;]</td>
+                    <td>10점</td>
+                </tr>
+                <tr>
+                    <td>클래스선택자</td>
+                    <td>.sample</td>
+                    <td>10점</td>
+                </tr>
+                <tr>
+                    <td>id선택자</td>
+                    <td>#sample</td>
+                    <td>100점</td>
+                </tr>
+                <tr>
+                    <td>인라인스타일</td>
+                    <td>style=&quot;&quot;</td>
+                    <td>1000점</td>
+                </tr>
+                <tr>
+                    <td>!important</td>
+                    <td>!important</td>
+                    <td>10000점</td>
+                </tr>
+            </table>
+            <p>선택자의 원리에 따른 점수계산</p>
+            <ul>
+                <li>a = 선택자중 ID의 수를 세어 100자리에 놓는다,</li>
+                <li>b = 선택자중 가상 클래스와 클래스의 수를 세어 10자리에 놓는다.</li>
+                <li>c = 선택자중 엘리먼트의 수를 세어 1의 자리에 놓는다.</li>
+                <li>d = 가상 엘리먼트는 무시한다.</li>
+            </ul>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>a(100자리)</th>
+                    <th>b(10자리)</th>
+                    <th>c(1자리)</th>
+                    <th>계산방법</th>
+                    <th>점수</th>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>전체선택자 1개</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>li</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>태그선택자 1개</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>ul li</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>태그선택자 2개</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>ul ol+li</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>태그선택자 3개</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>li.num</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>태그선택자 1개 클래스선택자 1개</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>ul+ol li.num</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>태그선택자 1개 클래스선택자 3개</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>li.num.last</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>태그선택자 1개 클래스선택자 2개</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td>#sample</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>아이디선택자 1개</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>p#sample</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>태그선택자 1개 아이디선택자 1개</td>
+                    <td>101</td>
+                </tr>
+            </table>
+            <p>
+                <br>
+                <br>
+            </p>
+            <h2 id="-">단위</h2>
+            <p>CSS에는 길이 표현을위한 여러 가지 단위가 있습니다.</p>
+            <p>많은 CSS 속성은 width, margin, padding, font-size, border-width 등과 같은 &quot;길이&quot;값을 사용합니다.</p>
+            <p>길이는 10px, 2em 등과 같은 길이 단위가 뒤에 오는 숫자입니다.</p>
+            <p>공백은 숫자와 단위 사이에 나타날 수 없습니다. 그러나 값이 0이면 단위를 생략 할 수 있습니다.</p>
+            <p>일부 CSS 속성의 경우 음수 길이를 사용할 수 있습니다.</p>
+            <p>길이 단위에는 절대 단위와 상대 단위의 두 가지 유형이 있습니다.</p>
+            <ul>
+                <li>절대 길이 단위</li>
+            </ul>
+            <p>절대 길이 단위는 고정되어 있으며 항상 정확히 같은 크기로 나타납니다.</p>
+            <p>대표적으로 <code>px</code> <code>pt</code> 등이 사용됩니다.</p>
+            <ul>
+                <li>상대 길이 단위</li>
+            </ul>
+            <p>상대 길이 단위는 부모의 단위에 영향을 받는 길이로 항상 같은 크기는 아닙니다.</p>
+            <p>대표적으로 <code>em</code> <code>%</code> 등이 사용됩니다.</p>
+            <h2 id="-">주석</h2>
+            <p>css 에서 주석은 <code>/*</code> 시작해서 <code>*/</code> 로 닫습니다. 주석은 한줄 또는 여러줄에 작성할 수 있습니다.</p>
+            <pre><code class="lang-css">/* 이글은 한줄 주석입니다 */
+/* 
+이 글은 
+여러줄
+주석입니다.
+*/
+</code></pre>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://highlightjs.org/static/highlight.pack.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flow-3col-left</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .header {
+        width: 100%;
+        height: 100px;
+        background-color: #666;
+        color: #fff;
+    }
+    
+    .content {
+        width: 800px;
+        float: left;
+        height: 500px;
+        background-color: #eee;
+    }
+    
+    .side1 {
+        width: 200px;
+        float: left;
+        height: 500px;
+        background-color: #06f;
+        color: #fff;
+    }
+    
+    .side2 {
+        width: 200px;
+        float: left;
+        height: 500px;
+        background-color: #f30;
+        color: #fff;
+    }
+    
+    .footer {
+        width: 100%;
+        height: 100px;
+        background-color: #666;
+        color: #fff;
+    }
+    
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="main clearfix">
+            <div class="content">content</div>
+            <div class="side1">side1</div>
+            <div class="side2">side2</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>

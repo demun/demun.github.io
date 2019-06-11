@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>반응형 레이아웃</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        font-size: 10px;
+    }
+    
+    body {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        font-family: "맑은고딕", Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    
+    .header {
+        background-color: #666;
+        color: #fff;
+    }
+    
+    .content {
+        background-color: #fff;
+    }
+    
+    .side1 {
+        background-color: #06f;
+        color: #fff;
+    }
+    
+    .side2 {
+        background-color: #f30;
+        color: #fff;
+    }
+    
+    .footer {
+        background-color: #666;
+        color: #fff;
+    }
+    
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .inner {
+        padding: 1rem;
+    }
+    
+    .logo {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        width: 20%;
+        float: left;
+    }
+    
+    .nav {
+        list-style: none;
+        float: left;
+        width: 80%;
+    }
+    
+    .nav li {
+        display: inline-block;
+    }
+    
+    .nav a {
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+    }
+    
+    .side1 ul {
+        list-style: none;
+        padding: 1rem;
+    }
+    
+    .side2 ul {
+        list-style: none;
+        padding: 1rem;
+    }
+    
+    .footer ul {
+        list-style: none;
+        padding: 1rem;
+    }
+    
+    .footer ul li {
+        display: inline-block;
+    }
+    
+    .post {
+        padding: 1rem;
+    }
+    
+    .product-wrap {}
+    
+    .product {}
+    
+    .product-image {
+        padding: 1rem;
+    }
+    
+    .productextra {
+        text-align: center;
+    }
+    
+    .product-content {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .product-title {
+        font-size: 1.2rem;
+    }
+    
+    .product-extra {
+        text-align: center;
+    }
+    
+    .product-price {
+        font-size: .9rem;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        body {
+            font-size: 1.6rem;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .inner {
+            padding: 2rem;
+        }
+        .content {
+            width: 70%;
+            float: left;
+        }
+        .nav {
+            float: right;
+            width: 70%;
+        }
+        .nav a {
+            padding: 0 1rem;
+        }
+        .side1 {
+            width: 30%;
+            float: left;
+        }
+        .side2 {
+            display: none;
+        }
+        /* 감추기 */
+        .main {
+            background-color: #06f;
+        }
+        .product {
+            float: left;
+            width: 50%;
+        }
+    }
+    
+    @media only screen and (min-width: 1200px) {
+        body {
+            font-size: 1.4rem;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .header {
+            width: 100%;
+            padding: 2rem 0;
+        }
+        .nav {
+            width: 80%;
+        }
+        .content {
+            width: 60%;
+            float: left;
+        }
+        .side1 {
+            width: 20%;
+            float: left;
+        }
+        .side2 {
+            width: 20%;
+            float: left;
+            display: block;
+        }
+        .footer {
+            width: 100%;
+            padding: 2rem 0;
+        }
+        .product {
+            width: 25%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="inner clearfix">
+                <a href="#" class="logo">사이트명</a>
+                <ul class="nav">
+                    <li><a href="#">링크1</a></li>
+                    <li><a href="#">링크2</a></li>
+                    <li><a href="#">링크3</a></li>
+                    <li><a href="#">링크4</a></li>
+                    <li><a href="#">링크5</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main clearfix">
+            <div class="side1">
+                <ul>
+                    <li>side1</li>
+                    <li>side1</li>
+                    <li>side1</li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="post">
+                    <h3>글 제목</h3>
+                    <p>대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다. 학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은 법률로 정한다.</p>
+                    <p>국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다. 일반사면을 명하려면 국회의 동의를 얻어야 한다.</p>
+                    <p>법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다.</p>
+                    <p>모든 국민은 거주·이전의 자유를 가진다. 신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.</p>
+                    <p>타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수 있다. 군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.</p>
+                    <div class="product-wrap clearfix">
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="http://www.sporbiz.co.kr/news/photo/201810/282156_214334_1557.jpg" alt="">
+                            </div>
+                            <div class="product-extra">상품명</div>
+                            <div class="product-content">
+                                <div class="product-title">상품 설명</div>
+                                <div class="product-price">10,000원</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="http://www.sporbiz.co.kr/news/photo/201810/282156_214334_1557.jpg" alt="">
+                            </div>
+                            <div class="product-extra">상품명</div>
+                            <div class="product-content">
+                                <div class="product-title">상품 설명</div>
+                                <div class="product-price">10,000원</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="http://www.sporbiz.co.kr/news/photo/201810/282156_214334_1557.jpg" alt="">
+                            </div>
+                            <div class="product-extra">상품명</div>
+                            <div class="product-content">
+                                <div class="product-title">상품 설명</div>
+                                <div class="product-price">10,000원</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="http://www.sporbiz.co.kr/news/photo/201810/282156_214334_1557.jpg" alt="">
+                            </div>
+                            <div class="product-extra">상품명</div>
+                            <div class="product-content">
+                                <div class="product-title">상품 설명</div>
+                                <div class="product-price">10,000원</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side2">
+                <ul>
+                    <li>side2</li>
+                    <li>side2</li>
+                    <li>side2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li>footer</li>
+                <li>footer</li>
+                <li>footer</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="demun,demunskin,demun.tistory.com,demunskin.com">
+    <meta name="author" content="Heo, Jong-Mun">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.min.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/cerulean/bootstrap.min.css" media="screen"> -->
+    <link rel="stylesheet" href="../css/monokai_sublime.css" media="screen">
+    <link rel="stylesheet" href="../css/template.css" media="screen">
+    <title>
+        웹퍼블리셔 가이드
+    </title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="nav-sidebar">
+            <h5><a href="../others/index.html">퍼블리셔가이드</a></h5>
+            <details>
+                <summary>HTML</summary>
+                <ol>
+                    <li><a href="../publish/00_default.html">기본</a></li>
+                    <li><a href="../publish/01_html.html">html 만들기</a></li>
+                    <li><a href="../publish/02_p.html">단락,블럭,주석</a></li>
+                    <li><a href="../publish/03_a.html">링크,이미지</a></li>
+                    <li><a href="../publish/04_list.html">리스트</a></li>
+                    <li><a href="../publish/05_table.html">표</a></li>
+                    <li><a href="../publish/06_html5.html">html5</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>CSS</summary>
+                <ol>
+                    <li><a href="../publish/07_css.html">CSS 소개</a></li>
+                    <li><a href="../publish/08_color.html">색상,배경,테두리</a></li>
+                    <li><a href="../publish/09_padding.html">여백,높이</a></li>
+                    <li><a href="../publish/10_box.html">박스모델</a></li>
+                    <li><a href="../publish/11_text.html">텍스트</a></li>
+                    <li><a href="../publish/12_list.html">목록,표</a></li>
+                    <li><a href="../publish/13_display.html">디스플레이</a></li>
+                    <li><a href="../publish/14_overflow.html">오버플로우</a></li>
+                    <li><a href="../publish/15_radius.html">둥근테두리</a></li>
+                    <li><a href="../publish/16_gradient.html">그라디언트</a></li>
+                    <li><a href="../publish/17_text.html">텍스트효과</a></li>
+                    <li><a href="../publish/18_shadow.html">그림자</a></li>
+                    <li><a href="../publish/19_webfont.html">웹글꼴</a></li>
+                    <li><a href="../publish/20_viewport.html">뷰포트</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>레이아웃</summary>
+                <ol>
+                    <li><a href="../publish/21_fixed.html">고정형</a></li>
+                    <li><a href="../publish/22_flow.html">유동형</a></li>
+                    <li><a href="../publish/23_response.html">반응형</a></li>
+                </ol>
+            </details>
+            <details>
+                <summary>웹페이지 검수</summary>
+                <ol>
+                    <li><a href="../publish/24_exam.html">호환성 보기 설정</a></li>
+                    <li><a href="../publish/25_exam.html">개발자 도구 실제 속성값 확인</a></li>
+                    <li><a href="../publish/26_exam.html">QR코드생성해서 보기</a></li>
+                    <li><a href="../publish/27_exam.html">모바일 웹페이지 검수</a></li>
+                </ol>
+            </details>
+        </div>
+        <div class="content-wrap">
+            <h1 id="html-">html 소개</h1>
+            <p>HTML(Hypertext Markup Language,하이퍼텍스트 마크업 언어)는 웹페이지가 어떻게 구조화되어 있는지 브라우저로 하여금 알 수 있도록 하는 마크업 언어입니다. HTML 은 elements 로 구성되어 있으며, 이들은 적절한 방법으로 나타내고 실행하기 위해 각 컨텐츠의 여러 부분들을 감싸고 마크업합니다. tags 는 웹 상의 다른 페이지로 이동하게 하는 하이퍼링크 내용들을 생성하거나, 단어를 강조하는 등의 역할을 합니다.</p>
+            <p>확장자가 <code>.html</code> 로 끝나는 문서가 html 문서입니다. </p>
+            <h1 id="html-">html 구조</h1>
+            <p>html 을 마크업언어라고 하는데 마크업할때 사용하는 약속된 표기법을 &#39;태그(tag)&#39;라고 합니다.</p>
+            <p>태그는 웹문서에 표시하려는 내용을 전달하는 언어이기 때문에 정확히 사용해야 합니다. </p>
+            <p>태그는 <code>&lt;</code> 와 <code>&gt;</code> 이루어져 있으며 대부분의 태그는 여는태그(<code>&lt;속성&gt;</code>) 와 닫는태그(<code>&lt;/속성&gt;</code>) 와 같이 한쌍으로 이루어져 있습니다. </p>
+            <p><code>&lt;img&gt;</code> 태그나 <code>&lt;br&gt;</code> 태그처럼 닫는태그가 없는 경우도 있지만 닫는태그가 있는 경우는 반드시 닫는태그를 삽입해야 합니다.</p>
+            <p>HTML 태그는 대.소문자를 구분하지 않지만 html5 에서는 모두 소문자로 사용하기를 권장합니다.</p>
+            <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;해딩&lt;/h1&gt;
+    &lt;p&gt;단락&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            <h1 id="-">문서타입</h1>
+            <p>문서의 시작을 알려주는 <code>&lt;html&gt;</code>태그보다 먼저 사용하는 것이 &#39;문서유형(document type)&#39;을 지정하는 <code>&lt;!doctype&gt;</code> 입니다.
+                <br>이때 지정하는 문서 유형이란 웹 브라우저에게 &#39;이제부터 처리할 문서는 HTML 문서이고 어떤 유형을 사용했으니 그 버젼에 맞는 방법으로 해석하라&#39; 라고 알려주는 겁니다.</p>
+            <p>문서의 유형에 따라 브라우져게 해석하는 방식이 다르기 때문에 명확하게 지정해줘야 합니다.</p>
+            <ul>
+                <li>엄격 모드(strict mode)</li>
+            </ul>
+            <p>HTML4 표준 문법에 따라야하고 조금만 어긋나면 오류를 일으키기 때문에 정확해야 합니다. 예를들어 닫기태그가 빠지면 오류를 일으킵니다.</p>
+            <pre><code class="lang-html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+&lt;!-- xhtml --&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1-strict.dtd&quot;&gt;
+</code></pre>
+            <ul>
+                <li>호환 모드(transitional mode)</li>
+            </ul>
+            <p>HTML4 표준 문법에 조금 벗어나더라도 허용하는 모드입니다.</p>
+            <pre><code class="lang-html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;!-- xhtml --&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1-transitional.dtd&quot;&gt;
+</code></pre>
+            <ul>
+                <li>프레임세트 모드(transitional mode)</li>
+            </ul>
+            <p>웹 브라우져가 화면을 분할해 한 화면에 여러분서를 동시에 표현하는 방법인데 웹 문서에서 프레임세트를 사용할경우, 프레임세트 모드를 지정해야합니다.</p>
+            <pre><code class="lang-html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;
+&lt;!-- xhtml --&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot; &quot;http://www.w3.org/TR/xhtml1-frameset.dtd&quot;&gt;
+</code></pre>
+            <blockquote>
+                <p>XHTML(Extensible Hypertext Markup Language)은 HTML 과 동등한 표현 능력을 지닌 마크업 언어로, HTML 보다 엄격한 문법을 가진다.</p>
+            </blockquote>
+            <ul>
+                <li>html5</li>
+            </ul>
+            <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+</code></pre>
+            <h2 id="-">태그</h2>
+            <p>태그는 속성과 함께 사용할수도 있습니다.</p>
+            <p>
+                <img src="../images/element.jpg" alt="태그설명">
+            </p>
+            <p>포함관계를 명확하게 해야 합니다.</p>
+            <p>올바른 예:</p>
+            <pre><code class="lang-html">&lt;ul&gt;&lt;li&gt;내용&lt;/li&gt;&lt;/ul&gt;
+</code></pre>
+            <p>잘못된 예:</p>
+            <pre><code class="lang-html">&lt;ul&gt;&lt;li&gt;내용&lt;/ul&gt;&lt;/li&gt;
+</code></pre>
+            <h1 id="-">요소, 속성</h1>
+            <p>html 에서 <code>&lt;h1&gt;</code> 와 같은 태그를 요소라고 하며, 요소는 속성 <code>name=&quot;value&quot;</code> 를 갖을수 있습니다.</p>
+            <p>속성은 이름과 값을 갖습니다.</p>
+            <p>아래는 링크의 예:</p>
+            <pre><code class="lang-html">&lt;a href=&quot;http://google.co.kr/&quot;&gt;Google&lt;/a&gt;
+</code></pre>
+            <h1 id="-">아아디, 클래스</h1>
+            <p>요소에 아이디를 부여할 수 있습니다. </p>
+            <p>아이디는 문서에서 유일해야 합니다.</p>
+            <p>공백이나 탭을 포함 할 수 없습니다.</p>
+            <p>대소문자를 구분합니다.</p>
+            <p>아이디의 예:</p>
+            <pre><code class="lang-html">&lt;div id=&quot;header&quot;&gt;.....&lt;/div&gt;
+&lt;span id=&quot;link&quot;&gt;......&lt;/span&gt;
+</code></pre>
+            <p>요소에 클래스를 부여할 수 있습니다.</p>
+            <p>클래스는 문서에 여러번 사용할 수 있습니다.</p>
+            <p>클래스의 예:</p>
+            <pre><code class="lang-html">&lt;div class=&quot;header&quot;&gt;....&lt;/div&gt;
+&lt;span class=&quot;link&quot;&gt;......&lt;/span&gt;
+</code></pre>
+            <p>아이디는 문서내에 유일해야하며, 클래스는 다중사용이 가능합니다.</p>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://highlightjs.org/static/highlight.pack.js"></script> -->
+</body>
+</html>
