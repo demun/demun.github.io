@@ -1,4 +1,16 @@
+# Project information
 site_name: demun.github.io
+site_description: demun blog
+site_author: demun
+site_url: https://demun.github.io/
+
+# Repository
+repo_name: demun/demun.github.io
+repo_url: https://github.com/demun/demun.github.io
+edit_uri: ""
+
+
+
 theme:
   name: 'material'
   custom_dir: 'mkdocs-material/material'
@@ -15,6 +27,9 @@ theme:
   include_search_page: false
   search_index_only: true
 
+# 404 page
+  static_templates:
+    - 404.html
 
 extra_css:
 - 'assets/stylesheets/extra.css'
