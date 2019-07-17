@@ -1,0 +1,18 @@
+.md-nav__link {font-size: 16px;}
+
+@media only screen and (max-width: 76.1875em) {
+    .md-nav__item--nested>.md-nav__link:after {vertical-align: -.2em;}
+}
+
+
+/* link */
+.list-link {
+    display: block;
+    background-color: #f1f1f1;
+}
+.list-link:hover {
+    opacity: .75;
+}
+.sub-text {
+    font-size: 1rem;
+}

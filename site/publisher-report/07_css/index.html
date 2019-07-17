@@ -1,0 +1,382 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="demun blog"><link rel="canonical" href="https://demun.github.io/publisher-report/07_css/"><meta name="author" content="demun"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>CSS소개 - demun.github.io</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=맑은고딕:300,400,400i,700|맑은고딕&display=swap"><style>body,input{font-family:"맑은고딕","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"맑은고딕","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../assets/stylesheets/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#css" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://demun.github.io/" title="demun.github.io" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">demun.github.io</span><span class="md-header-nav__topic">CSS소개</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs md-tabs--active" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../.." title="홈" class="md-tabs__link">홈</a></li><li class="md-tabs__item"><a href="../" title="Publisher report" class="md-tabs__link md-tabs__link--active">Publisher report</a></li><li class="md-tabs__item"><a href="../../vscode/" title="Visual Studio Code" class="md-tabs__link">Visual Studio Code</a></li><li class="md-tabs__item"><a href="../../mkdocs/" title="MkDocs" class="md-tabs__link">MkDocs</a></li><li class="md-tabs__item"><a href="../../webpack/guides/getting-started/" title="Webpack" class="md-tabs__link">Webpack</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://demun.github.io/" title="demun.github.io" class="md-nav__button md-logo"><i class="md-icon"></i></a>demun.github.io</label><div class="md-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="홈" class="md-nav__link">홈</a></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked><label class="md-nav__link" for="nav-2">Publisher report</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Publisher report</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../" title="HTML소개" class="md-nav__link">HTML소개</a></li><li class="md-nav__item"><a href="../00_default/" title="HTML기본" class="md-nav__link">HTML기본</a></li><li class="md-nav__item"><a href="../01_html/" title="HTML만들기" class="md-nav__link">HTML만들기</a></li><li class="md-nav__item"><a href="../02_p/" title="단락,블럭,주석" class="md-nav__link">단락,블럭,주석</a></li><li class="md-nav__item"><a href="../03_a/" title="링크,이미지" class="md-nav__link">링크,이미지</a></li><li class="md-nav__item"><a href="../04_list/" title="리스트" class="md-nav__link">리스트</a></li><li class="md-nav__item"><a href="../05_table/" title="표" class="md-nav__link">표</a></li><li class="md-nav__item"><a href="../06_html5/" title="HTML5" class="md-nav__link">HTML5</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">CSS소개</label><a href="./" title="CSS소개" class="md-nav__link md-nav__link--active">CSS소개</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_1" title="외부 스타일" class="md-nav__link">외부 스타일</a></li><li class="md-nav__item"><a href="#_2" title="내부 스타일" class="md-nav__link">내부 스타일</a></li><li class="md-nav__item"><a href="#_3" title="인라인 스타일" class="md-nav__link">인라인 스타일</a></li><li class="md-nav__item"><a href="#_4" title="구문" class="md-nav__link">구문</a></li><li class="md-nav__item"><a href="#_5" title="선택자, 가상클래스, 가상요소" class="md-nav__link">선택자, 가상클래스, 가상요소</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#universal-selector" title="전체 선택자(universal selector)" class="md-nav__link">전체 선택자(universal selector)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#tag-selector" title="태그 선택자(tag selector)" class="md-nav__link">태그 선택자(tag selector)</a></li></ul></nav></li><li class="md-nav__item"><a href="#class-selector" title="클래스 선택자(class selector)" class="md-nav__link">클래스 선택자(class selector)</a></li><li class="md-nav__item"><a href="#id-id-selector" title="id 선택자(id selector)" class="md-nav__link">id 선택자(id selector)</a></li><li class="md-nav__item"><a href="#_6" title="가상클래스" class="md-nav__link">가상클래스</a></li><li class="md-nav__item"><a href="#_7" title="가상요소" class="md-nav__link">가상요소</a></li></ul></nav></li><li class="md-nav__item"><a href="#_8" title="상속" class="md-nav__link">상속</a></li><li class="md-nav__item"><a href="#_9" title="우선순위" class="md-nav__link">우선순위</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#_10" title="원천 소스 우선 순위" class="md-nav__link">원천 소스 우선 순위</a></li><li class="md-nav__item"><a href="#css-specificity" title="CSS 명시도(Specificity) 계산법" class="md-nav__link">CSS 명시도(Specificity) 계산법</a></li></ul></nav></li><li class="md-nav__item"><a href="#_11" title="단위" class="md-nav__link">단위</a></li><li class="md-nav__item"><a href="#_12" title="주석" class="md-nav__link">주석</a></li></ul></nav></li><li class="md-nav__item"><a href="../08_color/" title="색상,배경,테두리" class="md-nav__link">색상,배경,테두리</a></li><li class="md-nav__item"><a href="../09_padding/" title="여백,높이" class="md-nav__link">여백,높이</a></li><li class="md-nav__item"><a href="../10_box/" title="박스모델" class="md-nav__link">박스모델</a></li><li class="md-nav__item"><a href="../11_text/" title="텍스트" class="md-nav__link">텍스트</a></li><li class="md-nav__item"><a href="../12_list/" title="목록,표" class="md-nav__link">목록,표</a></li><li class="md-nav__item"><a href="../13_display/" title="디스플레이" class="md-nav__link">디스플레이</a></li><li class="md-nav__item"><a href="../14_overflow/" title="오버플로우" class="md-nav__link">오버플로우</a></li><li class="md-nav__item"><a href="../15_radius/" title="둥근테두리" class="md-nav__link">둥근테두리</a></li><li class="md-nav__item"><a href="../16_gradient/" title="그라디언트" class="md-nav__link">그라디언트</a></li><li class="md-nav__item"><a href="../17_text/" title="텍스트효과" class="md-nav__link">텍스트효과</a></li><li class="md-nav__item"><a href="../18_shadow/" title="그림자" class="md-nav__link">그림자</a></li><li class="md-nav__item"><a href="../19_webfont/" title="웹글꼴" class="md-nav__link">웹글꼴</a></li><li class="md-nav__item"><a href="../20_viewport/" title="뷰포트" class="md-nav__link">뷰포트</a></li><li class="md-nav__item"><a href="../21_fixed/" title="레이아웃 고정형" class="md-nav__link">레이아웃 고정형</a></li><li class="md-nav__item"><a href="../22_flow/" title="레이아웃 유동형" class="md-nav__link">레이아웃 유동형</a></li><li class="md-nav__item"><a href="../23_response/" title="레이아웃 반응형" class="md-nav__link">레이아웃 반응형</a></li><li class="md-nav__item"><a href="../24_exam/" title="호환성 보기 설정" class="md-nav__link">호환성 보기 설정</a></li><li class="md-nav__item"><a href="../25_exam/" title="개발자 도구 확인" class="md-nav__link">개발자 도구 확인</a></li><li class="md-nav__item"><a href="../26_exam/" title="QR코드 생성" class="md-nav__link">QR코드 생성</a></li><li class="md-nav__item"><a href="../27_exam/" title="모바일 검수" class="md-nav__link">모바일 검수</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">Visual Studio Code</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">Visual Studio Code</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../vscode/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../vscode/shortcuts/" title="단축키" class="md-nav__link">단축키</a></li><li class="md-nav__item"><a href="../../vscode/git/" title="Git" class="md-nav__link">Git</a></li><li class="md-nav__item"><a href="../../vscode/debug/" title="Debug" class="md-nav__link">Debug</a></li><li class="md-nav__item"><a href="../../vscode/task/" title="Task" class="md-nav__link">Task</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">MkDocs</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">MkDocs</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../mkdocs/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../mkdocs/how/" title="사용법" class="md-nav__link">사용법</a></li><li class="md-nav__item"><a href="../../mkdocs/theme/" title="테마" class="md-nav__link">테마</a></li><li class="md-nav__item"><a href="../../mkdocs/tree/" title="구조" class="md-nav__link">구조</a></li><li class="md-nav__item"><a href="../../mkdocs/others/" title="기타" class="md-nav__link">기타</a></li><li class="md-nav__item"><a href="../../mkdocs/admonition/" title="Admonition" class="md-nav__link">Admonition</a></li><li class="md-nav__item"><a href="../../mkdocs/publish/" title="배포" class="md-nav__link">배포</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Webpack</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Webpack</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../webpack/guides/getting-started/" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="../../webpack/guides/asset-management/" title="Asset Management" class="md-nav__link">Asset Management</a></li><li class="md-nav__item"><a href="../../webpack/guides/development/" title="Development" class="md-nav__link">Development</a></li><li class="md-nav__item"><a href="../../webpack/guides/code-splitting/" title="Code Spliting" class="md-nav__link">Code Spliting</a></li><li class="md-nav__item"><a href="../../webpack/guides/caching/" title="Caching" class="md-nav__link">Caching</a></li><li class="md-nav__item"><a href="../../webpack/guides/author-libraries/" title="Authoring Libraries" class="md-nav__link">Authoring Libraries</a></li><li class="md-nav__item"><a href="../../webpack/guides/environment-variables/" title="Environment Variables" class="md-nav__link">Environment Variables</a></li><li class="md-nav__item"><a href="../../webpack/guides/build-performance/" title="Build Performance" class="md-nav__link">Build Performance</a></li><li class="md-nav__item"><a href="../../webpack/guides/csp/" title="Content Security Policies" class="md-nav__link">Content Security Policies</a></li><li class="md-nav__item"><a href="../../webpack/guides/development-vagrant/" title="Development - Vagrant" class="md-nav__link">Development - Vagrant</a></li><li class="md-nav__item"><a href="../../webpack/guides/installation/" title="Installation" class="md-nav__link">Installation</a></li><li class="md-nav__item"><a href="../../webpack/guides/scaffolding/" title="Scaffolding" class="md-nav__link">Scaffolding</a></li><li class="md-nav__item"><a href="../../webpack/guides/output-management/" title="Output Management" class="md-nav__link">Output Management</a></li><li class="md-nav__item"><a href="../../webpack/guides/hot-module-replacement/" title="Hot Module Replacement" class="md-nav__link">Hot Module Replacement</a></li><li class="md-nav__item"><a href="../../webpack/guides/tree-shaking/" title="Tree Shaking" class="md-nav__link">Tree Shaking</a></li><li class="md-nav__item"><a href="../../webpack/guides/production/" title="Production" class="md-nav__link">Production</a></li><li class="md-nav__item"><a href="../../webpack/guides/lazy-loading/" title="Lazy Loading" class="md-nav__link">Lazy Loading</a></li><li class="md-nav__item"><a href="../../webpack/guides/shimming/" title="Shimming" class="md-nav__link">Shimming</a></li><li class="md-nav__item"><a href="../../webpack/guides/typescript/" title="TypeScript" class="md-nav__link">TypeScript</a></li><li class="md-nav__item"><a href="../../webpack/guides/progressive-web-application/" title="Progressive Web Application" class="md-nav__link">Progressive Web Application</a></li><li class="md-nav__item"><a href="../../webpack/guides/public-path/" title="Public Path" class="md-nav__link">Public Path</a></li><li class="md-nav__item"><a href="../../webpack/guides/integrations/" title="Integrations" class="md-nav__link">Integrations</a></li><li class="md-nav__item"><a href="../../webpack/concepts/" title="Concepts" class="md-nav__link">Concepts</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_1" title="외부 스타일" class="md-nav__link">외부 스타일</a></li><li class="md-nav__item"><a href="#_2" title="내부 스타일" class="md-nav__link">내부 스타일</a></li><li class="md-nav__item"><a href="#_3" title="인라인 스타일" class="md-nav__link">인라인 스타일</a></li><li class="md-nav__item"><a href="#_4" title="구문" class="md-nav__link">구문</a></li><li class="md-nav__item"><a href="#_5" title="선택자, 가상클래스, 가상요소" class="md-nav__link">선택자, 가상클래스, 가상요소</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#universal-selector" title="전체 선택자(universal selector)" class="md-nav__link">전체 선택자(universal selector)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#tag-selector" title="태그 선택자(tag selector)" class="md-nav__link">태그 선택자(tag selector)</a></li></ul></nav></li><li class="md-nav__item"><a href="#class-selector" title="클래스 선택자(class selector)" class="md-nav__link">클래스 선택자(class selector)</a></li><li class="md-nav__item"><a href="#id-id-selector" title="id 선택자(id selector)" class="md-nav__link">id 선택자(id selector)</a></li><li class="md-nav__item"><a href="#_6" title="가상클래스" class="md-nav__link">가상클래스</a></li><li class="md-nav__item"><a href="#_7" title="가상요소" class="md-nav__link">가상요소</a></li></ul></nav></li><li class="md-nav__item"><a href="#_8" title="상속" class="md-nav__link">상속</a></li><li class="md-nav__item"><a href="#_9" title="우선순위" class="md-nav__link">우선순위</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#_10" title="원천 소스 우선 순위" class="md-nav__link">원천 소스 우선 순위</a></li><li class="md-nav__item"><a href="#css-specificity" title="CSS 명시도(Specificity) 계산법" class="md-nav__link">CSS 명시도(Specificity) 계산법</a></li></ul></nav></li><li class="md-nav__item"><a href="#_11" title="단위" class="md-nav__link">단위</a></li><li class="md-nav__item"><a href="#_12" title="주석" class="md-nav__link">주석</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1 id="css">css<a class="headerlink" href="#css" title="Permanent link">&para;</a></h1>
+<p>CSS(Cascading Style Sheets)는 HTML과 함께 웹 표준의 기본 개념입니다.</p>
+<p>HTML이 텍스트나 이미지, 표 같은 각 요소를 웹 문서에 넣어 뼈대를 만드는 것이라면 CSS는 텍스트 색상이나 크기, 이미지 크기나 위치 등 디자인 요소를 담당하는 역활을 합니다.</p>
+<p>웹 문서에서 스타일이란 글꼴이나 색상, 정렬, 배치 등 문서의 겉모습을 결정짓는 말하며 이런 스타일을 모아놓은것을 '스타일시트' 라고 합니다.</p>
+<p>스타일시트는 <code>.css</code> 확장자로 <code>css</code> 구문으로 작성된 파일입니다.</p>
+<p>CSS는 다음 세 가지 방법으로 HTML 요소에 추가 할 수 있습니다.</p>
+<ul>
+<li>외부 스타일</li>
+<li>내부 스타일</li>
+<li>인라인 스타일</li>
+</ul>
+<p><br><br></p>
+<h2 id="_1">외부 스타일<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>&lt;head&gt;</code> 태그안에 <code>&lt;link&gt;</code> 요소로 스타일을 참조하는 방식으로 가장 많이 사용하는 방법입니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><br><br></p>
+<h2 id="_2">내부 스타일<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>&lt;head&gt;</code> 태그안에 <code>&lt;style&gt;</code> 요소로 <code>css</code> 를 추가하는 방식입니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nt">body</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><br><br></p>
+<h2 id="_3">인라인 스타일<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>인라인 스타일은 <code>html</code> 태그에 <code>style</code> 속성을 사용하여 추가하는 방법으로 <code>style="속성:값; 속성:값;"</code> 형태로 작성합니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color: white&quot;</span><span class="p">&gt;</span>내용<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><br><br></p>
+<h2 id="_4">구문<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>css 구문은 선택자(selector)와 속성(property):값(value) 으로 구성됩니다. </p>
+<p>선택자는 <code>html</code> 요소를 말하며, 선언(declaration) 이후에는 세미콜론(;)으로 닫으며 반드시 중괄호{} 로 묶습니다.</p>
+<p>속성과 값은 콜론(:)으로 구분하고 선언과 선언은 세미콜론(;)으로 구분합니다.</p>
+<p><img alt="css rule" src="../images/css-rule.jpg" /></p>
+<p><br><br></p>
+<h2 id="_5">선택자, 가상클래스, 가상요소<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>선택자는 태그 하나를 지정할 수도 있지만 여러 개의 요소를 묶어 별도의 선택자로도 지정할 수 있습니다.</p>
+<p><br><br></p>
+<h3 id="universal-selector">전체 선택자(universal selector)<a class="headerlink" href="#universal-selector" title="Permanent link">&para;</a></h3>
+<p>전체 선택자는 <code>*(별표)</code> 입니다. 모든 요소에 스타일을 적용할 때 사용합니다. 또한 여백이나 글꼴 크기 등 기본스타일을 초기화 할때 사용합니다.</p>
+<div class="codehilite"><pre><span></span><span class="o">*</span> <span class="p">{</span>
+  <span class="err">속성:값</span><span class="p">;</span>
+  <span class="err">속성:값</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><br><br></p>
+<h4 id="tag-selector">태그 선택자(tag selector)<a class="headerlink" href="#tag-selector" title="Permanent link">&para;</a></h4>
+<p>전체 선택자 다음으로 많은 요소들에 스타일을 적용하는 태그 선택자는 특정 태그가 쓰인 모든 요소에 스타일을 적용합니다.</p>
+<p>예를들어 <code>p</code> 선택자를 정의하면 문서내의 모든 <code>p</code> 요소들에 스타일이 적용됩니다.</p>
+<div class="codehilite"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><br><br></p>
+<h3 id="class-selector">클래스 선택자(class selector)<a class="headerlink" href="#class-selector" title="Permanent link">&para;</a></h3>
+<p>클래스 선택자는 html 요소에 class 속성을 부여해서 사용합니다.  <br />
+클래스는 다중으로 사용할수 있습니다.  <br />
+클래스는 마침표(.) 다음에 클래스를 씁니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 다중으로 사용할때 */</span>
+<span class="p">.</span><span class="nc">header</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p>class는 숫자로 시작할 수 없습니다.</p>
+</blockquote>
+<p><br><br></p>
+<h3 id="id-id-selector">id 선택자(id selector)<a class="headerlink" href="#id-id-selector" title="Permanent link">&para;</a></h3>
+<p>id선택자는 html 요소에 id 속성을 부여해서 사용합니다.  <br />
+id는 해당페이지에서 고유한 요소에 사용합니다. 한번만 사용할 수 있습니다.  <br />
+id는 해시(#) 다음에 id 를 씁니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">header</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p>id는 숫자로 시작할 수 없습니다.</p>
+</blockquote>
+<p><br><br></p>
+<h3 id="_6">가상클래스<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>가상클래스는 요소의 특수 상태를 정의하는 데 사용됩니다.</p>
+<p>예를 들어 다음과 같이 사용할 수 있습니다.</p>
+<ul>
+<li>사용자가 마우스를 올리면 요소의 스타일을 지정합니다.</li>
+<li>방문한 스타일과 방문하지 않은 스타일이 다르게 적용됩니다.</li>
+<li>포커스를 얻으면 요소의 스타일을 지정합니다.</li>
+</ul>
+<p>대표적으로 링크의 상태에 따라 적용하는 예제입니다.</p>
+<div class="codehilite"><pre><span></span><span class="c">/* 기본 링크 색상 */</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">link</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#FF0000</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 방문한 링크 색상 */</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">visited</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#00FF00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 마우스 오버한 링크 색상 */</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#FF00FF</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 선택한 링크 색상 */</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">active</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#0000FF</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><br><br></p>
+<h3 id="_7">가상요소<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>CSS 가상요소는 요소의 지정된 부분을 스타일화하는 데 사용됩니다.</p>
+<p>예를 들어 다음과 같이 사용할 수 있습니다.</p>
+<ul>
+<li>요소의 첫 번째 문자 또는 선 스타일 지정</li>
+<li>요소의 내용 앞이나 뒤에 내용 삽입</li>
+</ul>
+<p><code>::first-line</code> 가상요소는 텍스트의 첫 번째 줄에 특별한 스타일을 추가하는 데 사용됩니다.</p>
+<div class="codehilite"><pre><span></span><span class="nt">p</span><span class="p">::</span><span class="nd">first-line</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+    <span class="k">font-variant</span><span class="p">:</span> <span class="kc">small-caps</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><code>p</code>태그 앞부분에 특별한 스타일을 추가한 예입니다.</p>
+<div class="codehilite"><pre><span></span><span class="nt">p</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p>가상클래스는 <code>:</code> 로 표시하고 가상요소는 <code>::</code> 를 표시합니다.</p>
+</blockquote>
+<p><br><br></p>
+<h2 id="_8">상속<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>CSS 에서 어려움을 겪는 것이 바로 <code>상속</code> 와 <code>우선순위</code> 입니다. <br />
+CSS 에서 상속이란 부모요소에 지정한 스타일이 자식요소에 적용되는 것을 말합니다.    </p>
+<p>예를들어 아래와같은 html 구조가 있다고 합니다.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>자식요소1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>자식요소2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>자식요소3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>여기서 <code>&lt;ul&gt;</code> 요소는 <code>&lt;li&gt;</code> 요소의 부모입니다. 즉 <code>&lt;li&gt;</code> 요소는 <code>&lt;ul&gt;</code> 요소의 자식입니다. <br />
+<code>&lt;ul&gt;:부모</code> <code>&lt;li&gt;:자식</code> 관계입니다.</p>
+<p>부모인 ul 요소에 스타일을 주면 자식인 li 에 스타일이 상속이 됩니다.</p>
+<p>일반적으로 body 에 글꼴 스타일을 적용하면 문서내의 모든 요소에 스타일이 적용이 됩니다.  <br />
+따로 하위요소에 스타일을 지정하지 않으면 body 요소에 적용된 스타일이 적용됩니다.</p>
+<p><img alt="css rule" src="../images/child.jpg" /></p>
+<p><br><br></p>
+<h2 id="_9">우선순위<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>스타일시트는 다음과 같은 3개의 CSS원천 소스(original source)를 가질수 있습니다.</p>
+<ul>
+<li>제작자(author) 원천 소스: 웹사이트 제작자가 지정하는 자신의 페이지 스타일</li>
+<li>사용자(user) 원천 소스: 사용자가 직접 정하는 자신의 사용할 스타일</li>
+<li>사용자 도구(user agent) 원천 소스: 웹 브라우저 자체에 지정된 기본 스타일</li>
+</ul>
+<p><br><br></p>
+<h3 id="_10">원천 소스 우선 순위<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>!important 선언을 한 사용자 스타일 &gt; !important 선언을 한 제작자 스타일 &gt; 제작자 스타일 &gt; 사용자 스타일 &gt; 사용자 도구 선언 (브라우저 자체의 선언)</p>
+<p><br><br></p>
+<h3 id="css-specificity">CSS 명시도(Specificity) 계산법<a class="headerlink" href="#css-specificity" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>!important &gt; id[100] &gt; class[10] &gt; tag[1] &gt; *[0]</p>
+</blockquote>
+<p>선택자에 따른 점수</p>
+<table>
+<thead>
+<tr>
+<th align="center">지정방법</th>
+<th align="left">예제</th>
+<th align="left">점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">전체선택자</td>
+<td align="left">*</td>
+<td align="left">0점</td>
+</tr>
+<tr>
+<td align="center">태그선택자</td>
+<td align="left">ul</td>
+<td align="left">1점</td>
+</tr>
+<tr>
+<td align="center">가상클래스속성</td>
+<td align="left">:first-child</td>
+<td align="left">10점</td>
+</tr>
+<tr>
+<td align="center">속성선택자</td>
+<td align="left">a[href*="sample"]</td>
+<td align="left">10점</td>
+</tr>
+<tr>
+<td align="center">클래스선택자</td>
+<td align="left">.sample</td>
+<td align="left">10점</td>
+</tr>
+<tr>
+<td align="center">id선택자</td>
+<td align="left">#sample</td>
+<td align="left">100점</td>
+</tr>
+<tr>
+<td align="center">인라인스타일</td>
+<td align="left">style=""</td>
+<td align="left">1000점</td>
+</tr>
+<tr>
+<td align="center">!important</td>
+<td align="left">!important</td>
+<td align="left">10000점</td>
+</tr>
+</tbody>
+</table>
+<p>선택자의 원리에 따른 점수계산</p>
+<ul>
+<li>a = 선택자중 ID의 수를 세어 100자리에 놓는다,</li>
+<li>b = 선택자중 가상 클래스와 클래스의 수를 세어 10자리에 놓는다.</li>
+<li>c = 선택자중 엘리먼트의 수를 세어 1의 자리에 놓는다.</li>
+<li>d = 가상 엘리먼트는 무시한다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">a(100자리)</th>
+<th align="center">b(10자리)</th>
+<th align="center">c(1자리)</th>
+<th align="left">계산방법</th>
+<th align="center">점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">*</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">전체선택자 1개</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="left">li</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="left">태그선택자 1개</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">ul li</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="left">태그선택자 2개</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">ul ol+li</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="left">태그선택자 3개</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left">li.num</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">태그선택자 1개 클래스선택자 1개</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="left">ul+ol li.num</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="left">태그선택자 1개 클래스선택자 3개</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="left">li.num.last</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="left">태그선택자 1개 클래스선택자 2개</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td align="left">#sample</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">아이디선택자 1개</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="left">p#sample</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="left">태그선택자 1개 아이디선택자 1개</td>
+<td align="center">101</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<h2 id="_11">단위<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>CSS에는 길이 표현을위한 여러 가지 단위가 있습니다.</p>
+<p>많은 CSS 속성은 width, margin, padding, font-size, border-width 등과 같은 "길이"값을 사용합니다.</p>
+<p>길이는 10px, 2em 등과 같은 길이 단위가 뒤에 오는 숫자입니다.</p>
+<p>공백은 숫자와 단위 사이에 나타날 수 없습니다. 그러나 값이 0이면 단위를 생략 할 수 있습니다.</p>
+<p>일부 CSS 속성의 경우 음수 길이를 사용할 수 있습니다.</p>
+<p>길이 단위에는 절대 단위와 상대 단위의 두 가지 유형이 있습니다.</p>
+<ul>
+<li>절대 길이 단위</li>
+</ul>
+<p>절대 길이 단위는 고정되어 있으며 항상 정확히 같은 크기로 나타납니다.</p>
+<p>대표적으로 <code>px</code> <code>pt</code> 등이 사용됩니다.</p>
+<ul>
+<li>상대 길이 단위</li>
+</ul>
+<p>상대 길이 단위는 부모의 단위에 영향을 받는 길이로 항상 같은 크기는 아닙니다.</p>
+<p>대표적으로 <code>em</code> <code>%</code> 등이 사용됩니다.</p>
+<p><br><br></p>
+<h2 id="_12">주석<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>css 에서 주석은 <code>/*</code> 시작해서 <code>*/</code> 로 닫습니다. 주석은 한줄 또는 여러줄에 작성할 수 있습니다.</p>
+<div class="codehilite"><pre><span></span><span class="c">/* 이글은 한줄 주석입니다 */</span>
+
+<span class="c">/* </span>
+<span class="c">이 글은 </span>
+<span class="c">여러줄</span>
+<span class="c">주석입니다.</span>
+<span class="c">*/</span>
+</pre></div>
+
+<p><br><br></p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../06_html5/" title="HTML5" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>HTML5</span></div></a><a href="../08_color/" title="색상,배경,테두리" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>색상,배경,테두리</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.d5a09f94.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>

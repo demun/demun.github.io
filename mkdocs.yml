@@ -1,0 +1,173 @@
+# Project information
+site_name: demun.github.io
+site_description: demun blog
+site_author: demun
+site_url: https://demun.github.io/
+
+# Repository
+repo_name: demun/demun.github.io
+repo_url: https://github.com/demun/demun.github.io
+edit_uri: ""
+
+
+
+theme:
+  name: 'material'
+  custom_dir: 'mkdocs-material/material'
+  feature:
+    tabs: true
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: '맑은고딕'
+    code: '맑은고딕'
+
+# Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+# 404 page
+  static_templates:
+    - 404.html
+
+extra_css:
+- 'assets/stylesheets/extra.css'
+
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+# markdown_extensions:
+#   - admonition
+#   - codehilite:
+#       guess_lang: false
+#   - toc:
+#       permalink: true
+
+# Pages
+nav: 
+  - 홈: index.md
+  - Publisher report:
+    - 'HTML소개': 'publisher-report/index.md'
+    - 'HTML기본': 'publisher-report/00_default.md'
+    - 'HTML만들기': 'publisher-report/01_html.md'
+    - '단락,블럭,주석': 'publisher-report/02_p.md'
+    - '링크,이미지': 'publisher-report/03_a.md'
+    - '리스트': 'publisher-report/04_list.md'
+    - '표': 'publisher-report/05_table.md'
+    - 'HTML5': 'publisher-report/06_html5.md'
+    - 'CSS소개': 'publisher-report/07_css.md'
+    - '색상,배경,테두리': 'publisher-report/08_color.md'
+    - '여백,높이': 'publisher-report/09_padding.md'
+    - '박스모델': 'publisher-report/10_box.md'
+    - '텍스트': 'publisher-report/11_text.md'
+    - '목록,표': 'publisher-report/12_list.md'
+    - '디스플레이': 'publisher-report/13_display.md'
+    - '오버플로우': 'publisher-report/14_overflow.md'
+    - '둥근테두리': 'publisher-report/15_radius.md'
+    - '그라디언트': 'publisher-report/16_gradient.md'
+    - '텍스트효과': 'publisher-report/17_text.md'
+    - '그림자': 'publisher-report/18_shadow.md'
+    - '웹글꼴': 'publisher-report/19_webfont.md'
+    - '뷰포트': 'publisher-report/20_viewport.md'
+    - '레이아웃 고정형': 'publisher-report/21_fixed.md'
+    - '레이아웃 유동형': 'publisher-report/22_flow.md'
+    - '레이아웃 반응형': 'publisher-report/23_response.md'
+    - '호환성 보기 설정': 'publisher-report/24_exam.md'
+    - '개발자 도구 확인': 'publisher-report/25_exam.md'
+    - 'QR코드 생성': 'publisher-report/26_exam.md'
+    - '모바일 검수': 'publisher-report/27_exam.md'
+  - Visual Studio Code:
+    - '소개': 'vscode/index.md'
+    - '단축키': 'vscode/shortcuts.md'
+    - 'Git': 'vscode/git.md'
+    - 'Debug': 'vscode/debug.md'
+    - 'Task': 'vscode/task.md'
+  - MkDocs:
+    - '소개': 'mkdocs/index.md'
+    - '사용법': 'mkdocs/how.md'
+    - '테마': 'mkdocs/theme.md'
+    - '구조': 'mkdocs/tree.md'
+    - '기타': 'mkdocs/others.md'
+    - 'Admonition': 'mkdocs/admonition.md'
+    - '배포': 'mkdocs/publish.md'
+  # - MkDocs Material:
+  #   - 'Material': 'material-theme/index.md'
+  #   - 'Getting started': 'material-theme/getting-started.md'
+  #   - 'Specimen': 'material-theme/specimen.md'
+  #   - 'Customization': 'material-theme/customization.md'
+  #   - 'Compliance with GDPR': 'material-theme/compliance.md'
+  #   - 'Admonition': 'material-theme/extensions/admonition.md'
+  #   - 'CodeHilite': 'material-theme/extensions/codehilite.md'
+  #   - 'Footnotes': 'material-theme/extensions/footnotes.md'
+  #   - 'Metadata': 'material-theme/extensions/metadata.md'
+  #   - 'Permalinks': 'material-theme/extensions/permalinks.md'
+  #   - 'PyMdown': 'material-theme/extensions/pymdown.md'
+  - Webpack:
+    - 'Getting Started': 'webpack/guides/getting-started.md'
+    - 'Asset Management': 'webpack/guides/asset-management.md'
+    - 'Development': 'webpack/guides/development.md'
+    - 'Code Spliting': 'webpack/guides/code-splitting.md'
+    - 'Caching': 'webpack/guides/caching.md'
+    - 'Authoring Libraries': 'webpack/guides/author-libraries.md'
+    - 'Environment Variables': 'webpack/guides/environment-variables.md'
+    - 'Build Performance': 'webpack/guides/build-performance.md'
+    - 'Content Security Policies': 'webpack/guides/csp.md'
+    - 'Development - Vagrant': 'webpack/guides/development-vagrant.md'
+    - 'Installation': 'webpack/guides/installation.md'
+    - 'Scaffolding': 'webpack/guides/scaffolding.md'
+    - 'Output Management': 'webpack/guides/output-management.md'
+    - 'Hot Module Replacement': 'webpack/guides/hot-module-replacement.md'
+    - 'Tree Shaking': 'webpack/guides/tree-shaking.md'
+    - 'Production': 'webpack/guides/production.md'
+    - 'Lazy Loading': 'webpack/guides/lazy-loading.md'
+    - 'Shimming': 'webpack/guides/shimming.md'
+    - 'TypeScript': 'webpack/guides/typescript.md'
+    - 'Progressive Web Application': 'webpack/guides/progressive-web-application.md'
+    - 'Public Path': 'webpack/guides/public-path.md'
+    - 'Integrations': 'webpack/guides/integrations.md'
+    - 'Concepts': 'webpack/concepts/index.md'
+    # - 'Entry Points': 'webpack/concepts/entry-points.md'
+    # - 'Output': 'webpack/concepts/output.md'
+    # - 'Loaders': 'webpack/concepts/loaders.md'
+    # - 'Plugins': 'webpack/concepts/plugins.md'
+    # - 'Configuration': 'webpack/concepts/configuration.md'
+    # - 'Why webpack': 'webpack/concepts/why-webpack.md'
+    # - 'Modules': 'webpack/concepts/modules.md'
+    # - 'Module Resolution': 'webpack/concepts/module-resolution.md'
+    # - 'Targets': 'webpack/concepts/targets.md'

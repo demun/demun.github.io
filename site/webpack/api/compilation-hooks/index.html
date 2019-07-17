@@ -1,0 +1,473 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="demun blog"><link rel="canonical" href="https://demun.github.io/webpack/api/compilation-hooks/"><meta name="author" content="demun"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Compilation Hooks</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=맑은고딕:300,400,400i,700|맑은고딕&display=swap"><style>body,input{font-family:"맑은고딕","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"맑은고딕","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../assets/stylesheets/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#buildmodule" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://demun.github.io/" title="demun.github.io" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">demun.github.io</span><span class="md-header-nav__topic">Compilation Hooks</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../../.." title="홈" class="md-tabs__link md-tabs__link--active">홈</a></li><li class="md-tabs__item"><a href="../../../publisher-report/" title="Publisher report" class="md-tabs__link">Publisher report</a></li><li class="md-tabs__item"><a href="../../../vscode/" title="Visual Studio Code" class="md-tabs__link">Visual Studio Code</a></li><li class="md-tabs__item"><a href="../../../mkdocs/" title="MkDocs" class="md-tabs__link">MkDocs</a></li><li class="md-tabs__item"><a href="../../guides/getting-started/" title="Webpack" class="md-tabs__link">Webpack</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://demun.github.io/" title="demun.github.io" class="md-nav__button md-logo"><i class="md-icon"></i></a>demun.github.io</label><div class="md-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="홈" class="md-nav__link">홈</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Publisher report</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Publisher report</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../publisher-report/" title="HTML소개" class="md-nav__link">HTML소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/00_default/" title="HTML기본" class="md-nav__link">HTML기본</a></li><li class="md-nav__item"><a href="../../../publisher-report/01_html/" title="HTML만들기" class="md-nav__link">HTML만들기</a></li><li class="md-nav__item"><a href="../../../publisher-report/02_p/" title="단락,블럭,주석" class="md-nav__link">단락,블럭,주석</a></li><li class="md-nav__item"><a href="../../../publisher-report/03_a/" title="링크,이미지" class="md-nav__link">링크,이미지</a></li><li class="md-nav__item"><a href="../../../publisher-report/04_list/" title="리스트" class="md-nav__link">리스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/05_table/" title="표" class="md-nav__link">표</a></li><li class="md-nav__item"><a href="../../../publisher-report/06_html5/" title="HTML5" class="md-nav__link">HTML5</a></li><li class="md-nav__item"><a href="../../../publisher-report/07_css/" title="CSS소개" class="md-nav__link">CSS소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/08_color/" title="색상,배경,테두리" class="md-nav__link">색상,배경,테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/09_padding/" title="여백,높이" class="md-nav__link">여백,높이</a></li><li class="md-nav__item"><a href="../../../publisher-report/10_box/" title="박스모델" class="md-nav__link">박스모델</a></li><li class="md-nav__item"><a href="../../../publisher-report/11_text/" title="텍스트" class="md-nav__link">텍스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/12_list/" title="목록,표" class="md-nav__link">목록,표</a></li><li class="md-nav__item"><a href="../../../publisher-report/13_display/" title="디스플레이" class="md-nav__link">디스플레이</a></li><li class="md-nav__item"><a href="../../../publisher-report/14_overflow/" title="오버플로우" class="md-nav__link">오버플로우</a></li><li class="md-nav__item"><a href="../../../publisher-report/15_radius/" title="둥근테두리" class="md-nav__link">둥근테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/16_gradient/" title="그라디언트" class="md-nav__link">그라디언트</a></li><li class="md-nav__item"><a href="../../../publisher-report/17_text/" title="텍스트효과" class="md-nav__link">텍스트효과</a></li><li class="md-nav__item"><a href="../../../publisher-report/18_shadow/" title="그림자" class="md-nav__link">그림자</a></li><li class="md-nav__item"><a href="../../../publisher-report/19_webfont/" title="웹글꼴" class="md-nav__link">웹글꼴</a></li><li class="md-nav__item"><a href="../../../publisher-report/20_viewport/" title="뷰포트" class="md-nav__link">뷰포트</a></li><li class="md-nav__item"><a href="../../../publisher-report/21_fixed/" title="레이아웃 고정형" class="md-nav__link">레이아웃 고정형</a></li><li class="md-nav__item"><a href="../../../publisher-report/22_flow/" title="레이아웃 유동형" class="md-nav__link">레이아웃 유동형</a></li><li class="md-nav__item"><a href="../../../publisher-report/23_response/" title="레이아웃 반응형" class="md-nav__link">레이아웃 반응형</a></li><li class="md-nav__item"><a href="../../../publisher-report/24_exam/" title="호환성 보기 설정" class="md-nav__link">호환성 보기 설정</a></li><li class="md-nav__item"><a href="../../../publisher-report/25_exam/" title="개발자 도구 확인" class="md-nav__link">개발자 도구 확인</a></li><li class="md-nav__item"><a href="../../../publisher-report/26_exam/" title="QR코드 생성" class="md-nav__link">QR코드 생성</a></li><li class="md-nav__item"><a href="../../../publisher-report/27_exam/" title="모바일 검수" class="md-nav__link">모바일 검수</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">Visual Studio Code</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">Visual Studio Code</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../vscode/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../vscode/shortcuts/" title="단축키" class="md-nav__link">단축키</a></li><li class="md-nav__item"><a href="../../../vscode/git/" title="Git" class="md-nav__link">Git</a></li><li class="md-nav__item"><a href="../../../vscode/debug/" title="Debug" class="md-nav__link">Debug</a></li><li class="md-nav__item"><a href="../../../vscode/task/" title="Task" class="md-nav__link">Task</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">MkDocs</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">MkDocs</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../mkdocs/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../mkdocs/how/" title="사용법" class="md-nav__link">사용법</a></li><li class="md-nav__item"><a href="../../../mkdocs/theme/" title="테마" class="md-nav__link">테마</a></li><li class="md-nav__item"><a href="../../../mkdocs/tree/" title="구조" class="md-nav__link">구조</a></li><li class="md-nav__item"><a href="../../../mkdocs/others/" title="기타" class="md-nav__link">기타</a></li><li class="md-nav__item"><a href="../../../mkdocs/admonition/" title="Admonition" class="md-nav__link">Admonition</a></li><li class="md-nav__item"><a href="../../../mkdocs/publish/" title="배포" class="md-nav__link">배포</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Webpack</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Webpack</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../guides/getting-started/" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="../../guides/asset-management/" title="Asset Management" class="md-nav__link">Asset Management</a></li><li class="md-nav__item"><a href="../../guides/development/" title="Development" class="md-nav__link">Development</a></li><li class="md-nav__item"><a href="../../guides/code-splitting/" title="Code Spliting" class="md-nav__link">Code Spliting</a></li><li class="md-nav__item"><a href="../../guides/caching/" title="Caching" class="md-nav__link">Caching</a></li><li class="md-nav__item"><a href="../../guides/author-libraries/" title="Authoring Libraries" class="md-nav__link">Authoring Libraries</a></li><li class="md-nav__item"><a href="../../guides/environment-variables/" title="Environment Variables" class="md-nav__link">Environment Variables</a></li><li class="md-nav__item"><a href="../../guides/build-performance/" title="Build Performance" class="md-nav__link">Build Performance</a></li><li class="md-nav__item"><a href="../../guides/csp/" title="Content Security Policies" class="md-nav__link">Content Security Policies</a></li><li class="md-nav__item"><a href="../../guides/development-vagrant/" title="Development - Vagrant" class="md-nav__link">Development - Vagrant</a></li><li class="md-nav__item"><a href="../../guides/installation/" title="Installation" class="md-nav__link">Installation</a></li><li class="md-nav__item"><a href="../../guides/scaffolding/" title="Scaffolding" class="md-nav__link">Scaffolding</a></li><li class="md-nav__item"><a href="../../guides/output-management/" title="Output Management" class="md-nav__link">Output Management</a></li><li class="md-nav__item"><a href="../../guides/hot-module-replacement/" title="Hot Module Replacement" class="md-nav__link">Hot Module Replacement</a></li><li class="md-nav__item"><a href="../../guides/tree-shaking/" title="Tree Shaking" class="md-nav__link">Tree Shaking</a></li><li class="md-nav__item"><a href="../../guides/production/" title="Production" class="md-nav__link">Production</a></li><li class="md-nav__item"><a href="../../guides/lazy-loading/" title="Lazy Loading" class="md-nav__link">Lazy Loading</a></li><li class="md-nav__item"><a href="../../guides/shimming/" title="Shimming" class="md-nav__link">Shimming</a></li><li class="md-nav__item"><a href="../../guides/typescript/" title="TypeScript" class="md-nav__link">TypeScript</a></li><li class="md-nav__item"><a href="../../guides/progressive-web-application/" title="Progressive Web Application" class="md-nav__link">Progressive Web Application</a></li><li class="md-nav__item"><a href="../../guides/public-path/" title="Public Path" class="md-nav__link">Public Path</a></li><li class="md-nav__item"><a href="../../guides/integrations/" title="Integrations" class="md-nav__link">Integrations</a></li><li class="md-nav__item"><a href="../../concepts/" title="Concepts" class="md-nav__link">Concepts</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#buildmodule" title="buildModule" class="md-nav__link">buildModule</a></li><li class="md-nav__item"><a href="#rebuildmodule" title="rebuildModule" class="md-nav__link">rebuildModule</a></li><li class="md-nav__item"><a href="#failedmodule" title="failedModule" class="md-nav__link">failedModule</a></li><li class="md-nav__item"><a href="#succeedmodule" title="succeedModule" class="md-nav__link">succeedModule</a></li><li class="md-nav__item"><a href="#finishmodules" title="finishModules" class="md-nav__link">finishModules</a></li><li class="md-nav__item"><a href="#finishrebuildingmodule" title="finishRebuildingModule" class="md-nav__link">finishRebuildingModule</a></li><li class="md-nav__item"><a href="#seal" title="seal" class="md-nav__link">seal</a></li><li class="md-nav__item"><a href="#unseal" title="unseal" class="md-nav__link">unseal</a></li><li class="md-nav__item"><a href="#optimizedependenciesbasic" title="optimizeDependenciesBasic" class="md-nav__link">optimizeDependenciesBasic</a></li><li class="md-nav__item"><a href="#optimizedependencies" title="optimizeDependencies" class="md-nav__link">optimizeDependencies</a></li><li class="md-nav__item"><a href="#optimizedependenciesadvanced" title="optimizeDependenciesAdvanced" class="md-nav__link">optimizeDependenciesAdvanced</a></li><li class="md-nav__item"><a href="#afteroptimizedependencies" title="afterOptimizeDependencies" class="md-nav__link">afterOptimizeDependencies</a></li><li class="md-nav__item"><a href="#optimize" title="optimize" class="md-nav__link">optimize</a></li><li class="md-nav__item"><a href="#optimizemodulesbasic" title="optimizeModulesBasic" class="md-nav__link">optimizeModulesBasic</a></li><li class="md-nav__item"><a href="#optimizemodules" title="optimizeModules" class="md-nav__link">optimizeModules</a></li><li class="md-nav__item"><a href="#optimizemodulesadvanced" title="optimizeModulesAdvanced" class="md-nav__link">optimizeModulesAdvanced</a></li><li class="md-nav__item"><a href="#afteroptimizemodules" title="afterOptimizeModules" class="md-nav__link">afterOptimizeModules</a></li><li class="md-nav__item"><a href="#optimizechunksbasic" title="optimizeChunksBasic" class="md-nav__link">optimizeChunksBasic</a></li><li class="md-nav__item"><a href="#optimizechunks" title="optimizeChunks" class="md-nav__link">optimizeChunks</a></li><li class="md-nav__item"><a href="#optimizechunksadvanced" title="optimizeChunksAdvanced" class="md-nav__link">optimizeChunksAdvanced</a></li><li class="md-nav__item"><a href="#afteroptimizechunks" title="afterOptimizeChunks" class="md-nav__link">afterOptimizeChunks</a></li><li class="md-nav__item"><a href="#optimizetree" title="optimizeTree" class="md-nav__link">optimizeTree</a></li><li class="md-nav__item"><a href="#afteroptimizetree" title="afterOptimizeTree" class="md-nav__link">afterOptimizeTree</a></li><li class="md-nav__item"><a href="#optimizechunkmodulesbasic" title="optimizeChunkModulesBasic" class="md-nav__link">optimizeChunkModulesBasic</a></li><li class="md-nav__item"><a href="#optimizechunkmodules" title="optimizeChunkModules" class="md-nav__link">optimizeChunkModules</a></li><li class="md-nav__item"><a href="#optimizechunkmodulesadvanced" title="optimizeChunkModulesAdvanced" class="md-nav__link">optimizeChunkModulesAdvanced</a></li><li class="md-nav__item"><a href="#afteroptimizechunkmodules" title="afterOptimizeChunkModules" class="md-nav__link">afterOptimizeChunkModules</a></li><li class="md-nav__item"><a href="#shouldrecord" title="shouldRecord" class="md-nav__link">shouldRecord</a></li><li class="md-nav__item"><a href="#revivemodules" title="reviveModules" class="md-nav__link">reviveModules</a></li><li class="md-nav__item"><a href="#optimizemoduleorder" title="optimizeModuleOrder" class="md-nav__link">optimizeModuleOrder</a></li><li class="md-nav__item"><a href="#advancedoptimizemoduleorder" title="advancedOptimizeModuleOrder" class="md-nav__link">advancedOptimizeModuleOrder</a></li><li class="md-nav__item"><a href="#beforemoduleids" title="beforeModuleIds" class="md-nav__link">beforeModuleIds</a></li><li class="md-nav__item"><a href="#moduleids" title="moduleIds" class="md-nav__link">moduleIds</a></li><li class="md-nav__item"><a href="#optimizemoduleids" title="optimizeModuleIds" class="md-nav__link">optimizeModuleIds</a></li><li class="md-nav__item"><a href="#afteroptimizemoduleids" title="afterOptimizeModuleIds" class="md-nav__link">afterOptimizeModuleIds</a></li><li class="md-nav__item"><a href="#revivechunks" title="reviveChunks" class="md-nav__link">reviveChunks</a></li><li class="md-nav__item"><a href="#optimizechunkorder" title="optimizeChunkOrder" class="md-nav__link">optimizeChunkOrder</a></li><li class="md-nav__item"><a href="#beforechunkids" title="beforeChunkIds" class="md-nav__link">beforeChunkIds</a></li><li class="md-nav__item"><a href="#chunkids" title="chunkIds" class="md-nav__link">chunkIds</a></li><li class="md-nav__item"><a href="#beforeoptimizechunkids" title="beforeOptimizeChunkIds" class="md-nav__link">beforeOptimizeChunkIds</a></li><li class="md-nav__item"><a href="#optimizechunkids" title="optimizeChunkIds" class="md-nav__link">optimizeChunkIds</a></li><li class="md-nav__item"><a href="#afteroptimizechunkids" title="afterOptimizeChunkIds" class="md-nav__link">afterOptimizeChunkIds</a></li><li class="md-nav__item"><a href="#recordmodules" title="recordModules" class="md-nav__link">recordModules</a></li><li class="md-nav__item"><a href="#recordchunks" title="recordChunks" class="md-nav__link">recordChunks</a></li><li class="md-nav__item"><a href="#optimizecodegeneration" title="optimizeCodeGeneration" class="md-nav__link">optimizeCodeGeneration</a></li><li class="md-nav__item"><a href="#beforemodulehash" title="beforeModuleHash" class="md-nav__link">beforeModuleHash</a></li><li class="md-nav__item"><a href="#aftermodulehash" title="afterModuleHash" class="md-nav__link">afterModuleHash</a></li><li class="md-nav__item"><a href="#beforeruntimerequirements" title="beforeRuntimeRequirements" class="md-nav__link">beforeRuntimeRequirements</a></li><li class="md-nav__item"><a href="#afterruntimerequirements" title="afterRuntimeRequirements" class="md-nav__link">afterRuntimeRequirements</a></li><li class="md-nav__item"><a href="#beforehash" title="beforeHash" class="md-nav__link">beforeHash</a></li><li class="md-nav__item"><a href="#afterhash" title="afterHash" class="md-nav__link">afterHash</a></li><li class="md-nav__item"><a href="#recordhash" title="recordHash" class="md-nav__link">recordHash</a></li><li class="md-nav__item"><a href="#record" title="record" class="md-nav__link">record</a></li><li class="md-nav__item"><a href="#beforemoduleassets" title="beforeModuleAssets" class="md-nav__link">beforeModuleAssets</a></li><li class="md-nav__item"><a href="#additionalchunkassets" title="additionalChunkAssets" class="md-nav__link">additionalChunkAssets</a></li><li class="md-nav__item"><a href="#shouldgeneratechunkassets" title="shouldGenerateChunkAssets" class="md-nav__link">shouldGenerateChunkAssets</a></li><li class="md-nav__item"><a href="#beforechunkassets" title="beforeChunkAssets" class="md-nav__link">beforeChunkAssets</a></li><li class="md-nav__item"><a href="#additionalassets" title="additionalAssets" class="md-nav__link">additionalAssets</a></li><li class="md-nav__item"><a href="#optimizechunkassets" title="optimizeChunkAssets" class="md-nav__link">optimizeChunkAssets</a></li><li class="md-nav__item"><a href="#afteroptimizechunkassets" title="afterOptimizeChunkAssets" class="md-nav__link">afterOptimizeChunkAssets</a></li><li class="md-nav__item"><a href="#optimizeassets" title="optimizeAssets" class="md-nav__link">optimizeAssets</a></li><li class="md-nav__item"><a href="#afteroptimizeassets" title="afterOptimizeAssets" class="md-nav__link">afterOptimizeAssets</a></li><li class="md-nav__item"><a href="#needadditionalseal" title="needAdditionalSeal" class="md-nav__link">needAdditionalSeal</a></li><li class="md-nav__item"><a href="#afterseal" title="afterSeal" class="md-nav__link">afterSeal</a></li><li class="md-nav__item"><a href="#chunkhash" title="chunkHash" class="md-nav__link">chunkHash</a></li><li class="md-nav__item"><a href="#moduleasset" title="moduleAsset" class="md-nav__link">moduleAsset</a></li><li class="md-nav__item"><a href="#chunkasset" title="chunkAsset" class="md-nav__link">chunkAsset</a></li><li class="md-nav__item"><a href="#assetpath" title="assetPath" class="md-nav__link">assetPath</a></li><li class="md-nav__item"><a href="#needadditionalpass" title="needAdditionalPass" class="md-nav__link">needAdditionalPass</a></li><li class="md-nav__item"><a href="#childcompiler" title="childCompiler" class="md-nav__link">childCompiler</a></li><li class="md-nav__item"><a href="#normalmoduleloader" title="normalModuleLoader" class="md-nav__link">normalModuleLoader</a></li><li class="md-nav__item"><a href="#dependencyreference" title="dependencyReference" class="md-nav__link">dependencyReference</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1>Compilation Hooks</h1><p>The <code>Compilation</code> module is used by the <code>Compiler</code> to create new compilations
+(or builds). A <code>compilation</code> instance has access to all modules and their
+dependencies (most of which are circular references). It is the literal
+compilation of all the modules in the dependency graph of an application.
+During the compilation phase, modules are loaded, sealed, optimized, chunked,
+hashed and restored.</p>
+<p>The <code>Compilation</code> class also extends <code>Tapable</code> and provides the following
+lifecycle hooks. They can be tapped the same way as compiler hooks:</p>
+<div class="codehilite"><pre><span></span><span class="nx">compilation</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">someHook</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+</pre></div>
+
+<p>As with the <code>compiler</code>, <code>tapAsync</code> and <code>tapPromise</code> may also be available
+depending on the type of hook.</p>
+<h3 id="buildmodule"><code>buildModule</code><a class="headerlink" href="#buildmodule" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Triggered before a module build has started, can be used to modify the module.</p>
+<ul>
+<li>Callback Parameters: <code>module</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nx">compilation</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">buildModule</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="s1">&#39;SourceMapDevToolModuleOptionsPlugin&#39;</span><span class="p">,</span>
+  <span class="nx">module</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">useSourceMap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+
+<h3 id="rebuildmodule"><code>rebuildModule</code><a class="headerlink" href="#rebuildmodule" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Fired before rebuilding a module.</p>
+<ul>
+<li>Callback Parameters: <code>module</code></li>
+</ul>
+<h3 id="failedmodule"><code>failedModule</code><a class="headerlink" href="#failedmodule" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Run when a module build has failed.</p>
+<ul>
+<li>Callback Parameters: <code>module</code> <code>error</code></li>
+</ul>
+<h3 id="succeedmodule"><code>succeedModule</code><a class="headerlink" href="#succeedmodule" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed when a module has been built successfully.</p>
+<ul>
+<li>Callback Parameters: <code>module</code></li>
+</ul>
+<h3 id="finishmodules"><code>finishModules</code><a class="headerlink" href="#finishmodules" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Called when all modules have been built without errors.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="finishrebuildingmodule"><code>finishRebuildingModule</code><a class="headerlink" href="#finishrebuildingmodule" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed when a module has been rebuilt, in case of both success or with errors.</p>
+<ul>
+<li>Callback Parameters: <code>module</code></li>
+</ul>
+<h3 id="seal"><code>seal</code><a class="headerlink" href="#seal" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Fired when the compilation stops accepting new modules.</p>
+<h3 id="unseal"><code>unseal</code><a class="headerlink" href="#unseal" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Fired when a compilation begins accepting new modules.</p>
+<h3 id="optimizedependenciesbasic"><code>optimizeDependenciesBasic</code><a class="headerlink" href="#optimizedependenciesbasic" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<p>Parameters: <code>modules</code></p>
+<h3 id="optimizedependencies"><code>optimizeDependencies</code><a class="headerlink" href="#optimizedependencies" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Fired at the beginning of dependency optimization.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimizedependenciesadvanced"><code>optimizeDependenciesAdvanced</code><a class="headerlink" href="#optimizedependenciesadvanced" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="afteroptimizedependencies"><code>afterOptimizeDependencies</code><a class="headerlink" href="#afteroptimizedependencies" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Fired after the dependency optimization.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimize"><code>optimize</code><a class="headerlink" href="#optimize" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Triggered at the beginning of the optimization phase.</p>
+<h3 id="optimizemodulesbasic"><code>optimizeModulesBasic</code><a class="headerlink" href="#optimizemodulesbasic" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimizemodules"><code>optimizeModules</code><a class="headerlink" href="#optimizemodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called at the beginning of the modules optimization phase. A plugin can tap into this hook to perform modules optimizations.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimizemodulesadvanced"><code>optimizeModulesAdvanced</code><a class="headerlink" href="#optimizemodulesadvanced" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="afteroptimizemodules"><code>afterOptimizeModules</code><a class="headerlink" href="#afteroptimizemodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called after modules optimization has completed.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimizechunksbasic"><code>optimizeChunksBasic</code><a class="headerlink" href="#optimizechunksbasic" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="optimizechunks"><code>optimizeChunks</code><a class="headerlink" href="#optimizechunks" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called at the beginning of the chunks optimizion phase. A plugin can tap into this hook to perform chunks optimizations.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="optimizechunksadvanced"><code>optimizeChunksAdvanced</code><a class="headerlink" href="#optimizechunksadvanced" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="afteroptimizechunks"><code>afterOptimizeChunks</code><a class="headerlink" href="#afteroptimizechunks" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Fired after chunk optimization has completed.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="optimizetree"><code>optimizeTree</code><a class="headerlink" href="#optimizetree" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Called before optimizing the dependency tree. A plugin can tap into this hook to perform a dependency tree optimization.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="afteroptimizetree"><code>afterOptimizeTree</code><a class="headerlink" href="#afteroptimizetree" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called after the dependency tree optimization has completed with success.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="optimizechunkmodulesbasic"><code>optimizeChunkModulesBasic</code><a class="headerlink" href="#optimizechunkmodulesbasic" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="optimizechunkmodules"><code>optimizeChunkModules</code><a class="headerlink" href="#optimizechunkmodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called after the tree optimization, at the beginning of the chunk modules optimization. A plugin can tap into this hook to perform optimizations of chunk modules.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="optimizechunkmodulesadvanced"><code>optimizeChunkModulesAdvanced</code><a class="headerlink" href="#optimizechunkmodulesadvanced" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="afteroptimizechunkmodules"><code>afterOptimizeChunkModules</code><a class="headerlink" href="#afteroptimizechunkmodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called after the chunkmodules optimization has successfully completed.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>modules</code></li>
+</ul>
+<h3 id="shouldrecord"><code>shouldRecord</code><a class="headerlink" href="#shouldrecord" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called to determine whether or not to store records. Returning anything <code>!== false</code> will prevent every other "record" hook from being executed (<code>record</code>, <code>recordModules</code>, <code>recordChunks</code> and <code>recordHash</code> )</p>
+<h3 id="revivemodules"><code>reviveModules</code><a class="headerlink" href="#revivemodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Restore module information from records.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code> <code>records</code></li>
+</ul>
+<h3 id="optimizemoduleorder"><code>optimizeModuleOrder</code><a class="headerlink" href="#optimizemoduleorder" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<p>Sort the modules in from most to least important.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="advancedoptimizemoduleorder"><code>advancedOptimizeModuleOrder</code><a class="headerlink" href="#advancedoptimizemoduleorder" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="beforemoduleids"><code>beforeModuleIds</code><a class="headerlink" href="#beforemoduleids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed before assigning an <code>id</code> to each module.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="moduleids"><code>moduleIds</code><a class="headerlink" href="#moduleids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called to assign an <code>id</code> to each module.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="optimizemoduleids"><code>optimizeModuleIds</code><a class="headerlink" href="#optimizemoduleids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called at the beginning of the modules <code>id</code> optimization.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="afteroptimizemoduleids"><code>afterOptimizeModuleIds</code><a class="headerlink" href="#afteroptimizemoduleids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called when the modules <code>id</code> optimization phase has completed.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="revivechunks"><code>reviveChunks</code><a class="headerlink" href="#revivechunks" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Restore chunk information from records.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>records</code></li>
+</ul>
+<h3 id="optimizechunkorder"><code>optimizeChunkOrder</code><a class="headerlink" href="#optimizechunkorder" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>W&gt; This hook will be removed in v5.0.0</p>
+<p>Sort the chunks in from most to least important.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="beforechunkids"><code>beforeChunkIds</code><a class="headerlink" href="#beforechunkids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed before assigning an <code>id</code> to each chunk.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="chunkids"><code>chunkIds</code><a class="headerlink" href="#chunkids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Called to assign an <code>id</code> to each chunk.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="beforeoptimizechunkids"><code>beforeOptimizeChunkIds</code><a class="headerlink" href="#beforeoptimizechunkids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Fired before chunks <code>id</code> optimization.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="optimizechunkids"><code>optimizeChunkIds</code><a class="headerlink" href="#optimizechunkids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called at the beginning of the chunks <code>id</code> optimization phase.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="afteroptimizechunkids"><code>afterOptimizeChunkIds</code><a class="headerlink" href="#afteroptimizechunkids" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Triggered after chunk <code>id</code> optimization has finished.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="recordmodules"><code>recordModules</code><a class="headerlink" href="#recordmodules" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Store module info to the records. This is triggered only if </p>
+<ul>
+<li>Callback Parameters: <code>modules</code> <code>records</code></li>
+</ul>
+<h3 id="recordchunks"><code>recordChunks</code><a class="headerlink" href="#recordchunks" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Store chunk info to the records.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code> <code>records</code></li>
+</ul>
+<h3 id="optimizecodegeneration"><code>optimizeCodeGeneration</code><a class="headerlink" href="#optimizecodegeneration" title="Permanent link">&para;</a></h3>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>A plugin can tap into this hook to optimize the generated code.</p>
+<ul>
+<li>Callback Parameters: <code>modules</code></li>
+</ul>
+<h3 id="beforemodulehash"><code>beforeModuleHash</code><a class="headerlink" href="#beforemodulehash" title="Permanent link">&para;</a></h3>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Called before hashing modules.</p>
+<h3 id="aftermodulehash"><code>afterModuleHash</code><a class="headerlink" href="#aftermodulehash" title="Permanent link">&para;</a></h3>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Called after hashing modules.</p>
+<h3 id="beforeruntimerequirements"><code>beforeRuntimeRequirements</code><a class="headerlink" href="#beforeruntimerequirements" title="Permanent link">&para;</a></h3>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Called before processing the modules required at runtime.</p>
+<ul>
+<li>Callback Parameters: <code>entrypoints</code></li>
+</ul>
+<h3 id="afterruntimerequirements"><code>afterRuntimeRequirements</code><a class="headerlink" href="#afterruntimerequirements" title="Permanent link">&para;</a></h3>
+<p>T&gt; This hook will be available in v5.0.0</p>
+<p>Called after processing the runtime requirements.</p>
+<h3 id="beforehash"><code>beforeHash</code><a class="headerlink" href="#beforehash" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called before the compilation is hashed.</p>
+<h3 id="afterhash"><code>afterHash</code><a class="headerlink" href="#afterhash" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called after the compilation is hashed.</p>
+<h3 id="recordhash"><code>recordHash</code><a class="headerlink" href="#recordhash" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Store information about record hash to the <code>records</code>.</p>
+<ul>
+<li>Callback Parameters: <code>records</code></li>
+</ul>
+<h3 id="record"><code>record</code><a class="headerlink" href="#record" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Store information about the <code>compilation</code> to the <code>records</code>.</p>
+<ul>
+<li>Callback Parameters: <code>compilation</code> <code>records</code></li>
+</ul>
+<h3 id="beforemoduleassets"><code>beforeModuleAssets</code><a class="headerlink" href="#beforemoduleassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed before module assets creation.</p>
+<h3 id="additionalchunkassets"><code>additionalChunkAssets</code><a class="headerlink" href="#additionalchunkassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Create additional assets for the chunks.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<h3 id="shouldgeneratechunkassets"><code>shouldGenerateChunkAssets</code><a class="headerlink" href="#shouldgeneratechunkassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called to determine wheter or not generate chunks assets. Returning anything <code>!== false</code> will allow chunk assets generation.</p>
+<h3 id="beforechunkassets"><code>beforeChunkAssets</code><a class="headerlink" href="#beforechunkassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed before creating the chunks assets.</p>
+<h3 id="additionalassets"><code>additionalAssets</code><a class="headerlink" href="#additionalassets" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Create additional assets for the compilation. This hook can be used to download
+an image, for example:</p>
+<div class="codehilite"><pre><span></span><span class="nx">compilation</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">additionalAssets</span><span class="p">.</span><span class="nx">tapAsync</span><span class="p">(</span><span class="s1">&#39;MyPlugin&#39;</span><span class="p">,</span> <span class="nx">callback</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">download</span><span class="p">(</span><span class="s1">&#39;https://img.shields.io/npm/v/webpack.svg&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">resp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="s1">&#39;webpack-version.svg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">toAsset</span><span class="p">(</span><span class="nx">resp</span><span class="p">);</span>
+      <span class="nx">callback</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;[webpack-example-plugin] Unable to download the image&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3 id="optimizechunkassets"><code>optimizeChunkAssets</code><a class="headerlink" href="#optimizechunkassets" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Optimize any chunk assets. The assets are stored in <code>compilation.assets</code>. A
+<code>Chunk</code> has a property <code>files</code> which points to all files created by a chunk.
+Any additional chunk assets are stored in <code>compilation.additionalChunkAssets</code>.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<p>Here's an example that simply adds a banner to each chunk.</p>
+<div class="codehilite"><pre><span></span><span class="nx">compilation</span><span class="p">.</span><span class="nx">hooks</span>
+  <span class="p">.</span><span class="nx">optimizeChunkAssets</span>
+  <span class="p">.</span><span class="nx">tapAsync</span><span class="p">(</span><span class="s1">&#39;MyPlugin&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">chunks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">chunk</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">chunk</span><span class="p">.</span><span class="nx">files</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">file</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="nx">file</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ConcatSource</span><span class="p">(</span>
+          <span class="s1">&#39;\/**Sweet Banner**\/&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;\n&#39;</span><span class="p">,</span>
+          <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="nx">file</span><span class="p">]</span>
+        <span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="nx">callback</span><span class="p">();</span>
+  <span class="p">});</span>
+</pre></div>
+
+<h3 id="afteroptimizechunkassets"><code>afterOptimizeChunkAssets</code><a class="headerlink" href="#afteroptimizechunkassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>The chunk assets have been optimized.</p>
+<ul>
+<li>Callback Parameters: <code>chunks</code></li>
+</ul>
+<p>Here's an example plugin from <a href="https://github.com/boopathi">@boopathi</a> that outputs exactly what went into each chunk.</p>
+<div class="codehilite"><pre><span></span><span class="nx">compilation</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">afterOptimizeChunkAssets</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="s1">&#39;MyPlugin&#39;</span><span class="p">,</span> <span class="nx">chunks</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">chunks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">chunk</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nx">chunk</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="nx">name</span><span class="o">:</span> <span class="nx">chunk</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+      <span class="nx">includes</span><span class="o">:</span> <span class="nx">chunk</span><span class="p">.</span><span class="nx">getModules</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">module</span> <span class="p">=&gt;</span> <span class="nx">module</span><span class="p">.</span><span class="nx">request</span><span class="p">)</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3 id="optimizeassets"><code>optimizeAssets</code><a class="headerlink" href="#optimizeassets" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Optimize all assets stored in <code>compilation.assets</code>.</p>
+<ul>
+<li>Callback Parameters: <code>assets</code></li>
+</ul>
+<h3 id="afteroptimizeassets"><code>afterOptimizeAssets</code><a class="headerlink" href="#afteroptimizeassets" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>The assets have been optimized.</p>
+<ul>
+<li>Callback Parameters: <code>assets</code></li>
+</ul>
+<h3 id="needadditionalseal"><code>needAdditionalSeal</code><a class="headerlink" href="#needadditionalseal" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called to determine if the compilation needs to be unsealed to include other files.</p>
+<h3 id="afterseal"><code>afterSeal</code><a class="headerlink" href="#afterseal" title="Permanent link">&para;</a></h3>
+<p><code>AsyncSeriesHook</code></p>
+<p>Executed right after <code>needAdditionalSeal</code>.</p>
+<h3 id="chunkhash"><code>chunkHash</code><a class="headerlink" href="#chunkhash" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Triggered to emit the hash for each chunk.</p>
+<ul>
+<li>Callback Parameters: <code>chunk</code> <code>chunkHash</code></li>
+</ul>
+<h3 id="moduleasset"><code>moduleAsset</code><a class="headerlink" href="#moduleasset" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Called when an asset from a module was added to the compilation.</p>
+<ul>
+<li>Callback Parameters: <code>module</code> <code>filename</code></li>
+</ul>
+<h3 id="chunkasset"><code>chunkAsset</code><a class="headerlink" href="#chunkasset" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Triggered when an asset from a chunk was added to the compilation.</p>
+<ul>
+<li>Callback Parameters: <code>chunk</code> <code>filename</code></li>
+</ul>
+<h3 id="assetpath"><code>assetPath</code><a class="headerlink" href="#assetpath" title="Permanent link">&para;</a></h3>
+<p><code>SyncWaterfallHook</code></p>
+<p>Called to determine the path of an asset.</p>
+<ul>
+<li>Callback Parameters: <code>path</code> <code>options</code></li>
+</ul>
+<h3 id="needadditionalpass"><code>needAdditionalPass</code><a class="headerlink" href="#needadditionalpass" title="Permanent link">&para;</a></h3>
+<p><code>SyncBailHook</code></p>
+<p>Called to determine if a asset need to be processed further after being emitted. </p>
+<h3 id="childcompiler"><code>childCompiler</code><a class="headerlink" href="#childcompiler" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>Executed after setting up a child compiler.</p>
+<ul>
+<li>Callback Parameters: <code>childCompiler</code> <code>compilerName</code> <code>compilerIndex</code></li>
+</ul>
+<h3 id="normalmoduleloader"><code>normalModuleLoader</code><a class="headerlink" href="#normalmoduleloader" title="Permanent link">&para;</a></h3>
+<p><code>SyncHook</code></p>
+<p>W&gt; This hook will be moved in v5.0.0 to <code>NormalModule.getCompilationHooks(compilation).loader</code></p>
+<p>The normal module loader is the function that actually loads all the modules</p>
+<p>in the module graph (one-by-one).</p>
+<ul>
+<li>Callback Parameters: <code>loaderContext</code> <code>module</code></li>
+</ul>
+<h3 id="dependencyreference"><code>dependencyReference</code><a class="headerlink" href="#dependencyreference" title="Permanent link">&para;</a></h3>
+<p><code>SyncWaterfallHook</code></p>
+<p>This hooks allows changing the references reported by dependencies.</p>
+<ul>
+<li>Callback Parameters: <code>depRef</code> <code>dependency</code> <code>module</code></li>
+</ul>
+<p>W&gt; The <code>module</code> parameter will be removed in v5.0.0</p></article></div></div></main><footer class="md-footer"><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.d5a09f94.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script></body></html>
