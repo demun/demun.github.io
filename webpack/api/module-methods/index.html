@@ -1,0 +1,308 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="demun blog"><link rel="canonical" href="https://demun.github.io/webpack/api/module-methods/"><meta name="author" content="demun"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Module Methods</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=맑은고딕:300,400,400i,700|맑은고딕&display=swap"><style>body,input{font-family:"맑은고딕","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"맑은고딕","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../assets/stylesheets/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#es6-recommended" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://demun.github.io/" title="demun.github.io" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">demun.github.io</span><span class="md-header-nav__topic">Module Methods</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../../.." title="홈" class="md-tabs__link md-tabs__link--active">홈</a></li><li class="md-tabs__item"><a href="../../../publisher-report/" title="Publisher report" class="md-tabs__link">Publisher report</a></li><li class="md-tabs__item"><a href="../../../vscode/" title="Visual Studio Code" class="md-tabs__link">Visual Studio Code</a></li><li class="md-tabs__item"><a href="../../../mkdocs/" title="MkDocs" class="md-tabs__link">MkDocs</a></li><li class="md-tabs__item"><a href="../../../material-theme/" title="MkDocs Material" class="md-tabs__link">MkDocs Material</a></li><li class="md-tabs__item"><a href="../../guides/getting-started/" title="Webpack" class="md-tabs__link">Webpack</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://demun.github.io/" title="demun.github.io" class="md-nav__button md-logo"><i class="md-icon"></i></a>demun.github.io</label><div class="md-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="홈" class="md-nav__link">홈</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Publisher report</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Publisher report</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../publisher-report/" title="HTML소개" class="md-nav__link">HTML소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/00_default/" title="HTML기본" class="md-nav__link">HTML기본</a></li><li class="md-nav__item"><a href="../../../publisher-report/01_html/" title="HTML만들기" class="md-nav__link">HTML만들기</a></li><li class="md-nav__item"><a href="../../../publisher-report/02_p/" title="단락,블럭,주석" class="md-nav__link">단락,블럭,주석</a></li><li class="md-nav__item"><a href="../../../publisher-report/03_a/" title="링크,이미지" class="md-nav__link">링크,이미지</a></li><li class="md-nav__item"><a href="../../../publisher-report/04_list/" title="리스트" class="md-nav__link">리스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/05_table/" title="표" class="md-nav__link">표</a></li><li class="md-nav__item"><a href="../../../publisher-report/06_html5/" title="HTML5" class="md-nav__link">HTML5</a></li><li class="md-nav__item"><a href="../../../publisher-report/07_css/" title="CSS소개" class="md-nav__link">CSS소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/08_color/" title="색상,배경,테두리" class="md-nav__link">색상,배경,테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/09_padding/" title="여백,높이" class="md-nav__link">여백,높이</a></li><li class="md-nav__item"><a href="../../../publisher-report/10_box/" title="박스모델" class="md-nav__link">박스모델</a></li><li class="md-nav__item"><a href="../../../publisher-report/11_text/" title="텍스트" class="md-nav__link">텍스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/12_list/" title="목록,표" class="md-nav__link">목록,표</a></li><li class="md-nav__item"><a href="../../../publisher-report/13_display/" title="디스플레이" class="md-nav__link">디스플레이</a></li><li class="md-nav__item"><a href="../../../publisher-report/14_overflow/" title="오버플로우" class="md-nav__link">오버플로우</a></li><li class="md-nav__item"><a href="../../../publisher-report/15_radius/" title="둥근테두리" class="md-nav__link">둥근테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/16_gradient/" title="그라디언트" class="md-nav__link">그라디언트</a></li><li class="md-nav__item"><a href="../../../publisher-report/17_text/" title="텍스트효과" class="md-nav__link">텍스트효과</a></li><li class="md-nav__item"><a href="../../../publisher-report/18_shadow/" title="그림자" class="md-nav__link">그림자</a></li><li class="md-nav__item"><a href="../../../publisher-report/19_webfont/" title="웹글꼴" class="md-nav__link">웹글꼴</a></li><li class="md-nav__item"><a href="../../../publisher-report/20_viewport/" title="뷰포트" class="md-nav__link">뷰포트</a></li><li class="md-nav__item"><a href="../../../publisher-report/21_fixed/" title="레이아웃 고정형" class="md-nav__link">레이아웃 고정형</a></li><li class="md-nav__item"><a href="../../../publisher-report/22_flow/" title="레이아웃 유동형" class="md-nav__link">레이아웃 유동형</a></li><li class="md-nav__item"><a href="../../../publisher-report/23_response/" title="레이아웃 반응형" class="md-nav__link">레이아웃 반응형</a></li><li class="md-nav__item"><a href="../../../publisher-report/24_exam/" title="호환성 보기 설정" class="md-nav__link">호환성 보기 설정</a></li><li class="md-nav__item"><a href="../../../publisher-report/25_exam/" title="개발자 도구 확인" class="md-nav__link">개발자 도구 확인</a></li><li class="md-nav__item"><a href="../../../publisher-report/26_exam/" title="QR코드 생성" class="md-nav__link">QR코드 생성</a></li><li class="md-nav__item"><a href="../../../publisher-report/27_exam/" title="모바일 검수" class="md-nav__link">모바일 검수</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">Visual Studio Code</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">Visual Studio Code</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../vscode/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../vscode/shortcuts/" title="단축키" class="md-nav__link">단축키</a></li><li class="md-nav__item"><a href="../../../vscode/git/" title="Git" class="md-nav__link">Git</a></li><li class="md-nav__item"><a href="../../../vscode/debug/" title="Debug" class="md-nav__link">Debug</a></li><li class="md-nav__item"><a href="../../../vscode/task/" title="Task" class="md-nav__link">Task</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">MkDocs</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">MkDocs</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../mkdocs/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../mkdocs/how/" title="사용법" class="md-nav__link">사용법</a></li><li class="md-nav__item"><a href="../../../mkdocs/theme/" title="테마" class="md-nav__link">테마</a></li><li class="md-nav__item"><a href="../../../mkdocs/tree/" title="구조" class="md-nav__link">구조</a></li><li class="md-nav__item"><a href="../../../mkdocs/others/" title="기타" class="md-nav__link">기타</a></li><li class="md-nav__item"><a href="../../../mkdocs/admonition/" title="Admonition" class="md-nav__link">Admonition</a></li><li class="md-nav__item"><a href="../../../mkdocs/publish/" title="배포" class="md-nav__link">배포</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">MkDocs Material</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">MkDocs Material</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../material-theme/" title="Material" class="md-nav__link">Material</a></li><li class="md-nav__item"><a href="../../../material-theme/getting-started/" title="Getting started" class="md-nav__link">Getting started</a></li><li class="md-nav__item"><a href="../../../material-theme/specimen/" title="Specimen" class="md-nav__link">Specimen</a></li><li class="md-nav__item"><a href="../../../material-theme/customization/" title="Customization" class="md-nav__link">Customization</a></li><li class="md-nav__item"><a href="../../../material-theme/compliance/" title="Compliance with GDPR" class="md-nav__link">Compliance with GDPR</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/admonition/" title="Admonition" class="md-nav__link">Admonition</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/codehilite/" title="CodeHilite" class="md-nav__link">CodeHilite</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/footnotes/" title="Footnotes" class="md-nav__link">Footnotes</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/metadata/" title="Metadata" class="md-nav__link">Metadata</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/permalinks/" title="Permalinks" class="md-nav__link">Permalinks</a></li><li class="md-nav__item"><a href="../../../material-theme/extensions/pymdown/" title="PyMdown" class="md-nav__link">PyMdown</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">Webpack</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Webpack</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../guides/getting-started/" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="../../guides/asset-management/" title="Asset Management" class="md-nav__link">Asset Management</a></li><li class="md-nav__item"><a href="../../guides/development/" title="Development" class="md-nav__link">Development</a></li><li class="md-nav__item"><a href="../../guides/code-splitting/" title="Code Spliting" class="md-nav__link">Code Spliting</a></li><li class="md-nav__item"><a href="../../guides/caching/" title="Caching" class="md-nav__link">Caching</a></li><li class="md-nav__item"><a href="../../guides/author-libraries/" title="Authoring Libraries" class="md-nav__link">Authoring Libraries</a></li><li class="md-nav__item"><a href="../../guides/environment-variables/" title="Environment Variables" class="md-nav__link">Environment Variables</a></li><li class="md-nav__item"><a href="../../guides/build-performance/" title="Build Performance" class="md-nav__link">Build Performance</a></li><li class="md-nav__item"><a href="../../guides/csp/" title="Content Security Policies" class="md-nav__link">Content Security Policies</a></li><li class="md-nav__item"><a href="../../guides/development-vagrant/" title="Development - Vagrant" class="md-nav__link">Development - Vagrant</a></li><li class="md-nav__item"><a href="../../guides/installation/" title="Installation" class="md-nav__link">Installation</a></li><li class="md-nav__item"><a href="../../guides/scaffolding/" title="Scaffolding" class="md-nav__link">Scaffolding</a></li><li class="md-nav__item"><a href="../../guides/output-management/" title="Output Management" class="md-nav__link">Output Management</a></li><li class="md-nav__item"><a href="../../guides/hot-module-replacement/" title="Hot Module Replacement" class="md-nav__link">Hot Module Replacement</a></li><li class="md-nav__item"><a href="../../guides/tree-shaking/" title="Tree Shaking" class="md-nav__link">Tree Shaking</a></li><li class="md-nav__item"><a href="../../guides/production/" title="Production" class="md-nav__link">Production</a></li><li class="md-nav__item"><a href="../../guides/lazy-loading/" title="Lazy Loading" class="md-nav__link">Lazy Loading</a></li><li class="md-nav__item"><a href="../../guides/shimming/" title="Shimming" class="md-nav__link">Shimming</a></li><li class="md-nav__item"><a href="../../guides/typescript/" title="TypeScript" class="md-nav__link">TypeScript</a></li><li class="md-nav__item"><a href="../../guides/progressive-web-application/" title="Progressive Web Application" class="md-nav__link">Progressive Web Application</a></li><li class="md-nav__item"><a href="../../guides/public-path/" title="Public Path" class="md-nav__link">Public Path</a></li><li class="md-nav__item"><a href="../../guides/integrations/" title="Integrations" class="md-nav__link">Integrations</a></li><li class="md-nav__item"><a href="../../concepts/" title="Concepts" class="md-nav__link">Concepts</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#es6-recommended" title="ES6 (Recommended)" class="md-nav__link">ES6 (Recommended)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#import" title="import" class="md-nav__link">import</a></li><li class="md-nav__item"><a href="#export" title="export" class="md-nav__link">export</a></li><li class="md-nav__item"><a href="#import_1" title="import()" class="md-nav__link">import()</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#magic-comments" title="Magic Comments" class="md-nav__link">Magic Comments</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#commonjs" title="CommonJS" class="md-nav__link">CommonJS</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#require" title="require" class="md-nav__link">require</a></li><li class="md-nav__item"><a href="#requireresolve" title="require.resolve" class="md-nav__link">require.resolve</a></li><li class="md-nav__item"><a href="#requirecache" title="require.cache" class="md-nav__link">require.cache</a></li><li class="md-nav__item"><a href="#requireensure" title="require.ensure" class="md-nav__link">require.ensure</a></li></ul></nav></li><li class="md-nav__item"><a href="#amd" title="AMD" class="md-nav__link">AMD</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#define-with-factory" title="define (with factory)" class="md-nav__link">define (with factory)</a></li><li class="md-nav__item"><a href="#define-with-value" title="define (with value)" class="md-nav__link">define (with value)</a></li><li class="md-nav__item"><a href="#require-amd-version" title="require (amd-version)" class="md-nav__link">require (amd-version)</a></li></ul></nav></li><li class="md-nav__item"><a href="#labeled-modules" title="Labeled Modules" class="md-nav__link">Labeled Modules</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#export-label" title="export label" class="md-nav__link">export label</a></li><li class="md-nav__item"><a href="#require-label" title="require label" class="md-nav__link">require label</a></li></ul></nav></li><li class="md-nav__item"><a href="#webpack" title="Webpack" class="md-nav__link">Webpack</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#requirecontext" title="require.context" class="md-nav__link">require.context</a></li><li class="md-nav__item"><a href="#requireinclude" title="require.include" class="md-nav__link">require.include</a></li><li class="md-nav__item"><a href="#requireresolveweak" title="require.resolveWeak" class="md-nav__link">require.resolveWeak</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1>Module Methods</h1><p>This section covers all methods available in code compiled with webpack. When using webpack to bundle your application, you can pick from a variety of module syntax styles including <a href="https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015">ES6</a>, <a href="https://en.wikipedia.org/wiki/CommonJS">CommonJS</a>, and <a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD</a>.</p>
+<p>W&gt; While webpack supports multiple module syntaxes, we recommend following a single syntax for consistency and to avoid odd behaviors/bugs. Here's <a href="https://github.com/webpack/webpack.js.org/issues/552">one example</a> of mixing ES6 and CommonJS, however there are surely others.</p>
+<h2 id="es6-recommended">ES6 (Recommended)<a class="headerlink" href="#es6-recommended" title="Permanent link">&para;</a></h2>
+<p>Version 2 of webpack supports ES6 module syntax natively, meaning you can use <code>import</code> and <code>export</code> without a tool like babel to handle this for you. Keep in mind that you will still probably need babel for other ES6+ features. The following methods are supported by webpack:</p>
+<h3 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link">&para;</a></h3>
+<p>Statically <code>import</code> the <code>export</code>s of another module.</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">MyModule</span> <span class="nx">from</span> <span class="s1">&#39;./my-module.js&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NamedExport</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./other-module.js&#39;</span><span class="p">;</span>
+</pre></div>
+
+<p>W&gt; The keyword here is <strong>statically</strong>. Normal <code>import</code> statement cannot be used dynamically within other logic or contain variables. See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">spec</a> for more information and <code>import()</code> below for dynamic usage.</p>
+<h3 id="export"><code>export</code><a class="headerlink" href="#export" title="Permanent link">&para;</a></h3>
+<p>Export anything as a <code>default</code> or named export.</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Named exports</span>
+<span class="kr">export</span> <span class="kd">var</span> <span class="nx">Count</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">Multiply</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Default export</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="c1">// Some data...</span>
+<span class="p">};</span>
+</pre></div>
+
+<h3 id="import_1"><code>import()</code><a class="headerlink" href="#import_1" title="Permanent link">&para;</a></h3>
+<p><code>import('path/to/module') -&gt; Promise</code></p>
+<p>Dynamically load modules. Calls to <code>import()</code> are treated as split points, meaning the requested module and its children are split out into a separate chunk.</p>
+<p>T&gt; The <a href="https://whatwg.github.io/loader/">ES2015 Loader spec</a> defines <code>import()</code> as method to load ES2015 modules dynamically on runtime.</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="nx">module</span><span class="p">.</span><span class="nx">hot</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;lodash&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Do something with lodash (a.k.a &#39;_&#39;)...</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>W&gt; This feature relies on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> internally. If you use <code>import()</code> with older browsers, remember to shim <code>Promise</code> using a polyfill such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> or <a href="https://github.com/taylorhakes/promise-polyfill">promise-polyfill</a>.</p>
+<h4 id="magic-comments">Magic Comments<a class="headerlink" href="#magic-comments" title="Permanent link">&para;</a></h4>
+<p>Inline comments to make features work. By adding comments to the import we can do things such as name our chunk or select different modes. For a full list of these magic comments see the code below followed by an explanation of what these comments do. </p>
+<div class="codehilite"><pre><span></span><span class="c1">// Single target</span>
+<span class="kr">import</span><span class="p">(</span>
+  <span class="cm">/* webpackChunkName: &quot;my-chunk-name&quot; */</span>
+  <span class="cm">/* webpackMode: &quot;lazy&quot; */</span>
+  <span class="s1">&#39;module&#39;</span>
+<span class="p">);</span>
+
+<span class="c1">// Multiple possible targets</span>
+<span class="kr">import</span><span class="p">(</span>
+  <span class="cm">/* webpackInclude: /\.json$/ */</span>
+  <span class="cm">/* webpackExclude: /\.noimport\.json$/ */</span>
+  <span class="cm">/* webpackChunkName: &quot;my-chunk-name&quot; */</span>
+  <span class="cm">/* webpackMode: &quot;lazy&quot; */</span>
+  <span class="cm">/* webpackPrefetch: true */</span> 
+  <span class="cm">/* webpackPreload: true */</span>
+  <span class="sb">`./locale/</span><span class="si">${</span><span class="nx">language</span><span class="si">}</span><span class="sb">`</span>
+<span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackIgnore: true */</span> <span class="s1">&#39;ignored-module.js&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p><code>webpackIgnore</code>: Disables dynamic import parsing when set to <code>true</code>.</p>
+<p>W&gt; Note that setting <code>webpackIgnore</code> to <code>true</code> opts out of code splitting.</p>
+<p><code>webpackChunkName</code>: A name for the new chunk. Since webpack 2.6.0, the placeholders <code>[index]</code> and <code>[request]</code> are supported within the given string to an incremented number or the actual resolved filename respectively. Adding this comment will cause our separate chunk to be named [my-chunk-name].js instead of [id].js.</p>
+<p><code>webpackMode</code>: Since webpack 2.6.0, different modes for resolving dynamic imports can be specified. The following options are supported:</p>
+<ul>
+<li><code>"lazy"</code> (default): Generates a lazy-loadable chunk for each <code>import()</code>ed module.</li>
+<li><code>"lazy-once"</code>: Generates a single lazy-loadable chunk that can satisfy all calls to <code>import()</code>. The chunk will be fetched on the first call to <code>import()</code>, and subsequent calls to <code>import()</code> will use the same network response. Note that this only makes sense in the case of a partially dynamic statement, e.g. <code>import(`./locales/${language}.json`)</code>, where there are multiple module paths that could potentially be requested.</li>
+<li><code>"eager"</code>: Generates no extra chunk. All modules are included in the current chunk and no additional network requests are made. A <code>Promise</code> is still returned but is already resolved. In contrast to a static import, the module isn't executed until the call to <code>import()</code> is made.</li>
+<li><code>"weak"</code>: Tries to load the module if the module function has already been loaded in some other way (i. e. another chunk imported it or a script containing the module was loaded). A <code>Promise</code> is still returned but, only successfully resolves if the chunks are already on the client. If the module is not available, the <code>Promise</code> is rejected. A network request will never be performed. This is useful for universal rendering when required chunks are always manually served in initial requests (embedded within the page), but not in cases where app navigation will trigger an import not initially served.</li>
+</ul>
+<p><code>webpackPrefetch</code>: Tells the browser that the resource is probably needed for some navigation in the future. Check out the guide for more information on <a href="/guides/code-splitting/#prefetching-preloading-modules">how webpackPrefetch works</a>.</p>
+<p><code>webpackPreload</code>: Tells the browser that the resource might be needed during the current navigation. Check out the guide for more information on <a href="/guides/code-splitting/#prefetching-preloading-modules">how webpackPreload works</a>.</p>
+<p>T&gt; Note that all options can be combined like so <code>/* webpackMode: "lazy-once", webpackChunkName: "all-i18n-data" */</code>. This is wrapped in a JavaScript object and executed using <a href="https://nodejs.org/dist/latest-v8.x/docs/api/vm.html">node VM</a>. You do not need to add curly brackets.</p>
+<p><code>webpackInclude</code>: A regular expression that will be matched against during import resolution. Only modules that match <strong>will be bundled</strong>.</p>
+<p><code>webpackExclude</code>: A regular expression that will be matched against during import resolution. Any module that matches <strong>will not be bundled</strong>.</p>
+<p>T&gt; Note that <code>webpackInclude</code> and <code>webpackExclude</code> options do not interfere with the prefix. eg: <code>./locale</code>.</p>
+<p>W&gt; Fully dynamic statements, such as <code>import(foo)</code>, <strong>will fail</strong> because webpack requires at least some file location information. This is because <code>foo</code> could potentially be any path to any file in your system or project. The <code>import()</code> must contain at least some information about where the module is located, so bundling can be limited to a specific directory or set of files.</p>
+<p>W&gt; Every module that could potentially be requested on an <code>import()</code> call is included. For example, <code>import(`./locale/${language}.json`)</code> will cause every <code>.json</code> file in the <code>./locale</code> directory to be bundled into the new chunk. At run time, when the variable <code>language</code> has been computed, any file like <code>english.json</code> or <code>german.json</code> will be available for consumption. Using the <code>webpackInclude</code> and <code>webpackExclude</code> options allows us to add regex patterns that reduce the files that webpack will bundle for this import.</p>
+<p>W&gt; The use of <code>System.import</code> in webpack <a href="https://github.com/webpack/webpack/issues/2163">did not fit the proposed spec</a>, so it was deprecated in webpack <a href="https://github.com/webpack/webpack/releases/tag/v2.1.0-beta.28">2.1.0-beta.28</a> in favor of <code>import()</code>.</p>
+<h2 id="commonjs">CommonJS<a class="headerlink" href="#commonjs" title="Permanent link">&para;</a></h2>
+<p>The goal of CommonJS is to specify an ecosystem for JavaScript outside the browser. The following CommonJS methods are supported by webpack:</p>
+<h3 id="require"><code>require</code><a class="headerlink" href="#require" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="nx">dependency</span><span class="o">:</span> <span class="nb">String</span><span class="p">);</span>
+</pre></div>
+
+<p>Synchronously retrieve the exports from another module. The compiler will ensure that the dependency is available in the output bundle.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">myModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;my-module&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>W&gt; Using it asynchronously may not have the expected effect.</p>
+<h3 id="requireresolve"><code>require.resolve</code><a class="headerlink" href="#requireresolve" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">dependency</span><span class="o">:</span> <span class="nb">String</span><span class="p">);</span>
+</pre></div>
+
+<p>Synchronously retrieve a module's ID. The compiler will ensure that the dependency is available in the output bundle. See <a href="/api/module-variables#module-id-commonjs-"><code>module.id</code></a> for more information.</p>
+<p>W&gt; Module ID is a number in webpack (in contrast to NodeJS where it is a string -- the filename).</p>
+<h3 id="requirecache"><code>require.cache</code><a class="headerlink" href="#requirecache" title="Permanent link">&para;</a></h3>
+<p>Multiple requires of the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export.</p>
+<p>W&gt; This is only needed in rare cases for compatibility!</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">d1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dependency&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dependency&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="nx">d1</span><span class="p">;</span>
+<span class="k">delete</span> <span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;dependency&#39;</span><span class="p">)];</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dependency&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">d1</span><span class="p">;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1">// in file.js</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">module</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">===</span> <span class="nx">module</span><span class="p">;</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./file.js&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">;</span>
+<span class="k">delete</span> <span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">module</span><span class="p">.</span><span class="nx">id</span><span class="p">];</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">module</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./file.js&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">;</span> <span class="c1">// in theory; in praxis this causes a stack overflow</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">module</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">module</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="requireensure"><code>require.ensure</code><a class="headerlink" href="#requireensure" title="Permanent link">&para;</a></h3>
+<p>W&gt; <code>require.ensure()</code> is specific to webpack and superseded by <code>import()</code>.</p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">(</span>
+  <span class="nx">dependencies</span><span class="o">:</span> <span class="nb">String</span><span class="p">[],</span>
+  <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">),</span>
+  <span class="nx">errorCallback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">),</span>
+  <span class="nx">chunkName</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Split out the given <code>dependencies</code> to a separate bundle that will be loaded asynchronously. When using CommonJS module syntax, this is the only way to dynamically load dependencies. Meaning, this code can be run within execution, only loading the <code>dependencies</code> if certain conditions are met.</p>
+<p>W&gt; This feature relies on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> internally. If you use <code>require.ensure</code> with older browsers, remember to shim <code>Promise</code> using a polyfill such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> or <a href="https://github.com/taylorhakes/promise-polyfill">promise-polyfill</a>.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;normal-dep&#39;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="nx">module</span><span class="p">.</span><span class="nx">hot</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">);</span>
+
+    <span class="c1">// Do something special...</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The following parameters are supported in the order specified above:</p>
+<ul>
+<li><code>dependencies</code>: An array of strings declaring all modules required for the code in the <code>callback</code> to execute.</li>
+<li><code>callback</code>: A function that webpack will execute once the dependencies are loaded. An implementation of the <code>require</code> function is sent as a parameter to this function. The function body can use this to further <code>require()</code> modules it needs for execution.</li>
+<li><code>errorCallback</code>: A function that is executed when webpack fails to load the dependencies.</li>
+<li><code>chunkName</code>: A name given to the chunk created by this particular <code>require.ensure()</code>. By passing the same <code>chunkName</code> to various <code>require.ensure()</code> calls, we can combine their code into a single chunk, resulting in only one bundle that the browser must load.</li>
+</ul>
+<p>W&gt; Although the implementation of <code>require</code> is passed as an argument to the <code>callback</code> function, using an arbitrary name e.g. <code>require.ensure([], function(request) { request('someModule'); })</code> isn't handled by webpack's static parser. Use <code>require</code> instead, e.g. <code>require.ensure([], function(require) { require('someModule'); })</code>.</p>
+<h2 id="amd">AMD<a class="headerlink" href="#amd" title="Permanent link">&para;</a></h2>
+<p>Asynchronous Module Definition (AMD) is a JavaScript specification that defines an interface for writing and loading modules. The following AMD methods are supported by webpack:</p>
+<h3 id="define-with-factory"><code>define</code> (with factory)<a class="headerlink" href="#define-with-factory" title="Permanent link">&para;</a></h3>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">([</span><span class="nx">name</span><span class="o">:</span> <span class="nb">String</span><span class="p">],</span> <span class="p">[</span><span class="nx">dependencies</span><span class="o">:</span> <span class="nb">String</span><span class="p">[]],</span> <span class="nx">factoryMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">(...))</span>
+</pre></div>
+
+<p>If <code>dependencies</code> are provided, <code>factoryMethod</code> will be called with the exports of each dependency (in the same order). If <code>dependencies</code> are not provided, <code>factoryMethod</code> is called with <code>require</code>, <code>exports</code> and <code>module</code> (for compatibility!). If this function returns a value, this value is exported by the module. The compiler ensures that each dependency is available.</p>
+<p>W&gt; Note that webpack ignores the <code>name</code> argument.</p>
+<div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">,</span> <span class="s1">&#39;my-module&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">myModule</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Do something with $ and myModule...</span>
+
+  <span class="c1">// Export a function</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>W&gt; This CANNOT be used in an asynchronous function.</p>
+<h3 id="define-with-value"><code>define</code> (with value)<a class="headerlink" href="#define-with-value" title="Permanent link">&para;</a></h3>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span> <span class="o">!</span><span class="nb">Function</span><span class="p">)</span>
+</pre></div>
+
+<p>This will simply export the provided <code>value</code>. The <code>value</code> here can be anything except a function.</p>
+<div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">({</span>
+  <span class="nx">answer</span><span class="o">:</span> <span class="mi">42</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>W&gt; This CANNOT be used in an async function.</p>
+<h3 id="require-amd-version"><code>require</code> (amd-version)<a class="headerlink" href="#require-amd-version" title="Permanent link">&para;</a></h3>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="nx">dependencies</span><span class="o">:</span> <span class="nb">String</span><span class="p">[],</span> <span class="p">[</span><span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(...)])</span>
+</pre></div>
+
+<p>Similar to <code>require.ensure</code>, this will split the given <code>dependencies</code> into a separate bundle that will be loaded asynchronously. The <code>callback</code> will be called with the exports of each dependency in the <code>dependencies</code> array.</p>
+<p>W&gt; This feature relies on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> internally. If you use AMD with older browsers (e.g. Internet Explorer 11), remember to shim <code>Promise</code> using a polyfill such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> or <a href="https://github.com/taylorhakes/promise-polyfill">promise-polyfill</a>.</p>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>W&gt; There is no option to provide a chunk name.</p>
+<h2 id="labeled-modules">Labeled Modules<a class="headerlink" href="#labeled-modules" title="Permanent link">&para;</a></h2>
+<p>The internal <code>LabeledModulesPlugin</code> enables you to use the following methods for exporting and requiring within your modules:</p>
+<h3 id="export-label"><code>export</code> label<a class="headerlink" href="#export-label" title="Permanent link">&para;</a></h3>
+<p>Export the given <code>value</code>. The label can occur before a function declaration or a variable declaration. The function name or variable name is the identifier under which the value is exported.</p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="kr">export</span><span class="o">:</span> <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kr">export</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">method</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Do something...</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>W&gt; Using it in an async function may not have the expected effect.</p>
+<h3 id="require-label"><code>require</code> label<a class="headerlink" href="#require-label" title="Permanent link">&para;</a></h3>
+<p>Make all exports from the dependency available in the current scope. The <code>require</code> label can occur before a string. The dependency must export values with the <code>export</code> label. CommonJS or AMD modules cannot be consumed.</p>
+<p><strong>some-dependency.js</strong></p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="kr">export</span><span class="o">:</span> <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kr">export</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">method</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Do something...</span>
+<span class="p">};</span>
+</pre></div>
+
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="o">:</span> <span class="s1">&#39;some-dependency&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
+<span class="nx">method</span><span class="p">(...);</span>
+</pre></div>
+
+<h2 id="webpack">Webpack<a class="headerlink" href="#webpack" title="Permanent link">&para;</a></h2>
+<p>Aside from the module syntaxes described above, webpack also allows a few custom, webpack-specific methods:</p>
+<h3 id="requirecontext"><code>require.context</code><a class="headerlink" href="#requirecontext" title="Permanent link">&para;</a></h3>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span>
+  <span class="nx">directory</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="nx">includeSubdirs</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="cm">/* optional, default true */</span><span class="p">,</span>
+  <span class="nx">filter</span><span class="o">:</span> <span class="nb">RegExp</span> <span class="cm">/* optional, default /^\.\/.*$/, any file */</span><span class="p">,</span>
+  <span class="nx">mode</span><span class="o">:</span> <span class="nb">String</span>  <span class="cm">/* optional, &#39;sync&#39; | &#39;eager&#39; | &#39;weak&#39; | &#39;lazy&#39; | &#39;lazy-once&#39;, default &#39;sync&#39; */</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Specify a whole group of dependencies using a path to the <code>directory</code>, an option to <code>includeSubdirs</code>, a <code>filter</code> for more fine grained control of the modules included, and a <code>mode</code> to define the way how loading will work. Underlying modules can then be easily resolved later on:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="s1">&#39;components&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="sr">/\.html$/</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">componentA</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;componentA&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>If <code>mode</code> is specified as "lazy", the underlying modules will be loaded asynchronously:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="s1">&#39;locales&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="sr">/\.json$/</span><span class="p">,</span> <span class="s1">&#39;lazy&#39;</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">(</span><span class="s1">&#39;localeA&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">locale</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// do something with locale</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>The full list of available modes and its behavior is described in <a href="#import-"><code>import()</code></a> documentation.</p>
+<h3 id="requireinclude"><code>require.include</code><a class="headerlink" href="#requireinclude" title="Permanent link">&para;</a></h3>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="nx">dependency</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span>
+</pre></div>
+
+<p>Include a <code>dependency</code> without executing it. This can be used for optimizing the position of a module in the output chunks.</p>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
+</pre></div>
+
+<p>This will result in the following output:</p>
+<ul>
+<li>entry chunk: <code>file.js</code> and <code>a</code></li>
+<li>anonymous chunk: <code>b</code></li>
+<li>anonymous chunk: <code>c</code></li>
+</ul>
+<p>Without <code>require.include('a')</code> it would be duplicated in both anonymous chunks.</p>
+<h3 id="requireresolveweak"><code>require.resolveWeak</code><a class="headerlink" href="#requireresolveweak" title="Permanent link">&para;</a></h3>
+<p>Similar to <code>require.resolve</code>, but this won't pull the <code>module</code> into the bundle. It's what is considered a "weak" dependency.</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">__webpack_modules__</span><span class="p">[</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolveWeak</span><span class="p">(</span><span class="s1">&#39;module&#39;</span><span class="p">)])</span> <span class="p">{</span>
+  <span class="c1">// Do something when module is available...</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolveWeak</span><span class="p">(</span><span class="s1">&#39;module&#39;</span><span class="p">)])</span> <span class="p">{</span>
+  <span class="c1">// Do something when module was loaded before...</span>
+<span class="p">}</span>
+
+<span class="c1">// You can perform dynamic resolves (&quot;context&quot;)</span>
+<span class="c1">// just as with other require/import methods.</span>
+<span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="s1">&#39;Foo&#39;</span><span class="p">;</span>
+<span class="nx">__webpack_modules__</span><span class="p">[</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolveWeak</span><span class="p">(</span><span class="sb">`./page/</span><span class="si">${</span><span class="nx">page</span><span class="si">}</span><span class="sb">`</span><span class="p">)];</span>
+</pre></div>
+
+<p>T&gt; <code>require.resolveWeak</code> is the foundation of <em>universal rendering</em> (SSR + Code Splitting), as used in packages such as <a href="https://github.com/faceyspacey/react-universal-component">react-universal-component</a>. It allows code to render synchronously on both the server and initial page-loads on the client. It requires that chunks are manually served or somehow available. It's able to require modules without indicating they should be bundled into a chunk. It's used in conjunction with <code>import()</code> which takes over when user navigation triggers additional imports.</p></article></div></div></main><footer class="md-footer"><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.d5a09f94.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script></body></html>
