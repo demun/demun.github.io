@@ -1,0 +1,427 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="demun blog"><link rel="canonical" href="https://demun.github.io/webpack/api/loaders/"><meta name="author" content="demun"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Loader Interface</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=맑은고딕:300,400,400i,700|맑은고딕&display=swap"><style>body,input{font-family:"맑은고딕","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"맑은고딕","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../assets/stylesheets/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#examples" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://demun.github.io/" title="demun.github.io" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">demun.github.io</span><span class="md-header-nav__topic">Loader Interface</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../../.." title="홈" class="md-tabs__link md-tabs__link--active">홈</a></li><li class="md-tabs__item"><a href="../../../publisher-report/" title="Publisher report" class="md-tabs__link">Publisher report</a></li><li class="md-tabs__item"><a href="../../../vscode/" title="Visual Studio Code" class="md-tabs__link">Visual Studio Code</a></li><li class="md-tabs__item"><a href="../../../mkdocs/" title="MkDocs" class="md-tabs__link">MkDocs</a></li><li class="md-tabs__item"><a href="../../guides/getting-started/" title="Webpack" class="md-tabs__link">Webpack</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://demun.github.io/" title="demun.github.io" class="md-nav__button md-logo"><i class="md-icon"></i></a>demun.github.io</label><div class="md-nav__source"><a href="https://github.com/demun/demun.github.io" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">demun/demun.github.io</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="홈" class="md-nav__link">홈</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Publisher report</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Publisher report</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../publisher-report/" title="HTML소개" class="md-nav__link">HTML소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/00_default/" title="HTML기본" class="md-nav__link">HTML기본</a></li><li class="md-nav__item"><a href="../../../publisher-report/01_html/" title="HTML만들기" class="md-nav__link">HTML만들기</a></li><li class="md-nav__item"><a href="../../../publisher-report/02_p/" title="단락,블럭,주석" class="md-nav__link">단락,블럭,주석</a></li><li class="md-nav__item"><a href="../../../publisher-report/03_a/" title="링크,이미지" class="md-nav__link">링크,이미지</a></li><li class="md-nav__item"><a href="../../../publisher-report/04_list/" title="리스트" class="md-nav__link">리스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/05_table/" title="표" class="md-nav__link">표</a></li><li class="md-nav__item"><a href="../../../publisher-report/06_html5/" title="HTML5" class="md-nav__link">HTML5</a></li><li class="md-nav__item"><a href="../../../publisher-report/07_css/" title="CSS소개" class="md-nav__link">CSS소개</a></li><li class="md-nav__item"><a href="../../../publisher-report/08_color/" title="색상,배경,테두리" class="md-nav__link">색상,배경,테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/09_padding/" title="여백,높이" class="md-nav__link">여백,높이</a></li><li class="md-nav__item"><a href="../../../publisher-report/10_box/" title="박스모델" class="md-nav__link">박스모델</a></li><li class="md-nav__item"><a href="../../../publisher-report/11_text/" title="텍스트" class="md-nav__link">텍스트</a></li><li class="md-nav__item"><a href="../../../publisher-report/12_list/" title="목록,표" class="md-nav__link">목록,표</a></li><li class="md-nav__item"><a href="../../../publisher-report/13_display/" title="디스플레이" class="md-nav__link">디스플레이</a></li><li class="md-nav__item"><a href="../../../publisher-report/14_overflow/" title="오버플로우" class="md-nav__link">오버플로우</a></li><li class="md-nav__item"><a href="../../../publisher-report/15_radius/" title="둥근테두리" class="md-nav__link">둥근테두리</a></li><li class="md-nav__item"><a href="../../../publisher-report/16_gradient/" title="그라디언트" class="md-nav__link">그라디언트</a></li><li class="md-nav__item"><a href="../../../publisher-report/17_text/" title="텍스트효과" class="md-nav__link">텍스트효과</a></li><li class="md-nav__item"><a href="../../../publisher-report/18_shadow/" title="그림자" class="md-nav__link">그림자</a></li><li class="md-nav__item"><a href="../../../publisher-report/19_webfont/" title="웹글꼴" class="md-nav__link">웹글꼴</a></li><li class="md-nav__item"><a href="../../../publisher-report/20_viewport/" title="뷰포트" class="md-nav__link">뷰포트</a></li><li class="md-nav__item"><a href="../../../publisher-report/21_fixed/" title="레이아웃 고정형" class="md-nav__link">레이아웃 고정형</a></li><li class="md-nav__item"><a href="../../../publisher-report/22_flow/" title="레이아웃 유동형" class="md-nav__link">레이아웃 유동형</a></li><li class="md-nav__item"><a href="../../../publisher-report/23_response/" title="레이아웃 반응형" class="md-nav__link">레이아웃 반응형</a></li><li class="md-nav__item"><a href="../../../publisher-report/24_exam/" title="호환성 보기 설정" class="md-nav__link">호환성 보기 설정</a></li><li class="md-nav__item"><a href="../../../publisher-report/25_exam/" title="개발자 도구 확인" class="md-nav__link">개발자 도구 확인</a></li><li class="md-nav__item"><a href="../../../publisher-report/26_exam/" title="QR코드 생성" class="md-nav__link">QR코드 생성</a></li><li class="md-nav__item"><a href="../../../publisher-report/27_exam/" title="모바일 검수" class="md-nav__link">모바일 검수</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">Visual Studio Code</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">Visual Studio Code</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../vscode/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../vscode/shortcuts/" title="단축키" class="md-nav__link">단축키</a></li><li class="md-nav__item"><a href="../../../vscode/git/" title="Git" class="md-nav__link">Git</a></li><li class="md-nav__item"><a href="../../../vscode/debug/" title="Debug" class="md-nav__link">Debug</a></li><li class="md-nav__item"><a href="../../../vscode/task/" title="Task" class="md-nav__link">Task</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">MkDocs</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">MkDocs</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../mkdocs/" title="소개" class="md-nav__link">소개</a></li><li class="md-nav__item"><a href="../../../mkdocs/how/" title="사용법" class="md-nav__link">사용법</a></li><li class="md-nav__item"><a href="../../../mkdocs/theme/" title="테마" class="md-nav__link">테마</a></li><li class="md-nav__item"><a href="../../../mkdocs/tree/" title="구조" class="md-nav__link">구조</a></li><li class="md-nav__item"><a href="../../../mkdocs/others/" title="기타" class="md-nav__link">기타</a></li><li class="md-nav__item"><a href="../../../mkdocs/admonition/" title="Admonition" class="md-nav__link">Admonition</a></li><li class="md-nav__item"><a href="../../../mkdocs/publish/" title="배포" class="md-nav__link">배포</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Webpack</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Webpack</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../guides/getting-started/" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="../../guides/asset-management/" title="Asset Management" class="md-nav__link">Asset Management</a></li><li class="md-nav__item"><a href="../../guides/development/" title="Development" class="md-nav__link">Development</a></li><li class="md-nav__item"><a href="../../guides/code-splitting/" title="Code Spliting" class="md-nav__link">Code Spliting</a></li><li class="md-nav__item"><a href="../../guides/caching/" title="Caching" class="md-nav__link">Caching</a></li><li class="md-nav__item"><a href="../../guides/author-libraries/" title="Authoring Libraries" class="md-nav__link">Authoring Libraries</a></li><li class="md-nav__item"><a href="../../guides/environment-variables/" title="Environment Variables" class="md-nav__link">Environment Variables</a></li><li class="md-nav__item"><a href="../../guides/build-performance/" title="Build Performance" class="md-nav__link">Build Performance</a></li><li class="md-nav__item"><a href="../../guides/csp/" title="Content Security Policies" class="md-nav__link">Content Security Policies</a></li><li class="md-nav__item"><a href="../../guides/development-vagrant/" title="Development - Vagrant" class="md-nav__link">Development - Vagrant</a></li><li class="md-nav__item"><a href="../../guides/installation/" title="Installation" class="md-nav__link">Installation</a></li><li class="md-nav__item"><a href="../../guides/scaffolding/" title="Scaffolding" class="md-nav__link">Scaffolding</a></li><li class="md-nav__item"><a href="../../guides/output-management/" title="Output Management" class="md-nav__link">Output Management</a></li><li class="md-nav__item"><a href="../../guides/hot-module-replacement/" title="Hot Module Replacement" class="md-nav__link">Hot Module Replacement</a></li><li class="md-nav__item"><a href="../../guides/tree-shaking/" title="Tree Shaking" class="md-nav__link">Tree Shaking</a></li><li class="md-nav__item"><a href="../../guides/production/" title="Production" class="md-nav__link">Production</a></li><li class="md-nav__item"><a href="../../guides/lazy-loading/" title="Lazy Loading" class="md-nav__link">Lazy Loading</a></li><li class="md-nav__item"><a href="../../guides/shimming/" title="Shimming" class="md-nav__link">Shimming</a></li><li class="md-nav__item"><a href="../../guides/typescript/" title="TypeScript" class="md-nav__link">TypeScript</a></li><li class="md-nav__item"><a href="../../guides/progressive-web-application/" title="Progressive Web Application" class="md-nav__link">Progressive Web Application</a></li><li class="md-nav__item"><a href="../../guides/public-path/" title="Public Path" class="md-nav__link">Public Path</a></li><li class="md-nav__item"><a href="../../guides/integrations/" title="Integrations" class="md-nav__link">Integrations</a></li><li class="md-nav__item"><a href="../../concepts/" title="Concepts" class="md-nav__link">Concepts</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#examples" title="Examples" class="md-nav__link">Examples</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#synchronous-loaders" title="Synchronous Loaders" class="md-nav__link">Synchronous Loaders</a></li><li class="md-nav__item"><a href="#asynchronous-loaders" title="Asynchronous Loaders" class="md-nav__link">Asynchronous Loaders</a></li><li class="md-nav__item"><a href="#raw-loader" title=""Raw" Loader" class="md-nav__link">"Raw" Loader</a></li><li class="md-nav__item"><a href="#pitching-loader" title="Pitching Loader" class="md-nav__link">Pitching Loader</a></li></ul></nav></li><li class="md-nav__item"><a href="#the-loader-context" title="The Loader Context" class="md-nav__link">The Loader Context</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#thisversion" title="this.version" class="md-nav__link">this.version</a></li><li class="md-nav__item"><a href="#thiscontext" title="this.context" class="md-nav__link">this.context</a></li><li class="md-nav__item"><a href="#thisrootcontext" title="this.rootContext" class="md-nav__link">this.rootContext</a></li><li class="md-nav__item"><a href="#thisrequest" title="this.request" class="md-nav__link">this.request</a></li><li class="md-nav__item"><a href="#thisquery" title="this.query" class="md-nav__link">this.query</a></li><li class="md-nav__item"><a href="#thiscallback" title="this.callback" class="md-nav__link">this.callback</a></li><li class="md-nav__item"><a href="#thisasync" title="this.async" class="md-nav__link">this.async</a></li><li class="md-nav__item"><a href="#thisdata" title="this.data" class="md-nav__link">this.data</a></li><li class="md-nav__item"><a href="#thiscacheable" title="this.cacheable" class="md-nav__link">this.cacheable</a></li><li class="md-nav__item"><a href="#thisloaders" title="this.loaders" class="md-nav__link">this.loaders</a></li><li class="md-nav__item"><a href="#thisloaderindex" title="this.loaderIndex" class="md-nav__link">this.loaderIndex</a></li><li class="md-nav__item"><a href="#thisresource" title="this.resource" class="md-nav__link">this.resource</a></li><li class="md-nav__item"><a href="#thisresourcepath" title="this.resourcePath" class="md-nav__link">this.resourcePath</a></li><li class="md-nav__item"><a href="#thisresourcequery" title="this.resourceQuery" class="md-nav__link">this.resourceQuery</a></li><li class="md-nav__item"><a href="#thistarget" title="this.target" class="md-nav__link">this.target</a></li><li class="md-nav__item"><a href="#thiswebpack" title="this.webpack" class="md-nav__link">this.webpack</a></li><li class="md-nav__item"><a href="#thissourcemap" title="this.sourceMap" class="md-nav__link">this.sourceMap</a></li><li class="md-nav__item"><a href="#thisemitwarning" title="this.emitWarning" class="md-nav__link">this.emitWarning</a></li><li class="md-nav__item"><a href="#thisloadmodule" title="this.loadModule" class="md-nav__link">this.loadModule</a></li><li class="md-nav__item"><a href="#thisresolve" title="this.resolve" class="md-nav__link">this.resolve</a></li><li class="md-nav__item"><a href="#thisadddependency" title="this.addDependency" class="md-nav__link">this.addDependency</a></li><li class="md-nav__item"><a href="#thisaddcontextdependency" title="this.addContextDependency" class="md-nav__link">this.addContextDependency</a></li><li class="md-nav__item"><a href="#thiscleardependencies" title="this.clearDependencies" class="md-nav__link">this.clearDependencies</a></li><li class="md-nav__item"><a href="#thisemitfile" title="this.emitFile" class="md-nav__link">this.emitFile</a></li><li class="md-nav__item"><a href="#thisfs" title="this.fs" class="md-nav__link">this.fs</a></li><li class="md-nav__item"><a href="#thismode" title="this.mode" class="md-nav__link">this.mode</a></li></ul></nav></li><li class="md-nav__item"><a href="#deprecated-context-properties" title="Deprecated context properties" class="md-nav__link">Deprecated context properties</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#thisexec" title="this.exec" class="md-nav__link">this.exec</a></li><li class="md-nav__item"><a href="#thisresolvesync" title="this.resolveSync" class="md-nav__link">this.resolveSync</a></li><li class="md-nav__item"><a href="#thisvalue" title="this.value" class="md-nav__link">this.value</a></li><li class="md-nav__item"><a href="#thisinputvalue" title="this.inputValue" class="md-nav__link">this.inputValue</a></li><li class="md-nav__item"><a href="#thisoptions" title="this.options" class="md-nav__link">this.options</a></li><li class="md-nav__item"><a href="#thisdebug" title="this.debug" class="md-nav__link">this.debug</a></li><li class="md-nav__item"><a href="#thisminimize" title="this.minimize" class="md-nav__link">this.minimize</a></li><li class="md-nav__item"><a href="#this_compilation" title="this._compilation" class="md-nav__link">this._compilation</a></li><li class="md-nav__item"><a href="#this_compiler" title="this._compiler" class="md-nav__link">this._compiler</a></li><li class="md-nav__item"><a href="#this_module" title="this._module" class="md-nav__link">this._module</a></li></ul></nav></li><li class="md-nav__item"><a href="#error-reporting" title="Error Reporting" class="md-nav__link">Error Reporting</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#inline-matchresource" title="Inline matchResource" class="md-nav__link">Inline matchResource</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1>Loader Interface</h1><p>A loader is just a JavaScript module that exports a function. The <a href="https://github.com/webpack/loader-runner">loader runner</a> calls this function and passes the result of the previous loader or the resource file into it. The <code>this</code> context of the function is filled-in by webpack and the <a href="https://github.com/webpack/loader-runner">loader runner</a> with some useful methods that allow the loader (among other things) to change its invocation style to async, or get query parameters.</p>
+<p>The first loader is passed one argument: the content of the resource file. The compiler expects a result from the last loader. The result should be a <code>String</code> or a <code>Buffer</code> (which is converted to a string), representing the JavaScript source code of the module. An optional SourceMap result (as a JSON object) may also be passed.</p>
+<p>A single result can be returned in <strong>sync mode</strong>. For multiple results the <code>this.callback()</code> must be called. In <strong>async mode</strong> <code>this.async()</code> must be called to indicate that the <a href="https://github.com/webpack/loader-runner">loader runner</a> should wait for an asynchronous result. It returns <code>this.callback()</code>. Then the loader must return <code>undefined</code> and call that callback.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>The following sections provide some basic examples of the different types of loaders. Note that the <code>map</code> and <code>meta</code> parameters are optional, see <a href="#thiscallback"><code>this.callback</code></a> below.</p>
+<h3 id="synchronous-loaders">Synchronous Loaders<a class="headerlink" href="#synchronous-loaders" title="Permanent link">&para;</a></h3>
+<p>Either <code>return</code> or <code>this.callback</code> can be used to return the transformed <code>content</code> synchronously:</p>
+<p><strong>sync-loader.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">someSyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>The <code>this.callback</code> method is more flexible as it allows multiple arguments to be passed as opposed to just the <code>content</code>.</p>
+<p><strong>sync-loader-with-multiple-results.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">someSyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">),</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">;</span> <span class="c1">// always return undefined when calling callback()</span>
+<span class="p">};</span>
+</pre></div>
+
+<h3 id="asynchronous-loaders">Asynchronous Loaders<a class="headerlink" href="#asynchronous-loaders" title="Permanent link">&para;</a></h3>
+<p>For asynchronous loaders, <a href="#this-async"><code>this.async</code></a> is used to retrieve the <code>callback</code> function:</p>
+<p><strong>async-loader.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">async</span><span class="p">();</span>
+  <span class="nx">someAsyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">result</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong>async-loader-with-multiple-results.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">async</span><span class="p">();</span>
+  <span class="nx">someAsyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">,</span> <span class="nx">sourceMaps</span><span class="p">,</span> <span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">result</span><span class="p">,</span> <span class="nx">sourceMaps</span><span class="p">,</span> <span class="nx">meta</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>T&gt; Loaders were originally designed to work in synchronous loader pipelines, like Node.js (using <a href="https://github.com/webpack/enhanced-require">enhanced-require</a>), <em>and</em> asynchronous pipelines, like in webpack. However, since expensive synchronous computations are a bad idea in a single-threaded environment like Node.js, we advise making your loader asynchronous if possible. Synchronous loaders are ok if the amount of computation is trivial.</p>
+<h3 id="raw-loader">"Raw" Loader<a class="headerlink" href="#raw-loader" title="Permanent link">&para;</a></h3>
+<p>By default, the resource file is converted to a UTF-8 string and passed to the loader. By setting the <code>raw</code> flag, the loader will receive the raw <code>Buffer</code>. Every loader is allowed to deliver its result as <code>String</code> or as <code>Buffer</code>. The compiler converts them between loaders.</p>
+<p><strong>raw-loader.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">assert</span><span class="p">(</span><span class="nx">content</span> <span class="k">instanceof</span> <span class="nx">Buffer</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">someSyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+  <span class="c1">// return value can be a `Buffer` too</span>
+  <span class="c1">// This is also allowed if loader is not &quot;raw&quot;</span>
+<span class="p">};</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">raw</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="pitching-loader">Pitching Loader<a class="headerlink" href="#pitching-loader" title="Permanent link">&para;</a></h3>
+<p>Loaders are <strong>always</strong> called from right to left. There are some instances where the loader only cares about the <strong>metadata</strong> behind a request and can ignore the results of the previous loader. The <code>pitch</code> method on loaders is called from <strong>left to right</strong> before the loaders are actually executed (from right to left). </p>
+<p>T&gt; Loaders may be added inline in requests and disabled via inline prefixes, which will impact the order in which they are "pitched" and executed. See <a href="/configuration/module#ruleenforce"><code>Rule.enforce</code></a> for more details.</p>
+<p>For the following configuration of <a href="/configuration/module#rule-use"><code>use</code></a>:</p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//...</span>
+  <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="c1">//...</span>
+        <span class="nx">use</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s1">&#39;a-loader&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;b-loader&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;c-loader&#39;</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>These steps would occur:</p>
+<div class="codehilite"><pre><span></span>|- a-loader `pitch`
+  |- b-loader `pitch`
+    |- c-loader `pitch`
+      |- requested module is picked up as a dependency
+    |- c-loader normal execution
+  |- b-loader normal execution
+|- a-loader normal execution
+</pre></div>
+
+<p>So why might a loader take advantage of the "pitching" phase?</p>
+<p>First, the <code>data</code> passed to the <code>pitch</code> method is exposed in the execution phase as well under <code>this.data</code> and could be useful for capturing and sharing information from earlier in the cycle.</p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">someSyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">pitch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">remainingRequest</span><span class="p">,</span> <span class="nx">precedingRequest</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>Second, if a loader delivers a result in the <code>pitch</code> method the process turns around and skips the remaining loaders. In our example above, if the <code>b-loader</code>s <code>pitch</code> method returned something:</p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">someSyncOperation</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">pitch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">remainingRequest</span><span class="p">,</span> <span class="nx">precedingRequest</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;module.exports = require(&#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">&#39;-!&#39;</span> <span class="o">+</span> <span class="nx">remainingRequest</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;);&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>The steps above would be shortened to:</p>
+<div class="codehilite"><pre><span></span>|- a-loader `pitch`
+  |- b-loader `pitch` returns a module
+|- a-loader normal execution
+</pre></div>
+
+<p>See the <a href="https://github.com/webpack-contrib/bundle-loader">bundle-loader</a> for a good example of how this process can be used in a more meaningful way.</p>
+<h2 id="the-loader-context">The Loader Context<a class="headerlink" href="#the-loader-context" title="Permanent link">&para;</a></h2>
+<p>The loader context represents the properties that are available inside of a loader assigned to the <code>this</code> property.</p>
+<p>Given the following example this require call is used:
+In <code>/abc/file.js</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./loader1?xyz!loader2!./resource?rrr&#39;</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="thisversion"><code>this.version</code><a class="headerlink" href="#thisversion" title="Permanent link">&para;</a></h3>
+<p><strong>Loader API version.</strong> Currently <code>2</code>. This is useful for providing backwards compatibility. Using the version you can specify custom logic or fallbacks for breaking changes.</p>
+<h3 id="thiscontext"><code>this.context</code><a class="headerlink" href="#thiscontext" title="Permanent link">&para;</a></h3>
+<p><strong>The directory of the module.</strong> Can be used as a context for resolving other stuff.</p>
+<p>In the example: <code>/abc</code> because <code>resource.js</code> is in this directory</p>
+<h3 id="thisrootcontext"><code>this.rootContext</code><a class="headerlink" href="#thisrootcontext" title="Permanent link">&para;</a></h3>
+<p>Starting with webpack 4, the formerly <code>this.options.context</code> is provided as <code>this.rootContext</code>.</p>
+<h3 id="thisrequest"><code>this.request</code><a class="headerlink" href="#thisrequest" title="Permanent link">&para;</a></h3>
+<p>The resolved request string.</p>
+<p>In the example: <code>"/abc/loader1.js?xyz!/abc/node_modules/loader2/index.js!/abc/resource.js?rrr"</code></p>
+<h3 id="thisquery"><code>this.query</code><a class="headerlink" href="#thisquery" title="Permanent link">&para;</a></h3>
+<ol>
+<li>If the loader was configured with an <a href="/configuration/module/#useentry"><code>options</code></a> object, this will point to that object.</li>
+<li>If the loader has no <code>options</code>, but was invoked with a query string, this will be a string starting with <code>?</code>.</li>
+</ol>
+<p>T&gt; Use the <a href="https://github.com/webpack/loader-utils#getoptions"><code>getOptions</code> method</a> from <code>loader-utils</code> to extract given loader options.</p>
+<h3 id="thiscallback"><code>this.callback</code><a class="headerlink" href="#thiscallback" title="Permanent link">&para;</a></h3>
+<p>A function that can be called synchronously or asynchronously in order to return multiple results. The expected arguments are:</p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">(</span>
+  <span class="nx">err</span><span class="o">:</span> <span class="nb">Error</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">content</span><span class="o">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">Buffer</span><span class="p">,</span>
+  <span class="nx">sourceMap</span><span class="o">?:</span> <span class="nx">SourceMap</span><span class="p">,</span>
+  <span class="nx">meta</span><span class="o">?:</span> <span class="nx">any</span>
+<span class="p">);</span>
+</pre></div>
+
+<ol>
+<li>The first argument must be an <code>Error</code> or <code>null</code></li>
+<li>The second argument a <code>string</code> or a <a href="https://nodejs.org/api/buffer.html"><code>Buffer</code></a>.</li>
+<li>Optional: The third argument must be a source map that is parsable by <a href="https://github.com/mozilla/source-map">this module</a>.</li>
+<li>Optional: The fourth option, ignored by webpack, can be anything (e.g. some metadata).</li>
+</ol>
+<p>T&gt; It can be useful to pass an abstract syntax tree (AST), like <a href="https://github.com/estree/estree"><code>ESTree</code></a>, as the fourth argument (<code>meta</code>) to speed up the build time if you want to share common ASTs between loaders.</p>
+<p>In case this function is called, you should return undefined to avoid ambiguous loader results.</p>
+<h3 id="thisasync"><code>this.async</code><a class="headerlink" href="#thisasync" title="Permanent link">&para;</a></h3>
+<p>Tells the <a href="https://github.com/webpack/loader-runner">loader-runner</a> that the loader intends to call back asynchronously. Returns <code>this.callback</code>.</p>
+<h3 id="thisdata"><code>this.data</code><a class="headerlink" href="#thisdata" title="Permanent link">&para;</a></h3>
+<p>A data object shared between the pitch and the normal phase.</p>
+<h3 id="thiscacheable"><code>this.cacheable</code><a class="headerlink" href="#thiscacheable" title="Permanent link">&para;</a></h3>
+<p>A function that sets the cacheable flag:</p>
+<div class="codehilite"><pre><span></span><span class="nx">cacheable</span><span class="p">(</span><span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">)</span>
+</pre></div>
+
+<p>By default, loader results are flagged as cacheable. Call this method passing <code>false</code> to make the loader's result not cacheable.</p>
+<p>A cacheable loader must have a deterministic result when inputs and dependencies haven't changed. This means the loader shouldn't have other dependencies than specified with <code>this.addDependency</code>.</p>
+<h3 id="thisloaders"><code>this.loaders</code><a class="headerlink" href="#thisloaders" title="Permanent link">&para;</a></h3>
+<p>An array of all the loaders. It is writeable in the pitch phase.</p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="nx">loaders</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">request</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">path</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">query</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">module</span><span class="o">:</span> <span class="kd">function</span><span class="p">}]</span>
+</pre></div>
+
+<p>In the example:</p>
+<div class="codehilite"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="s1">&#39;/abc/loader1.js?xyz&#39;</span><span class="p">,</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/abc/loader1.js&#39;</span><span class="p">,</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="s1">&#39;?xyz&#39;</span><span class="p">,</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="s1">&#39;/abc/node_modules/loader2/index.js&#39;</span><span class="p">,</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/abc/node_modules/loader2/index.js&#39;</span><span class="p">,</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">];</span>
+</pre></div>
+
+<h3 id="thisloaderindex"><code>this.loaderIndex</code><a class="headerlink" href="#thisloaderindex" title="Permanent link">&para;</a></h3>
+<p>The index in the loaders array of the current loader.</p>
+<p>In the example: in loader1: <code>0</code>, in loader2: <code>1</code></p>
+<h3 id="thisresource"><code>this.resource</code><a class="headerlink" href="#thisresource" title="Permanent link">&para;</a></h3>
+<p>The resource part of the request, including query.</p>
+<p>In the example: <code>"/abc/resource.js?rrr"</code></p>
+<h3 id="thisresourcepath"><code>this.resourcePath</code><a class="headerlink" href="#thisresourcepath" title="Permanent link">&para;</a></h3>
+<p>The resource file.</p>
+<p>In the example: <code>"/abc/resource.js"</code></p>
+<h3 id="thisresourcequery"><code>this.resourceQuery</code><a class="headerlink" href="#thisresourcequery" title="Permanent link">&para;</a></h3>
+<p>The query of the resource.</p>
+<p>In the example: <code>"?rrr"</code></p>
+<h3 id="thistarget"><code>this.target</code><a class="headerlink" href="#thistarget" title="Permanent link">&para;</a></h3>
+<p>Target of compilation. Passed from configuration options.</p>
+<p>Example values: <code>"web"</code>, <code>"node"</code></p>
+<h3 id="thiswebpack"><code>this.webpack</code><a class="headerlink" href="#thiswebpack" title="Permanent link">&para;</a></h3>
+<p>This boolean is set to true when this is compiled by webpack.</p>
+<p>T&gt; Loaders were originally designed to also work as Babel transforms. Therefore if you write a loader that works for both, you can use this property to know if there is access to additional loaderContext and webpack features.</p>
+<h3 id="thissourcemap"><code>this.sourceMap</code><a class="headerlink" href="#thissourcemap" title="Permanent link">&para;</a></h3>
+<p>Tells if source map should be generated. Since generating source maps can be an expensive task, you should check if source maps are actually requested.</p>
+<h3 id="thisemitwarning"><code>this.emitWarning</code><a class="headerlink" href="#thisemitwarning" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">emitWarning</span><span class="p">(</span><span class="nx">warning</span>: <span class="kt">Error</span><span class="p">)</span>
+</pre></div>
+
+<p>Emit a warning that will be displayed in the output like the following:</p>
+<div class="codehilite"><pre><span></span>WARNING in ./src/lib.js <span class="o">(</span>./src/loader.js!./src/lib.js<span class="o">)</span>
+Module Warning <span class="o">(</span>from ./src/loader.js<span class="o">)</span>:
+Here is a Warning!
+ @ ./src/index.js <span class="m">1</span>:0-25
+ <span class="sb">```</span>
+
+T&gt; Note that the warnings will not be displayed <span class="k">if</span> <span class="sb">`</span>stats.warnings<span class="sb">`</span> is <span class="nb">set</span> to <span class="sb">`</span><span class="nb">false</span><span class="sb">`</span>, or some other omit setting is used to <span class="sb">`</span>stats<span class="sb">`</span> such as <span class="sb">`</span>none<span class="sb">`</span> or <span class="sb">`</span>errors-only<span class="sb">`</span>. See the <span class="o">[</span>stats configuration<span class="o">](</span>/configuration/stats/#stats<span class="o">)</span>.
+
+<span class="c1">### `this.emitError`</span>
+
+<span class="sb">```</span> typescript
+emitError<span class="o">(</span>error: Error<span class="o">)</span>
+</pre></div>
+
+<p>Emit an error that also can be displayed in the output.</p>
+<div class="codehilite"><pre><span></span>ERROR in ./src/lib.js <span class="o">(</span>./src/loader.js!./src/lib.js<span class="o">)</span>
+Module Error <span class="o">(</span>from ./src/loader.js<span class="o">)</span>:
+Here is an Error!
+ @ ./src/index.js <span class="m">1</span>:0-25
+</pre></div>
+
+<p>T&gt; Unlike throwing an Error directly, it will NOT interrupt the compilation process of the current module.</p>
+<h3 id="thisloadmodule"><code>this.loadModule</code><a class="headerlink" href="#thisloadmodule" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">loadModule</span><span class="p">(</span><span class="nx">request</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">callback</span>: <span class="kt">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">sourceMap</span><span class="p">,</span> <span class="nx">module</span><span class="p">))</span>
+</pre></div>
+
+<p>Resolves the given request to a module, applies all configured loaders and calls back with the generated source, the sourceMap and the module instance (usually an instance of <a href="https://github.com/webpack/webpack/blob/master/lib/NormalModule.js"><code>NormalModule</code></a>). Use this function if you need to know the source code of another module to generate the result.</p>
+<h3 id="thisresolve"><code>this.resolve</code><a class="headerlink" href="#thisresolve" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">resolve</span><span class="p">(</span><span class="nx">context</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">request</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">callback</span>: <span class="kt">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span>: <span class="kt">string</span><span class="p">))</span>
+</pre></div>
+
+<p>Resolve a request like a require expression.</p>
+<h3 id="thisadddependency"><code>this.addDependency</code><a class="headerlink" href="#thisadddependency" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">addDependency</span><span class="p">(</span><span class="nx">file</span>: <span class="kt">string</span><span class="p">)</span>
+<span class="nx">dependency</span><span class="p">(</span><span class="nx">file</span>: <span class="kt">string</span><span class="p">)</span> <span class="c1">// shortcut</span>
+</pre></div>
+
+<p>Adds a file as dependency of the loader result in order to make them watchable. For example, <a href="https://github.com/webpack-contrib/html-loader"><code>html-loader</code></a> uses this technique as it finds <code>src</code> and <code>src-set</code> attributes. Then, it sets the url's for those attributes as dependencies of the html file that is parsed.</p>
+<h3 id="thisaddcontextdependency"><code>this.addContextDependency</code><a class="headerlink" href="#thisaddcontextdependency" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">addContextDependency</span><span class="p">(</span><span class="nx">directory</span>: <span class="kt">string</span><span class="p">)</span>
+</pre></div>
+
+<p>Add a directory as dependency of the loader result.</p>
+<h3 id="thiscleardependencies"><code>this.clearDependencies</code><a class="headerlink" href="#thiscleardependencies" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">clearDependencies</span><span class="p">()</span>
+</pre></div>
+
+<p>Remove all dependencies of the loader result. Even initial dependencies and these of other loaders. Consider using <code>pitch</code>.</p>
+<h3 id="thisemitfile"><code>this.emitFile</code><a class="headerlink" href="#thisemitfile" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">emitFile</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">content</span>: <span class="kt">Buffer</span><span class="o">|</span><span class="kt">string</span><span class="p">,</span> <span class="nx">sourceMap</span><span class="o">:</span> <span class="p">{...})</span>
+</pre></div>
+
+<p>Emit a file. This is webpack-specific.</p>
+<h3 id="thisfs"><code>this.fs</code><a class="headerlink" href="#thisfs" title="Permanent link">&para;</a></h3>
+<p>Access to the <code>compilation</code>'s <code>inputFileSystem</code> property.</p>
+<h3 id="thismode"><code>this.mode</code><a class="headerlink" href="#thismode" title="Permanent link">&para;</a></h3>
+<p>Read in which <a href="/configuration/mode/"><code>mode</code></a> webpack is running.</p>
+<p>Possible values: <code>'production'</code>, <code>'development'</code>, <code>'none'</code></p>
+<h2 id="deprecated-context-properties">Deprecated context properties<a class="headerlink" href="#deprecated-context-properties" title="Permanent link">&para;</a></h2>
+<p>W&gt; The usage of these properties is highly discouraged since we are planning to remove them from the context. They are still listed here for documentation purposes.</p>
+<h3 id="thisexec"><code>this.exec</code><a class="headerlink" href="#thisexec" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">exec</span><span class="p">(</span><span class="nx">code</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">filename</span>: <span class="kt">string</span><span class="p">)</span>
+</pre></div>
+
+<p>Execute some code fragment like a module. See <a href="https://github.com/webpack/webpack.js.org/issues/1268#issuecomment-313513988">this comment</a> for a replacement method if needed.</p>
+<h3 id="thisresolvesync"><code>this.resolveSync</code><a class="headerlink" href="#thisresolvesync" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">resolveSync</span><span class="p">(</span><span class="nx">context</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">request</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">string</span>
+</pre></div>
+
+<p>Resolve a request like a require expression.</p>
+<h3 id="thisvalue"><code>this.value</code><a class="headerlink" href="#thisvalue" title="Permanent link">&para;</a></h3>
+<p>Pass values to the next loader. If you know what your result exports if executed as a module, set this value here (as an only element array).</p>
+<h3 id="thisinputvalue"><code>this.inputValue</code><a class="headerlink" href="#thisinputvalue" title="Permanent link">&para;</a></h3>
+<p>Passed from the last loader. If you would execute the input argument as a module, consider reading this variable for a shortcut (for performance).</p>
+<h3 id="thisoptions"><code>this.options</code><a class="headerlink" href="#thisoptions" title="Permanent link">&para;</a></h3>
+<p>W&gt; The <code>options</code> property has been deprecated in webpack 3 and removed in webpack 4.</p>
+<h3 id="thisdebug"><code>this.debug</code><a class="headerlink" href="#thisdebug" title="Permanent link">&para;</a></h3>
+<p>A boolean flag. It is set when in debug mode.</p>
+<h3 id="thisminimize"><code>this.minimize</code><a class="headerlink" href="#thisminimize" title="Permanent link">&para;</a></h3>
+<p>Tells if result should be minimized.</p>
+<h3 id="this_compilation"><code>this._compilation</code><a class="headerlink" href="#this_compilation" title="Permanent link">&para;</a></h3>
+<p>Hacky access to the Compilation object of webpack.</p>
+<h3 id="this_compiler"><code>this._compiler</code><a class="headerlink" href="#this_compiler" title="Permanent link">&para;</a></h3>
+<p>Hacky access to the Compiler object of webpack.</p>
+<h3 id="this_module"><code>this._module</code><a class="headerlink" href="#this_module" title="Permanent link">&para;</a></h3>
+<p>Hacky access to the Module object being loaded.</p>
+<h2 id="error-reporting">Error Reporting<a class="headerlink" href="#error-reporting" title="Permanent link">&para;</a></h2>
+<p>You can report errors from inside a loader by:</p>
+<ul>
+<li>Using <a href="/api/loaders/#this-emiterror">this.emitError</a>. Will report the errors without interrupting module's compilation.</li>
+<li>Using <code>throw</code> (or other uncaught exception). Throwing an error while a loader is running will cause current module compilation failure.</li>
+<li>Using <code>callback</code> (in async mode). Pass an error to the callback will also cause module compilation failure.</li>
+</ul>
+<p>For example:</p>
+<p><strong>./src/index.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./loader!./lib&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>Throwing an error from loader:</p>
+<p><strong>./src/loader.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;This is a Fatal Error!&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>Or pass an error to the callback in async mode:</p>
+<p><strong>./src/loader.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">async</span><span class="p">();</span>
+  <span class="c1">//...</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;This is a Fatal Error!&#39;</span><span class="p">),</span> <span class="nx">source</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+<p>The module will get bundled like this:</p>
+<!-- eslint-skip -->
+
+<div class="codehilite"><pre><span></span><span class="cm">/***/</span> <span class="s2">&quot;./src/loader.js!./src/lib.js&quot;</span><span class="o">:</span>
+<span class="cm">/*!************************************!*\</span>
+<span class="cm">  !*** ./src/loader.js!./src/lib.js ***!</span>
+<span class="cm">  \************************************/</span>
+<span class="cm">/*! no static exports found */</span>
+<span class="cm">/***/</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">module</span><span class="p">,</span> <span class="nx">exports</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Module build failed (from ./src/loader.js):\nError: This is a Fatal Error!\n    at Object.module.exports (/workspace/src/loader.js:3:9)&quot;</span><span class="p">);</span>
+
+<span class="cm">/***/</span> <span class="p">})</span>
+</pre></div>
+
+<p>Then the build output will also display the error (Similar to <code>this.emitError</code>):</p>
+<div class="codehilite"><pre><span></span>ERROR in ./src/lib.js <span class="o">(</span>./src/loader.js!./src/lib.js<span class="o">)</span>
+Module build failed <span class="o">(</span>from ./src/loader.js<span class="o">)</span>:
+Error: This is a Fatal Error!
+    at Object.module.exports <span class="o">(</span>/workspace/src/loader.js:2:9<span class="o">)</span>
+ @ ./src/index.js <span class="m">1</span>:0-25
+</pre></div>
+
+<p>As you can see below, not only error message, but also details about which loader and module are involved:</p>
+<ul>
+<li>the module path: <code>ERROR in ./src/lib.js</code></li>
+<li>the request string: <code>(./src/loader.js!./src/lib.js)</code></li>
+<li>the loader path: <code>(from ./src/loader.js)</code></li>
+<li>the caller path: <code>@ ./src/index.js 1:0-25</code></li>
+</ul>
+<p>W&gt; The loader path in the error is displayed since webpack 4.12</p>
+<p>T&gt; All the errors and warnings will be recorded into <code>stats</code>. Please see <a href="/api/stats/#errors-and-warnings">Stats Data</a>.</p>
+<h3 id="inline-matchresource">Inline matchResource<a class="headerlink" href="#inline-matchresource" title="Permanent link">&para;</a></h3>
+<p>A new inline request syntax was introduced in webpack v4. Prefixing <code>&lt;match-resource&gt;!=!</code> to a request will set the <code>matchResource</code> for this request.</p>
+<p>W&gt; It is not recommended to use this syntax in application code.
+Inline request syntax is intended to only be used by loader generated code.
+Not following this recommendation will make your code webpack-specific and non-standard.</p>
+<p>T&gt; A relative <code>matchResource</code> will resolve relative to the current context of the containing module.</p>
+<p>When a <code>matchResource</code> is set, it will be used to match with the <a href="/configuration/module/#module-rules"><code>module.rules</code></a> instead of the original resource. This can be useful if further loaders should be applied to the resource, or if the module type needs to be changed. It's also displayed in the stats and used for matching <a href="/configuration/module/#rule-issuer"><code>Rule.issuer</code></a> and <a href="/plugins/split-chunks-plugin/#splitchunks-cachegroups-cachegroup-test"><code>test</code> in <code>splitChunks</code></a>.</p>
+<p>Example:</p>
+<p><strong>file.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="cm">/* STYLE: body { background: red; } */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;yep&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>A loader could transform the file into the following file and use the <code>matchResource</code> to apply the user-specified CSS processing rules:</p>
+<p><strong>file.js</strong> (transformed by loader)</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="s1">&#39;./file.js.css!=!extract-style-loader/getStyles!./file.js&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;yep&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>This will add a dependency to <code>extract-style-loader/getStyles!./file.js</code> and treat the result as <code>file.js.css</code>. Because <a href="/configuration/module/#module-rules"><code>module.rules</code></a> has a rule matching <code>/\.css$/</code> and it will apply to this dependency.</p>
+<p>The loader could look like this:</p>
+<p><strong>extract-style-loader/index.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">stringifyRequest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;loader-utils&#39;</span><span class="p">).</span><span class="nx">stringifyRequest</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">getRemainingRequest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;loader-utils&#39;</span><span class="p">).</span><span class="nx">getRemainingRequest</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">getStylesLoader</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;./getStyle&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">source</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">STYLES_REGEXP</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">source</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">source</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">STYLES_REGEXP</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">remReq</span> <span class="o">=</span> <span class="nx">getRemainingRequest</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">return</span> <span class="sb">`import </span><span class="si">${</span><span class="nx">stringifyRequest</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">resource</span><span class="si">}</span><span class="sb">.css!=!</span><span class="si">${</span><span class="nx">getStylesLoader</span><span class="si">}</span><span class="sb">!</span><span class="si">${</span><span class="nx">remReq</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span><span class="si">}</span><span class="sb">;</span><span class="si">${</span><span class="nx">source</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">source</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong>extract-style-loader/getStyles.js</strong></p>
+<div class="codehilite"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="nx">STYLES_REGEXP</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">match</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div></article></div></div></main><footer class="md-footer"><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.d5a09f94.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script></body></html>
