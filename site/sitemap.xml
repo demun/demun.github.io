@@ -211,6 +211,61 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://demun.github.io/material-theme/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/getting-started/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/specimen/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/customization/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/compliance/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/admonition/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/codehilite/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/footnotes/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/metadata/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/permalinks/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://demun.github.io/material-theme/extensions/pymdown/</loc>
+     <lastmod>2019-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://demun.github.io/webpack/guides/getting-started/</loc>
      <lastmod>2019-07-17</lastmod>
      <changefreq>daily</changefreq>
