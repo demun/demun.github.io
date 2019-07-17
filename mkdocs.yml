@@ -81,7 +81,7 @@ markdown_extensions:
 
 # Pages
 nav: 
-  - 홈: index.md
+  - Home: index.md
   - Publisher report:
     - 'HTML소개': 'publisher-report/index.md'
     - 'HTML기본': 'publisher-report/00_default.md'
