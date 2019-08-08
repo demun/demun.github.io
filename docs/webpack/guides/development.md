@@ -228,7 +228,8 @@ __webpack.config.js__
 
 `localhost:8080`는 `webpack-dev-server`로 `dist` 디렉터리에 있는 파일을 처리하라는 것이다.
 
-W> `webpack-dev-server`는 컴파일 후 출력 파일을 작성하지 않는다. 대신 번들 파일을 메모리에 보관하고 서버의 루트 경로에 탑재된 실제 파일인 것처럼 서비스한다. 페이지가 다른 경로에서 번들 파일을 찾을 것으로 예상하는 경우, dev 서버의 구성에서 [`publicPath`](/configuration/dev-server/#devserver-publicpath-) 옵션을 사용하여 이 파일을 변경할 수 있다.
+!!! warning
+    `webpack-dev-server`는 컴파일 후 출력 파일을 작성하지 않는다. 대신 번들 파일을 메모리에 보관하고 서버의 루트 경로에 탑재된 실제 파일인 것처럼 서비스한다. 페이지가 다른 경로에서 번들 파일을 찾을 것으로 예상하는 경우, dev 서버의 구성에서 [`publicPath`](/configuration/dev-server/#devserver-publicpath-) 옵션을 사용하여 이 파일을 변경할 수 있다.
 
 dev 서버도 쉽게 실행할 스크립트를 추가하십시오.
 

@@ -137,7 +137,8 @@ Entrypoint another = vendors~another~index.bundle.js another.bundle.js
 
 동적 코드 분할에 관한 한 웹팩에 의해 두 가지 유사한 기법이 지원된다. 첫 번째 및 권장 방법은 동적 가져오기에 [ECMAScript proposal](https://github.com/tc39/proposal-dynamic-import)을 준수하는  [`import()` syntax](/api/module-methods#import-1)을 사용하는 것이다. 기존의 웹팩 특유의 접근방식은 [`require.ensure`](/api/module-methods#requireensure)를 사용하는 것이다. 이 두 가지 방법 중 첫 번째 방법을 사용해 봅시다.
 
-W> `import()` 호출은 내부적으로 [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)을 사용한다. 이전 브라우저에서 `import()`를 사용할 경우 [es6-promise](https://github.com/stefanpenner/es6-promise) 또는 [promise-polyfill](https://github.com/taylorhakes/promise-polyfill)와 같은 폴리필을 사용하여 `Promise`를 표시하십시오.
+!!! warning
+    `import()` 호출은 내부적으로 [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)을 사용한다. 이전 브라우저에서 `import()`를 사용할 경우 [es6-promise](https://github.com/stefanpenner/es6-promise) 또는 [promise-polyfill](https://github.com/taylorhakes/promise-polyfill)와 같은 폴리필을 사용하여 `Promise`를 표시하십시오.
 
 시작하기 전에 다음 시연에 필요하지 않으므로 [`entry`](/concepts/entry-points/) 및 [`optimization.splitChunks`](/plugins/split-chunks-plugin)를 구성에서 제거하십시오.
 

@@ -1,28 +1,9 @@
----
-title: Production
-sort: 8
-contributors:
-  - henriquea
-  - rajagopal4890
-  - markerikson
-  - simon04
-  - kisnows
-  - chrisVillanueva
-  - swapnilmishra
-  - bring2dip
-  - redian
-  - skipjack
-  - xgqfrms
-  - kelset
-  - xgirma
-  - mehrdaad
-  - SevenOutman
-  - AnayaDesign
----
+# Production
 
 In this guide we'll dive into some of the best practices and utilities for building a production site or application.
 
-T> This walkthrough stems from [Tree Shaking](/guides/tree-shaking) and [Development](/guides/development). Please ensure you are familiar with the concepts/setup introduced in those guides before continuing on.
+!!! tip
+    This walkthrough stems from [Tree Shaking](/guides/tree-shaking) and [Development](/guides/development). Please ensure you are familiar with the concepts/setup introduced in those guides before continuing on.
 
 
 ## Setup
@@ -164,7 +145,8 @@ __webpack.prod.js__
   });
 ```
 
-T> Technically, `NODE_ENV` is a system environment variable that Node.js exposes into running scripts. It is used by convention to determine dev-vs-prod behavior by server tools, build scripts, and client-side libraries. Contrary to expectations, `process.env.NODE_ENV` is not set to `"production"` __within__ the build script `webpack.config.js`, see [#2537](https://github.com/webpack/webpack/issues/2537). Thus, conditionals like `process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'` within webpack configurations do not work as expected.
+!!! tip
+    Technically, `NODE_ENV` is a system environment variable that Node.js exposes into running scripts. It is used by convention to determine dev-vs-prod behavior by server tools, build scripts, and client-side libraries. Contrary to expectations, `process.env.NODE_ENV` is not set to `"production"` __within__ the build script `webpack.config.js`, see [#2537](https://github.com/webpack/webpack/issues/2537). Thus, conditionals like `process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'` within webpack configurations do not work as expected.
 
 If you're using a library like [`react`](https://reactjs.org/), you should actually see a significant drop in bundle size after adding this plugin. Also note that any of our local `/src` code can key off of this as well, so the following check would be valid:
 
@@ -220,7 +202,8 @@ __webpack.prod.js__
   });
 ```
 
-T> Avoid `inline-***` and `eval-***` use in production as they can increase bundle size and reduce the overall performance.
+!!! tip
+    Avoid `inline-***` and `eval-***` use in production as they can increase bundle size and reduce the overall performance.
 
 
 ## Minimize CSS

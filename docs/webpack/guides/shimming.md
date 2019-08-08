@@ -22,13 +22,15 @@ related:
 
 The `webpack` compiler can understand modules written as ES2015 modules, CommonJS or AMD. However, some third party libraries may expect global dependencies (e.g. `$` for `jQuery`). The libraries might also create globals which need to be exported. These "broken modules" are one instance where _shimming_ comes into play.
 
-W> __We don't recommend using globals!__ The whole concept behind webpack is to allow more modular front-end development. This means writing isolated modules that are well contained and do not rely on hidden dependencies (e.g. globals). Please use these features only when necessary.
+!!! warning
+    __We don't recommend using globals!__ The whole concept behind webpack is to allow more modular front-end development. This means writing isolated modules that are well contained and do not rely on hidden dependencies (e.g. globals). Please use these features only when necessary.
 
 Another instance where _shimming_ can be useful is when you want to [polyfill](https://en.wikipedia.org/wiki/Polyfill_%28programming%29) browser functionality to support more users. In this case, you may only want to deliver those polyfills to the browsers that need patching (i.e. load them on demand).
 
 The following article will walk through both of these use cases.
 
-T> For simplicity, this guide stems from the examples in [Getting Started](/guides/getting-started). Please make sure you are familiar with the setup there before moving on.
+!!! tip
+    For simplicity, this guide stems from the examples in [Getting Started](/guides/getting-started). Please make sure you are familiar with the setup there before moving on.
 
 
 ## Shimming Globals
@@ -286,7 +288,8 @@ __src/index.js__
   document.body.appendChild(component());
 ```
 
-T> Note that we aren't binding the `import` to a variable. This is because polyfills simply run on their own, prior to the rest of the code base, allowing us to then assume certain native functionality exists.
+!!! tip
+    Note that we aren't binding the `import` to a variable. This is because polyfills simply run on their own, prior to the rest of the code base, allowing us to then assume certain native functionality exists.
 
 Note that this approach prioritizes correctness over bundle size. To be safe and robust, polyfills/shims must run __before all other code__, and thus either need to load synchronously, or, all app code needs to load after all polyfills/shims load.
 There are many misconceptions in the community, as well, that modern browsers "don't need" polyfills, or that polyfills/shims merely serve to add missing features - in fact, they often _repair broken implementations_, even in the most modern of browsers.
@@ -456,10 +459,12 @@ There are a few other tools that can help when dealing with legacy modules.
 
 The [`script-loader`](/loaders/script-loader/) evaluates code in the global context, similar to inclusion via a `script` tag. In this mode, every normal library should work. `require`, `module`, etc. are undefined.
 
-W> When using the `script-loader`, the module is added as a string to the bundle. It is not minimized by `webpack`, so use a minimized version. There is also no `devtool` support for libraries added by this loader.
+!!! warning
+    When using the `script-loader`, the module is added as a string to the bundle. It is not minimized by `webpack`, so use a minimized version. There is also no `devtool` support for libraries added by this loader.
 
 When there is no AMD/CommonJS version of the module and you want to include the `dist`, you can flag this module in [`noParse`](/configuration/module/#module-noparse). This will cause webpack to include the module without parsing it or resolving `require()` and `import` statements. This practice is also used to improve the build performance.
 
-W> Any feature requiring the AST, like the `ProvidePlugin`, will not work.
+!!! warning
+    Any feature requiring the AST, like the `ProvidePlugin`, will not work.
 
 Lastly, there are some modules that support multiple [module styles](/concepts/modules); e.g. a combination of AMD, CommonJS, and legacy. In most of these cases, they first check for `define` and then use some quirky code to export properties. In these cases, it could help to force the CommonJS path by setting `define=>false` via the [`imports-loader`](/loaders/imports-loader/).

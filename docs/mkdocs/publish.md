@@ -4,11 +4,15 @@ mkdocs 로 제작된 문서들은 [github.com][https://github.com/] 저장소에
 
 먼저 배포를 하기전 마지막으로 `mkdocs build` 를 해서 최종파일을 만들어놉니다.
 
+`mkdocs build`를 하면 `site` 폴더에 모든 저작물을 만들어놓습니다.
+
 배포를 하려면 아래의 명령어를 사용하면 됩니다.
 
 ```sh
 mkdocs gh-deploy
 ```
+
+`mkdocs gh-deploy` 명령을 하면 `site` 폴더의 내용을 전부 github 사이트의 저장소에 모두 업로드 합니다.
 
 이제 모든 파일들을 저장소에 올리면 됩니다.
 

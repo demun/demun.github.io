@@ -92,7 +92,8 @@ module.exports = {
 
 `thread-loader`는 고가의 로더를 작업자 풀로 옮기는 데 사용할 수 있습니다.
 
-W> Node.js 런타임 및 로더에 대한 부트 오버 헤드가 있으므로 너무 많은 작업자를 사용하지 마십시오. 작업자와 주 프로세스 간의 모듈 전송을 최소화하십시오. IPC는 비쌉니다.
+!!! warning
+    Node.js 런타임 및 로더에 대한 부트 오버 헤드가 있으므로 너무 많은 작업자를 사용하지 마십시오. 작업자와 주 프로세스 간의 모듈 전송을 최소화하십시오. IPC는 비쌉니다.
 
 
 
@@ -178,7 +179,7 @@ new CommonsChunkPlugin({
 
 ### Avoid Extra Optimization Steps
 
-webpack does extra algorithmic work to optimize the output for size and load performance. These optimizations are performant for smaller codebases, but can be costly in larger ones:
+webpack은 크기 및로드 성능을 위해 출력을 최적화하기위한 추가 알고리즘 작업을 수행합니다. 이러한 최적화는 더 작은 코드베이스에서는 성능이 좋지만 큰 코드베이스에서는 비용이 많이들 수 있습니다.
 
 ```js
 module.exports = {
@@ -193,7 +194,8 @@ module.exports = {
 
 ### Output Without Path Info
 
-webpack has the ability to generate path info in the output bundle. However, this puts garbage collection pressure on projects that bundle thousands of modules. Turn this off in the `options.output.pathinfo` setting:
+
+webpack에는 출력 번들에 경로 정보를 생성하는 기능이 있습니다. 그러나 이렇게하면 수천 개의 모듈이 번들되는 프로젝트에 가비지 수집 압력이 가해집니다. `options.output.pathinfo` 설정에서 이것을 끄십시오 :
 
 ```js
 module.exports = {
@@ -206,11 +208,16 @@ module.exports = {
 
 ### Node.js Version
 
-There has been a [performance regression](https://github.com/nodejs/node/issues/19769) in the latest stable versions of Node.js and its ES2015 `Map` and `Set` implementations. A fix has been merged into master, but a release has yet to be made. In the meantime, to get the most out of incremental build speeds, try to stick with version 8.9.x (the problem exists between 8.9.10 - 9.11.1). webpack has moved to using those ES2015 data structures liberally, and it will improve the initial build times as well.
+최신 안정 버전의 Node.js와 ES2015 `Map` 및 `Set` 구현에는 [performance regression](https://github.com/nodejs/node/issues/19769)가 있습니다. 
+수정 사항이 마스터에 병합되었지만 릴리스가 아직 작성되지 않았습니다.
+그 동안 증분 빌드 속도를 최대한 활용하려면 버전 8.9.x를 고수하십시오 (8.9.10 - 9.11.1 사이에 문제가 있음). 
+webpack은 ES2015 데이터 구조를 자유롭게 사용하여 초기 빌드 시간을 향상시킵니다.
 
 ### TypeScript Loader
 
-Recently, `ts-loader` has started to consume the internal TypeScript watch mode APIs which dramatically decreases the number of modules to be rebuilt on each iteration. This `experimentalWatchApi` shares the same logic as the normal TypeScript watch mode itself and is quite stable for development use. Turn on `transpileOnly`, as well, for even faster incremental builds.
+최근에 `ts-loader` 는 내부 TypeScript 감시(watch) 모드 API를 사용하기 시작하여 각 반복에서 재 빌드 될 모듈의 수를 크게 줄였습니다.
+이 `experimentalWatchApi` 는 일반적인 TypeScript watch 모드와 동일한 로직을 공유하며 개발용으로 매우 안정적입니다.
+더욱 빠른 증분 빌드를 위해서는 `transpileOnly` 도 활성화하십시오.
 
 ```js
 module.exports = {
@@ -228,11 +235,12 @@ module.exports = {
 };
 ```
 
-Note: the `ts-loader` documentation suggests the use of `cache-loader`, but this actually slows the incremental builds down with disk writes.
+주의 : `ts-loader` 문서는 `cache-loader` 의 사용을 제안합니다, 그러나 이것은 실제로 디스크 쓰기로 점진적 빌드를 느리게 만듭니다.
 
-To gain typechecking again, use the [`ForkTsCheckerWebpackPlugin`](https://www.npmjs.com/package/fork-ts-checker-webpack-plugin).
+다시 typechecking을 하려면 [`ForkTsCheckerWebpackPlugin`](https://www.npmjs.com/package/fork-ts-checker-webpack-plugin).
 
-There is a [full example](https://github.com/TypeStrong/ts-loader/tree/master/examples/fork-ts-checker-webpack-plugin) on the ts-loader github repository.
+ts-loader github 저장소에는 [전체 예제](https://github.com/TypeStrong/ts-loader/tree/master/examples/fork-ts-checker-webpack-plugin)가 있습니다.
+
 
 ---
 
@@ -240,28 +248,32 @@ There is a [full example](https://github.com/TypeStrong/ts-loader/tree/master/ex
 ## Production
 
 The following steps are especially useful in _production_.
+다음 단계는 _production_ 환경에서 특히 유용합니다.
 
-W> __Don't sacrifice the quality of your application for small performance gains!__ Keep in mind that optimization quality is, in most cases, more important than build performance.
+
+!!! warning
+    __작은 성능 향상을 위해 응용 프로그램의 품질을 희생하지 마십시오!__ 최적화 품질은 대부분의 경우 빌드 성능보다 더 중요합니다.
 
 
 ### Multiple Compilations
 
-When using multiple compilations, the following tools can help:
+여러 컴파일을 사용할 때 다음 도구가 도움이 될 수 있습니다.
 
-- [`parallel-webpack`](https://github.com/trivago/parallel-webpack): It allows for compilation in a worker pool.
-- `cache-loader`: The cache can be shared between multiple compilations.
+- [`parallel-webpack`](https://github.com/trivago/parallel-webpack): 작업자 풀에서 컴파일 할 수 있습니다.
+- `cache-loader`: 캐시는 여러 컴파일간에 공유 할 수 있습니다.
 
 
 ### Source Maps
 
-Source maps are really expensive. Do you really need them?
+
+소스 맵은 실제로 비용이 많이 듭니다. 당신은 정말로 그것을 필요로합니까?
 
 ---
 
 
 ## Specific Tooling Issues
 
-The following tools have certain problems that can degrade build performance:
+다음 도구는 빌드 성능을 저하시킬 수있는 특정 문제가 있습니다.
 
 
 ### Babel
@@ -271,11 +283,11 @@ The following tools have certain problems that can degrade build performance:
 
 ### TypeScript
 
-- Use the `fork-ts-checker-webpack-plugin` for typechecking in a separate process.
-- Configure loaders to skip typechecking.
-- Use the `ts-loader` in `happyPackMode: true` / `transpileOnly: true`.
+- `fork-ts-checker-webpack-plugin`을 사용하여 별도의 프로세스에서 형식 검사를 수행하십시오.
+- 형식 확인을 건너 뛰도록 로더를 구성하십시오.
+- `ts-loader` 에서 `happyPackMode: true` / `transpileOnly: true` 를 사용하세요.
 
 
 ### Sass
 
-- `node-sass` has a bug which blocks threads from the Node.js thread pool. When using it with the `thread-loader` set `workerParallelJobs: 2`.
+- `node-sass`는 Node.js 스레드 풀에서 스레드를 차단하는 버그가 있습니다. `thread-loader`와 함께 사용할 경우 `workerParallelJobs : 2` 로 설정한다.

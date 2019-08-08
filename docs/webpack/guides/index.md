@@ -1,12 +1,8 @@
----
-title: Guides
-sort: 0
-contributors:
-  - skipjack
----
+# Guides
 
-This section contains guides for understanding and mastering the wide variety of tools and features that webpack offers. The first is a simple guide that takes you through [installation](/guides/installation).
+이 섹션에는 웹팩이 제공하는 다양한 도구와 기능을 이해하고 마스터하기위한 가이드가 포함되어 있습니다. 첫 번째는 [installation](/guides/installation)을 안내하는 간단한 안내서입니다.
 
-The guides get more and more advanced as you go on. Most serve as a starting point, and once completed you should feel more comfortable diving into the actual [documentation](/configuration).
+계속 진행하면서 가이드가 점점 더 발전합니다. 대부분은 출발점으로 사용되며, 일단 완성되면 실제 [documentation](/configuration)을 보다 쉽게 경험할 수 있습니다.
 
-W> The output shown from running webpack in the guides may differ slightly from the output of newer versions. This is to be expected. As long as the bundles look similar and run correctly, then there shouldn't be any issues. If you do come across an example that seems to be broken by a new version, please create an issue and we will do our best to resolve the discrepancy.
+!!! warning
+    가이드에서 webpack을 실행하면 나타나는 출력은 새 버전의 출력과 약간 다를 수 있습니다. 번들이 비슷하게 보이고 올바르게 작동하는 한 아무런 문제가 없어야 합니다. 새 버전으로 인해 손상된 것으로 보이는 예를 발견하면 문제를 작성하십시오. 우리는 불일치를 해결하기 위해 최선을 다할 것입니다.

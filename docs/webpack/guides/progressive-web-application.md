@@ -1,12 +1,5 @@
----
-title: Progressive Web Application
-sort: 14
-contributors:
-  - johnnyreilly
-  - chenxsan
-  - EugeneHlushko
-  - benschac
----
+# Progressive Web Application
+
 
 T> This guide extends on code examples found in the [Output Management](/guides/output-management) guide.
 

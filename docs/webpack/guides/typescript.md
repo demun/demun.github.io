@@ -1,14 +1,8 @@
----
-title: TypeScript
-sort: 14
-contributors:
-  - morsdyce
-  - kkamali
-  - mtrivera
-  - byzyk
----
+# TypeScript
 
-T> This guide stems from the [_Getting Started_](/guides/getting-started/) guide.
+
+!!! tip
+    This guide stems from the [_Getting Started_](/guides/getting-started/) guide.
 
 [TypeScript](https://www.typescriptlang.org) is a typed superset of JavaScript that compiles to plain JavaScript. In this guide we will learn how to integrate TypeScript with webpack.
 
@@ -183,6 +177,7 @@ Here we declare a new module for SVGs by specifying any import that ends in `.sv
 
 ## Build Performance
 
-W> This may degrade build performance.
+!!! warning
+    This may degrade build performance.
 
 See the [Build Performance](/guides/build-performance/) guide on build tooling.

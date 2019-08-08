@@ -1,19 +1,11 @@
----
-title: Lazy Loading
-sort: 10
-contributors:
-  - iammerrick
-  - chrisVillanueva
-  - skipjack
-  - byzyk
-  - EugeneHlushko
-  - AnayaDesign
-related:
-  - title: Lazy Loading ES2015 Modules in the Browser
-    url: https://dzone.com/articles/lazy-loading-es2015-modules-in-the-browser
----
+# Lazy Loading
 
-T> This guide is a small follow-up to [Code Splitting](/guides/code-splitting). If you have not yet read through that guide, please do so now.
+<!-- - title: Lazy Loading ES2015 Modules in the Browser
+url: https://dzone.com/articles/lazy-loading-es2015-modules-in-the-browser -->
+
+
+!!! tip
+    This guide is a small follow-up to [Code Splitting](/guides/code-splitting). If you have not yet read through that guide, please do so now.
 
 Lazy, or "on demand", loading is a great way to optimize your site or application. This practice essentially involves splitting your code at logical breakpoints, and then loading it once the user has done something that requires, or will require, a new block of code. This speeds up the initial load of the application and lightens its overall weight as some blocks may never even be loaded.
 
@@ -81,7 +73,8 @@ __src/index.js__
 + document.body.appendChild(component());
 ```
 
-W> Note that when using `import()` on ES6 modules you must reference the `.default` property as it's the actual `module` object that will be returned when the promise is resolved.
+!!! warning
+    Note that when using `import()` on ES6 modules you must reference the `.default` property as it's the actual `module` object that will be returned when the promise is resolved.
 
 Now let's run webpack and check out our new lazy-loading functionality:
 

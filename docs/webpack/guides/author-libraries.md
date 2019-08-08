@@ -1,6 +1,5 @@
 # Authoring Libraries
 
-Aside from applications, webpack can also be used to bundle JavaScript libraries. The following guide is meant for library authors looking to streamline their bundling strategy.
 응용 프로그램을 제외하고 webpack은 JavaScript 라이브러리를 묶는 데 사용될 수도 있습니다. 다음 가이드는 번들링 전략을 간소화 하려는 라이브러리 제작자를 위한 것입니다.
 
 ## Authoring a Library
@@ -334,11 +333,13 @@ __package.json__
 `main` 키는 [`package.json`의 표준](https://docs.npmjs.com/files/package.json#main)을 의미하고, `module`을 [a](https://github.com/dherman/defense-of-dot-js/blob/master/proposal.md) [proposal](https://github.com/rollup/rollup/wiki/pkg.module) JavaScript 생태계 업그레이드를 허용하려면 역호환성을 없애지 않고 ES2015 모듈을 사용합니다.
 
 
-W> `module` 속성은 ES2015 모듈 구문을 사용하지만 브라우저나 노드에서 아직 지원하지 않는 다른 구문 기능은 사용하지 않는 스크립트를 가리켜야합니다. 이렇게하면 webpack이 모듈 구문 자체를 분석 할 수 있으므로 사용자가 라이브러리의 특정 부분만 사용하는 경우 [tree shaking](https://webpack.js.org/guides/tree-shaking/)을 통해 더 가벼운 번들을 사용할 수 있습니다.
+!!! warning
+    `module` 속성은 ES2015 모듈 구문을 사용하지만 브라우저나 노드에서 아직 지원하지 않는 다른 구문 기능은 사용하지 않는 스크립트를 가리켜야합니다. 이렇게하면 webpack이 모듈 구문 자체를 분석 할 수 있으므로 사용자가 라이브러리의 특정 부분만 사용하는 경우 [tree shaking](https://webpack.js.org/guides/tree-shaking/)을 통해 더 가벼운 번들을 사용할 수 있습니다.
 
 이제 [npm 패키지로 게시](https://docs.npmjs.com/getting-started/publishing-npm-packages)하고 [unpkg.com](https://unpkg.com/#/)에서 검색하여 사용자에게 배포 할 수 있습니다.
 
-T> 라이브러리와 관련된 스타일시트를 노출하려면 [`MiniCssExtractPlugin`](/plugins/mini-css-extract-plugin)을 사용해야합니다. 사용자는 다른 스타일시트처럼 사용하고 로드 할 수 있습니다.
+!!! tip
+    라이브러리와 관련된 스타일시트를 노출하려면 [`MiniCssExtractPlugin`](/plugins/mini-css-extract-plugin)을 사용해야합니다. 사용자는 다른 스타일시트처럼 사용하고 로드 할 수 있습니다.
 
 
 <br>
